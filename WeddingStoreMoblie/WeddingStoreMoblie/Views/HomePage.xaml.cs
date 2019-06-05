@@ -12,10 +12,10 @@ namespace WeddingStoreMoblie.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class HomePage : MasterDetailPage
 	{
-		public HomePage ()
+		public HomePage (string maNV)
 		{
-			InitializeComponent ();
-            this.Master = new MasterPage();
+            InitializeComponent();
+            this.Master = new MasterPage(maNV);
             this.Detail = new NavigationPage(new HoaDonPage());
             NavigationPage.SetHasNavigationBar(this, false); //turn off toolbar default
         }

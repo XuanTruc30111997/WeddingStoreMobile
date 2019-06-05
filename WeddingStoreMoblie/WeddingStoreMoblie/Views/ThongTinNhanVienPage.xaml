@@ -26,7 +26,7 @@
                 <!--<Image Grid.RowSpan="5" Grid.ColumnSpan="2" 
                        Source="backgroundNhanVien.jpg" Aspect="Fill"/>-->
                 <StackLayout Orientation="Vertical" Grid.Column="0">
-                    <Image HeightRequest="80" Source="{Binding Avatarr, Converter={StaticResource myImage}}" Aspect="AspectFill"/>
+                    <Image HeightRequest="80" Source="{Binding Avatar, Converter={StaticResource myImage}}" Aspect="AspectFill"/>
                     <Label HorizontalTextAlignment="Center" Margin="0,5"
                            Text="{Binding myNhanVien.MaNV}" TextColor="Black" FontAttributes="Bold"/>
                 </StackLayout>
@@ -55,22 +55,6 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <!--<StackLayout
-                                    Orientation="Horizontal">
-                                <Label
-                                        Text="{Binding Ngay}"/>
-                                <StackLayout
-                                        Orientation="Vertical">
-                                    <Label Text="{Binding MaHD}"/>
-                                    <StackLayout
-                                            Orientation="Horizontal">
-                                        <Label
-                                                Text="{Binding ThoiGianDen}"/>
-                                        <Label
-                                                Text="{Binding ThoiGianDi}"/>
-                                    </StackLayout>
-                                </StackLayout>
-                            </StackLayout>-->
 
                             <Grid Padding="5">
                                 <Grid.ColumnDefinitions>

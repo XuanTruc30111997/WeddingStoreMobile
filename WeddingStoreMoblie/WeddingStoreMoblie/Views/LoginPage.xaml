@@ -16,7 +16,7 @@
                   BackgroundColor="Transparent">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="6*"/>
-                    <RowDefinition Height="2.5*"/>
+                    <RowDefinition Height="3.5*"/>
                     <RowDefinition Height="1.5*"/>
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
@@ -41,7 +41,7 @@
                     </StackLayout>
                 </Frame>
 
-                <Button Text="Login" WidthRequest="300" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#F08C32"
+                <Button Margin="0,15,0,0" Text="Login" WidthRequest="300" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#F08C32"
                         Command="{Binding LoginCommand}"/>
 
                 <ActivityIndicator Grid.Row="3" IsEnabled="{Binding isBusy,Mode=TwoWay}"

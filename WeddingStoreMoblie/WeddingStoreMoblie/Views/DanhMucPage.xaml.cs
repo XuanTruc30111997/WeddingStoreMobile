@@ -12,9 +12,18 @@ namespace WeddingStoreMoblie.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DanhMucPage : ContentPage
     {
-        public DanhMucPage()
+        ViewModels.DanhMucViewModel vm;
+        public DanhMucPage(string maNV)
         {
             InitializeComponent();
+            vm = new ViewModels.DanhMucViewModel(maNV);
+            BindingContext = vm;
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await vm.GetData();
         }
     }
 }

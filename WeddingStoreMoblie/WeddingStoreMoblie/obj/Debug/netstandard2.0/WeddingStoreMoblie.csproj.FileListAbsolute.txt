@@ -33,3 +33,4 @@ D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie\bin
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie\obj\Debug\netstandard2.0\WeddingStoreMoblie.csproj.CopyComplete
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie\obj\Debug\netstandard2.0\XamlC.stamp
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie\obj\Debug\netstandard2.0\Views\DanhMucPage.xaml.g.cs

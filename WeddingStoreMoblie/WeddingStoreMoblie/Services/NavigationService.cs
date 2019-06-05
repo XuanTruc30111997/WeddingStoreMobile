@@ -30,13 +30,14 @@ namespace WeddingStoreMoblie.Services
             myPage.IsPresented = false;
         }
 
-        public async Task NavigateToMaster()
+        public void NavigateToMaster(string maNV)
         {
             //Page _currentPage = GetCurrentPage();
             //await _currentPage.Navigation.PushAsync(new NavigationPage(new HomePage()));
             Device.BeginInvokeOnMainThread(() =>
             {
-                App.Current.MainPage = new NavigationPage(new HomePage());
+                App.Current.MainPage = new NavigationPage(new HomePage(maNV));
+                //App.Current.MainPage = new NavigationPage(new DanhMucPage(maNV));
             });
         }
     }

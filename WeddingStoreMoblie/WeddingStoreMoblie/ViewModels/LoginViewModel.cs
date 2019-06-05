@@ -82,7 +82,7 @@ namespace WeddingStoreMoblie.ViewModels
             TaiKhoanModel myTK = _LstTaiKhoan.FirstOrDefault(tk => tk.UserName == _UserName && tk.PassWord == _Password);
             if (myTK != null)
             {
-                await _myNavigationService.NavigateToMaster();
+                _myNavigationService.NavigateToMaster(myTK.MaNV);
             }
             else
             {

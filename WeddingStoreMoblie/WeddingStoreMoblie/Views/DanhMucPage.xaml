@@ -3,13 +3,65 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:markEx="clr-namespace:WeddingStoreMoblie.MarkupExtensions"
+             xmlns:controls="clr-namespace:WeddingStoreMoblie.Controls"
+             xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              mc:Ignorable="d"
-             x:Class="WeddingStoreMoblie.Views.DanhMucPage">
+             x:Class="WeddingStoreMoblie.Views.DanhMucPage"
+             NavigationPage.HasBackButton="False" NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <AbsoluteLayout>
+            <Image Source="{markEx:EmbeddedImage danhMucBackground.jpg}" 
+                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
+            <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
+                           IsVisible="{Binding isBusy,Mode=TwoWay}"
+                           IsRunning="{Binding isBusy,Mode=TwoWay}"
+                           AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
+
+            <Grid AbsoluteLayout.LayoutBounds="0.5,0.5,300,500" AbsoluteLayout.LayoutFlags="PositionProportional"
+                  BackgroundColor="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="120"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" WidthRequest="120" HeightRequest="100" VerticalOptions="Center" HorizontalOptions="Center"
+                       Source="{Binding MyNhanVien.Avatar,Converter={StaticResource myImage}}"/>
+                <!--<sync:SfListView Grid.Row="1" BackgroundColor="Transparent" Margin="5" ItemsSource="{Binding LstTinhNang}"
+                          SelectedItem="{Binding SelectedTinhNang}" Orientation="Horizontal" IsScrollBarVisible="True">
+                        <sync:SfListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid HeightRequest="120" WidthRequest="130">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="30"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="{Binding icon,Converter={StaticResource myImageApp}}" Aspect="Fill" Grid.Row="0"
+                                               HeightRequest="90" WidthRequest="70"/>
+                                        <Label Grid.Row="1" HorizontalOptions="Center" Text="{Binding ChucNang}"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </sync:SfListView.ItemTemplate>
+                    </sync:SfListView>-->
+                <sync:SfListView ItemsSource="{Binding LstTinhNang}" Orientation="Horizontal" Grid.Row="1"
+                                 ItemSpacing="5" SelectionMode="None">
+                    <sync:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="30"/>
+                                </Grid.RowDefinitions>
+                                <Image Source="{Binding icon, Converter={StaticResource myImageApp}}"
+                                           Grid.Row="0" Aspect="Fill"/>
+                                <Label Text="{Binding ChucNang}" Grid.Row="1"/>
+                            </Grid>
+                        </DataTemplate>
+                    </sync:SfListView.ItemTemplate>
+                </sync:SfListView>
+            </Grid>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

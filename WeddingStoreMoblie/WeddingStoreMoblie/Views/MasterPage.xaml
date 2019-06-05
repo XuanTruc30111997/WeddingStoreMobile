@@ -7,24 +7,38 @@
              Title="WeddingApp">
 
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical"
-                     Padding="10"
-                     BackgroundColor="#7fefa6">
-            <Image VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="130"
-                   Source="{markEx:EmbeddedImage home.jpg}"/>
-            <ListView
-                ItemsSource="{Binding LstTinhNang}"
-                ItemTapped="ChucNang_ItemTapped"
-                BackgroundColor="Transparent">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <!--<ImageCell ImageSource="{markEx:EmbeddedImage icon}" 
+        <AbsoluteLayout>
+            <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
+                               IsVisible="{Binding isBusy,Mode=TwoWay}"
+                               IsRunning="{Binding isBusy,Mode=TwoWay}"
+                               AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
+            
+            <Grid Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="140"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <Image VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="130" Grid.Row="0"
+                       Source="{markEx:EmbeddedImage home.jpg}"/>
+                <ListView Grid.Row="1"
+                           ItemsSource="{Binding LstTinhNang}" SelectedItem="{Binding SelectedTinhNang}"
+                           BackgroundColor="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <!--<ImageCell ImageSource="{markEx:EmbeddedImage icon}" 
                                    Text="{Binding ChucNang}" TextColor="Black"/>-->
-                        <ImageCell ImageSource="{Binding icon, Converter={StaticResource myImageApp}}" 
+                            <ImageCell ImageSource="{Binding icon, Converter={StaticResource myImageApp}}" 
                                    Text="{Binding ChucNang}" TextColor="Black"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout Grid.Row="2" Orientation="Horizontal" VerticalOptions="Center">
+                    <Image Source="{Binding MyNhanVien.Avatar,Converter={StaticResource myImage}}" WidthRequest="50" HeightRequest="50"
+                       Aspect="Fill" Margin="5"/>
+                    <Label Text="{Binding MyNhanVien.TenNV}" FontAttributes="Bold" VerticalOptions="Center" FontSize="Large"/>
+                </StackLayout>
+            </Grid>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

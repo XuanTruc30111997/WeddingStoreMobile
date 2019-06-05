@@ -15,17 +15,18 @@ namespace WeddingStoreMoblie.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MasterPage : ContentPage
 	{
-		public MasterPage ()
+        MasterPageViewModel vm;
+        public MasterPage (string maNV)
 		{
-			InitializeComponent ();
-            BindingContext = new MasterPageViewModel();
+            InitializeComponent();
+            vm = new MasterPageViewModel(maNV);
+            BindingContext = vm;
         }
 
-        private void ChucNang_ItemTapped(object sender, ItemTappedEventArgs e)
+        protected override async void OnAppearing()
         {
-            var chucNang = e.Item as TinhNang;
-            var _chucNang = new MasterPageViewModel();
-            _chucNang.CLickOnChucNang(chucNang.id);
+            base.OnAppearing();
+            await vm.GetDataAsync();
         }
     }
 }
