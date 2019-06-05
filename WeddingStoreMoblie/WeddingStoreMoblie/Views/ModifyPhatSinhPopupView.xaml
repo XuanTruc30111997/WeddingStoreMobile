@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeddingStoreMoblie.Views.ModifyPhatSinhPopupView"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:animation="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup">
+    <pages:PopupPage.Animation>
+        <animation:ScaleAnimation DurationIn="400"
+                                  DurationOut="300"
+                                  EasingIn="SinOut"
+                                  EasingOut="SinIn"
+                                  HasBackgroundAnimation="True"
+                                  PositionIn="Center"
+                                  PositionOut="Center"
+                                  ScaleIn="1.2"
+                                  ScaleOut="0.8"/>
+    </pages:PopupPage.Animation>
+    <StackLayout BackgroundColor="White"
+                 Padding="24"
+                 Margin="24"
+                 Orientation="Vertical"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center">
+        <Grid>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Thông tin vật liêu:"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.RowSpan="2" Grid.Column="0" Source="{Binding AnhMoTa,Converter={StaticResource myImage}}"/>
+                    <Label Text="{Binding thongTinPhatSinh.TenVL}" Grid.Row="0" Grid.Column="1"/>
+                    <Label Text="{Binding thongTinPhatSinh.SoLuong, StringFormat='Số lượng: {0:0}'}" Grid.Row="1" Grid.Column="1"/>
+                    <Label Text="{Binding thongTinPhatSinh.ThanhTien, StringFormat='Thành tiền: {0:0,0.0}'}" Grid.Row="1" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+                </Grid>
+            </StackLayout>
+        </Grid>
+
+        <StackLayout Orientation="Horizontal">
+            <Entry Placeholder="Số lượng" Text="{Binding soLuong}"/>
+            <Label Text="{Binding tongTien,StringFormat='Giá tiền {0:0,0.0}'}"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Save" Command="{Binding SaveCommand}"/>
+            <Button Text="Done" Command="{Binding DoneCommand}"/>
+        </StackLayout>
+    </StackLayout>
+</pages:PopupPage>

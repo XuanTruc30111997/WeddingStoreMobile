@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeddingStoreMoblie.Views.ThongTinMauPage"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:markup="clr-namespace:WeddingStoreMoblie.MarkupExtensions">
+
+    <AbsoluteLayout>
+        <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
+                           IsVisible="{Binding isBusy,Mode=TwoWay}"
+                           IsRunning="{Binding isBusy,Mode=TwoWay}"
+                           AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
+
+        <Grid>
+            <Grid>
+                <ListView
+                ItemsSource="{Binding LstThongTinChiTietHoaDon}"
+                IsGroupingEnabled="True"
+                GroupDisplayBinding="{Binding MaSP}"
+                HeightRequest="750"
+                HasUnevenRows="True">
+
+                    <ListView.GroupHeaderTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <RelativeLayout Margin="5" HeightRequest="70">
+                                    <Image Source="{Binding Hinh, Converter={StaticResource myImage}}"
+                                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
+                                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=SearchControlsGrid,Property=Width, Factor=1, Constant=0 }"
+                                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=SearchControlsGrid, Property=Height,Factor=1, Constant=0}"/>
+
+                                    <Grid VerticalOptions="Center">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="7*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding TenSP}"
+                                           FontAttributes="Bold" FontSize="Medium" TextColor="Black"/>
+                                        <Label Grid.Row="1" Grid.Column="0" Text="{Binding SoLuong, StringFormat='Số lượng: {0:0}'}" 
+                                           HorizontalTextAlignment="Start" FontAttributes="Bold" TextColor="Black"/>
+                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding ThanhTien,StringFormat='Thành tiền: {0:0,0.0} VNĐ'}"
+                                           HorizontalOptions="End" FontAttributes="Bold" TextColor="Black"/>
+                                    </Grid>
+
+                                </RelativeLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.GroupHeaderTemplate>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid HeightRequest="80">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Source="{Binding AnhMoTa,Converter={StaticResource myImage}}" Margin="5"/>
+                                    <Grid Grid.Column="1" VerticalOptions="Center">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding TenVL}" Grid.Row="0"/>
+                                        <Label Text="{Binding DonVi,StringFormat='Số Lượng: {0:N}'}" Grid.Row="1"/>
+                                    </Grid>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </Grid>
+
+            <Grid
+            HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"
+            RowSpacing="0" ColumnSpacing="10"
+            BackgroundColor="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <BoxView
+                IsVisible="{Binding ShowMenu}" Grid.ColumnSpan="3"
+                Color="Transparent"
+                 />
+
+                <Image x:Name="more" WidthRequest="50" HeightRequest="50"
+                   Source="{markup:EmbeddedImage list.png}"
+                   Grid.Column="2"/>
+
+                <Image x:Name="them" WidthRequest="50" HeightRequest="50"
+                Source="{markup:EmbeddedImage addmau.png}"
+                IsVisible="{Binding ShowMenu}"
+                Grid.Column="0"/>
+                <Image x:Name="modify" WidthRequest="50" HeightRequest="50"
+                Source="{markup:EmbeddedImage modify.png}"
+                IsVisible="{Binding ShowMenu}"
+                Grid.Column="1"/>
+            </Grid>
+        </Grid>
+    </AbsoluteLayout>
+</ContentPage>

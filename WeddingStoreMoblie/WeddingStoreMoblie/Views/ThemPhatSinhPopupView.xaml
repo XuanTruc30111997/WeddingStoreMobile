@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeddingStoreMoblie.Views.ThemPhatSinhPopupView"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:animation="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup">
+    <pages:PopupPage.Animation>
+        <animation:ScaleAnimation DurationIn="400"
+                                  DurationOut="300"
+                                  EasingIn="SinOut"
+                                  EasingOut="SinIn"
+                                  HasBackgroundAnimation="True"
+                                  PositionIn="Center"
+                                  PositionOut="Center"
+                                  ScaleIn="1.2"
+                                  ScaleOut="0.8"/>
+    </pages:PopupPage.Animation>
+
+    <StackLayout BackgroundColor="White"
+                 Padding="24"
+                 Margin="24"
+                 Orientation="Vertical"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center">
+        <Label Text="-- Chọn Vật Liệu --" TextColor="Brown" FontSize="Medium"/>
+        <ListView ItemsSource="{Binding LstVatLieu}"
+                  SelectedItem="{Binding SelectedVL}" 
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="5">
+                            <Image Source="{Binding AnhMoTa,Converter={StaticResource myImage}}" WidthRequest="50" HeightRequest="50"/>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding TenVL}"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding SoLuongTon, StringFormat='Số lượng tồn: {0:0}'}"/>
+                                    <Label Text="{Binding GiaTien,StringFormat=' {0:0,0.0} VNĐ'}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout Orientation="Horizontal">
+            <Entry Placeholder="Số lượng" Text="{Binding soLuong}"/>
+            <Button Text="Thêm" Command="{Binding ThemCommand}" BackgroundColor="DodgerBlue"/>
+        </StackLayout>
+    </StackLayout>
+
+</pages:PopupPage>

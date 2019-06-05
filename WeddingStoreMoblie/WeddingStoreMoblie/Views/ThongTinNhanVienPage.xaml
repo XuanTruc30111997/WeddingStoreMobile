@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeddingStoreMoblie.Views.ThongTinNhanVienPage"
+             xmlns:converter="clr-namespace:WeddingStoreMoblie.Converters" BackgroundColor="#F5D790">
+
+    <ContentPage.Resources>
+        <converter:ConvertTimeSpanToString x:Key="myTime"/>
+        <converter:ConvertDateTimeToStringV2 x:Key="myDateTime"/>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <!--<Image Source="backgroundNhanVien.jpg" Aspect="Fill" HeightRequest="120"/>-->
+            <Grid Grid.Row="0" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--<Image Grid.RowSpan="5" Grid.ColumnSpan="2" 
+                       Source="backgroundNhanVien.jpg" Aspect="Fill"/>-->
+                <StackLayout Orientation="Vertical" Grid.Column="0">
+                    <Image HeightRequest="80" Source="{Binding Avatarr, Converter={StaticResource myImage}}" Aspect="AspectFill"/>
+                    <Label HorizontalTextAlignment="Center" Margin="0,5"
+                           Text="{Binding myNhanVien.MaNV}" TextColor="Black" FontAttributes="Bold"/>
+                </StackLayout>
+                <StackLayout Grid.Column="1" Orientation="Vertical">
+                    <Label Text="{Binding myNhanVien.TenNV}" FontAttributes="Bold"/>
+                    <Label Text="{Binding myNhanVien.GioiTinh, StringFormat='Giới tính: {0:N}'}" FontAttributes="Bold"/>
+                    <Label Text="{Binding myNhanVien.SoDT, StringFormat='Số điện thoại: {0:N}'}"/>
+                    <Label Text="{Binding myNhanVien.DiaChi, StringFormat='Địa chỉ: {0:N}'}" FontAttributes="Italic"/>
+                </StackLayout>
+            </Grid>
+
+            <Grid Grid.Row="1" Padding="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Picker Grid.Column="0" ItemsSource="{Binding LstThang}" SelectedItem="{Binding SelectedThang,Mode=TwoWay}" Margin="5"
+                    Title="-- Chọn tháng --"/>
+                <Entry Placeholder="Năm" Text="{Binding Nam,Mode=TwoWay}" Grid.Column="1"/>
+                <Button Grid.Column="2" Text="Xem" Command="{Binding SearchCommand}"/>
+            </Grid>
+            <ListView Grid.Row="2"
+                    ItemsSource="{Binding LstPhanCong}"
+                    BackgroundColor="Transparent" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <!--<StackLayout
+                                    Orientation="Horizontal">
+                                <Label
+                                        Text="{Binding Ngay}"/>
+                                <StackLayout
+                                        Orientation="Vertical">
+                                    <Label Text="{Binding MaHD}"/>
+                                    <StackLayout
+                                            Orientation="Horizontal">
+                                        <Label
+                                                Text="{Binding ThoiGianDen}"/>
+                                        <Label
+                                                Text="{Binding ThoiGianDi}"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>-->
+
+                            <Grid Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Text="{Binding Ngay,StringFormat=' {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}" Grid.Row="0" Grid.Column="0"/>
+                                <Label Text="{Binding MaHD, StringFormat='Mã hóa đơn: {0:N}'}" Grid.Row="1" Grid.Column="0"/>
+                                <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="End" Orientation="Horizontal">
+                                    <Label Text="Thời gian đến: "/>
+                                    <Label Text="{Binding ThoiGianDen, Converter={StaticResource myTime}}" />
+                                </StackLayout>
+                                <StackLayout  Grid.Row="1" Grid.Column="1" HorizontalOptions="End" Orientation="Horizontal">
+                                    <Label Text="Thời gian đi: "/>
+                                    <Label Text="{Binding ThoiGianDi, Converter={StaticResource myTime}}" />
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Grid Grid.Row="3" VerticalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" TextColor="#ea415b" FontAttributes="Bold"
+                        Text="{Binding gioCong, StringFormat='Tổng giờ công: {0:N}'}"/>
+                <Label Grid.Column="1" TextColor="#e01e14" FontAttributes="Bold"
+                        Text="{Binding tongLuong,StringFormat='Tổng lương: {0:0,0} VNĐ'}"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

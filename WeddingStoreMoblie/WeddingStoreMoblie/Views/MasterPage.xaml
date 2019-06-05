@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeddingStoreMoblie.Views.MasterPage"
+             xmlns:markEx="clr-namespace:WeddingStoreMoblie.MarkupExtensions"
+             xmlns:converter="clr-namespace:WeddingStoreMoblie.Converters"
+             Title="WeddingApp">
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"
+                     Padding="10"
+                     BackgroundColor="#7fefa6">
+            <Image VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="130"
+                   Source="{markEx:EmbeddedImage home.jpg}"/>
+            <ListView
+                ItemsSource="{Binding LstTinhNang}"
+                ItemTapped="ChucNang_ItemTapped"
+                BackgroundColor="Transparent">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<ImageCell ImageSource="{markEx:EmbeddedImage icon}" 
+                                   Text="{Binding ChucNang}" TextColor="Black"/>-->
+                        <ImageCell ImageSource="{Binding icon, Converter={StaticResource myImageApp}}" 
+                                   Text="{Binding ChucNang}" TextColor="Black"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

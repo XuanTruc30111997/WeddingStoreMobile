@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeddingStoreMoblie.Views.PhanCongPage"
+             xmlns:converter="clr-namespace:WeddingStoreMoblie.Converters"
+             Title="Phân Công"
+             xmlns:markup="clr-namespace:WeddingStoreMoblie.MarkupExtensions">
+
+    <ContentPage.Resources>
+        <converter:ConvertDateTimeToStringV2 x:Key="myDate"/>
+        <converter:ConvertTimeSpanToString x:Key="myTime"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
+                               IsVisible="{Binding isBusy,Mode=TwoWay}"
+                               IsRunning="{Binding isBusy,Mode=TwoWay}"
+                               AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
+            <Grid>
+                <Grid>
+                    <StackLayout Orientation="Vertical">
+                        <ListView ItemsSource="{Binding LstPhanCongNhanVien, Mode=TwoWay}" IsGroupingEnabled="True"
+                              GroupDisplayBinding="{Binding Ngay,StringFormat='{0:dd/MM/yyy}',Converter={StaticResource myDate}}"
+                              HasUnevenRows="True"
+                              ItemTapped="Handler_NVTapped">
+                            <ListView.GroupHeaderTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Label Text="{Binding Ngay}" TextColor="Salmon" FontSize="Large"/>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.GroupHeaderTemplate>
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="Fill">
+                                            <Image HeightRequest="50" WidthRequest="50" Source="{Binding Avatar, Converter={StaticResource myImage}}"/>
+                                            <StackLayout Orientation="Vertical">
+                                                <Label Text="{Binding TenNV}"/>
+                                                <Label Text="{Binding SoDT,StringFormat='SĐT: {0:N}'}"/>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition/>
+                                                        <ColumnDefinition/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Text="{Binding ThoiGianDen, Converter={StaticResource myTime}}" HorizontalOptions="Start" Grid.Column="0"/>
+                                                    <Label Text="{Binding ThoiGianDi, Converter={StaticResource myTime}}" HorizontalOptions="End" Grid.Column="1"/>
+                                                </Grid>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </ViewCell>
+                                    <!--<ImageCell Text="{Binding TenNV}" Detail="{Binding ThoiGianDen}"/>-->
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Grid>
+
+                <Grid HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand">
+                    <Image x:Name="them" WidthRequest="50" HeightRequest="50"
+                       Source="{markup:EmbeddedImage add.png}"/>
+                </Grid>
+            </Grid>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,90 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceAssemblyReference>true</ProduceAssemblyReference>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\add.png" />
+    <None Remove="Images\addmau.png" />
+    <None Remove="Images\checked.png" />
+    <None Remove="Images\ChuaTrangTri.png" />
+    <None Remove="Images\DaThaoDo.png" />
+    <None Remove="Images\DaTrangTri.png" />
+    <None Remove="Images\hoadon.png" />
+    <None Remove="Images\home.jpg" />
+    <None Remove="Images\list.png" />
+    <None Remove="Images\loginBackground.jpg" />
+    <None Remove="Images\modify.png" />
+    <None Remove="Images\nhanvien.png" />
+    <None Remove="Images\noimage.png" />
+    <None Remove="Images\unchecked.png" />
+    <None Remove="Images\vatlieu.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\add.png" />
+    <EmbeddedResource Include="Images\addmau.png" />
+    <EmbeddedResource Include="Images\checked.png" />
+    <EmbeddedResource Include="Images\ChuaTrangTri.png" />
+    <EmbeddedResource Include="Images\DaThaoDo.png" />
+    <EmbeddedResource Include="Images\DaTrangTri.png" />
+    <EmbeddedResource Include="Images\hoadon.png" />
+    <EmbeddedResource Include="Images\home.jpg" />
+    <EmbeddedResource Include="Images\list.png" />
+    <EmbeddedResource Include="Images\loginBackground.jpg" />
+    <EmbeddedResource Include="Images\modify.png" />
+    <EmbeddedResource Include="Images\nhanvien.png" />
+    <EmbeddedResource Include="Images\noimage.png" />
+    <EmbeddedResource Include="Images\unchecked.png" />
+    <EmbeddedResource Include="Images\vatlieu.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.SignalR.Client" Version="2.4.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.1.5.188" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="17.1.0.48" />
+    <PackageReference Include="ThriveGmbH.BottomNavigationBar.XF" Version="1.0.2" />
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.425677" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Functions\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v8.1\Mono.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\HoaDonPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NhanVienPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TinhNangPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\VatLieuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

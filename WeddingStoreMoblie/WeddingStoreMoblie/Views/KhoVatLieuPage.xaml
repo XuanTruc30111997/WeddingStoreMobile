@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeddingStoreMoblie.Views.KhoVatLieuPage"
+             Title="Danh Sách Vật Liệu"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             BackgroundColor="#323d4f">
+    <AbsoluteLayout>
+        <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
+                           IsVisible="{Binding isBusy,Mode=TwoWay}"
+                           IsRunning="{Binding isBusy,Mode=TwoWay}"
+                           AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
+        <Grid>
+            <Grid>
+                <StackLayout Orientation="Vertical" BackgroundColor="Transparent">
+                    <StackLayout Orientation="Horizontal">
+                        <SearchBar Placeholder="Search Here!!" WidthRequest="250" FontSize="Medium"
+                               SearchCommand="{Binding SearchCommand}" Text="{Binding keyWord}" 
+                               TextChanged="Handler_keyWordChanged" BackgroundColor="Transparent"/>
+                        <Picker Title="--Choose your option--"
+                            ItemsSource="{Binding LstOption}" SelectedItem="{Binding selectedOption, Mode=TwoWay}"
+                            WidthRequest="100" FontSize="Medium" BackgroundColor="Transparent"/>
+                    </StackLayout>
+
+                    <ListView x:Name="listView" ItemsSource="{Binding LstVatLieu}"
+                          Margin="5" BackgroundColor="Transparent" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid HeightRequest="60" Padding="5">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="70"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="{Binding AnhMoTa, Converter={StaticResource myImage}}" Grid.Column="0"/>
+                                        <Grid Grid.Column="1">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="4*"/>
+                                                <ColumnDefinition Width="6*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="{Binding TenVL}" FontSize="Medium" FontAttributes="Bold"
+                                               Grid.Row="0" Grid.ColumnSpan="2"/>
+                                            <Label Text="{Binding SoLuongTon, StringFormat='Số lượng: {0:0}'}"
+                                               HorizontalOptions="End" TextColor="White" FontAttributes="Italic"
+                                               Grid.Row="1" Grid.Column="0"/>
+                                            <Label Text="{Binding GiaTien, StringFormat='Giá Tiền: {0:0,0} VNĐ'}"
+                                               TextColor="White" HorizontalTextAlignment="End"
+                                               Grid.Row="1" Grid.Column="1"/>
+                                        </Grid>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Grid>
+            <Grid HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="Transparent">
+                <Image WidthRequest="64" HeightRequest="64" x:Name="them" Source="addlist.png"/>
+            </Grid>
+        </Grid>
+
+    </AbsoluteLayout>
+</ContentPage>

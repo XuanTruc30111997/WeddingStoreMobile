@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="WeddingStoreMoblie.Views.ModifyPhanCongPopupView"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:animation="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 xmlns:converter="clr-namespace:WeddingStoreMoblie.Converters"
+                 Title="Điểm danh nhân viên">
+
+    <pages:PopupPage.Animation>
+        <animation:ScaleAnimation DurationIn="400"
+                                  DurationOut="300"
+                                  EasingIn="SinOut"
+                                  EasingOut="SinIn"
+                                  HasBackgroundAnimation="True"
+                                  PositionIn="Center"
+                                  PositionOut="Center"
+                                  ScaleIn="1.2"
+                                  ScaleOut="0.8"/>
+    </pages:PopupPage.Animation>
+
+    <pages:PopupPage.Resources>
+        <converter:ConvertDateTimeToStringV2 x:Key="myDateTime"/>
+        <Style TargetType="Button" x:Name="myButton">
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="Padding" Value="5,0"/>
+        </Style>
+    </pages:PopupPage.Resources>
+
+    <pages:PopupPage.Content>
+        <Grid Padding="24" Margin="24"
+              HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#E3B8B8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Padding="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="{Binding Avatar, Converter={StaticResource myImage}}" Margin="5,0"/>
+                <Label Grid.Column="1" Text="{Binding thongTinNhanVienPhanCong.TenNV}" FontSize="Medium"
+                       VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+            </Grid>
+            <!--<Label Grid.Row="0" Text="{Binding thongTinNhanVienPhanCong.TenNV}" FontSize="Medium"/>-->
+            <Label Grid.Row="1" Text="{Binding thongTinNhanVienPhanCong.Ngay,StringFormat=' {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"
+                   FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+
+            <StackLayout Grid.Row="2" Padding="3" Orientation="Horizontal" VerticalOptions="Center"
+                         HorizontalOptions="CenterAndExpand">
+                <Label Text="Thời gian: " Margin="3,0" VerticalOptions="Center"/>
+                <TimePicker Time="{Binding Time,Mode=TwoWay}" VerticalOptions="Center" FontSize="Small"/>
+            </StackLayout>
+            <Grid Grid.Row="3" Padding="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Text="CheckIn" BackgroundColor="Blue" Command="{Binding CheckInCommand}"/>
+                <Button Grid.Column="1" Text="CheckOut" BackgroundColor="Green" Command="{Binding CheckOutCommand}"/>
+            </Grid>
+            <Grid Grid.Row="4" Padding="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Text="Delete" BackgroundColor="Red" Command="{Binding DeleteCommand}"/>
+                <Button Grid.Column="1" Text="Done" BackgroundColor="#F36464" Command="{Binding DoneCommand}"/>
+            </Grid>
+
+        </Grid>
+    </pages:PopupPage.Content>
+</pages:PopupPage>

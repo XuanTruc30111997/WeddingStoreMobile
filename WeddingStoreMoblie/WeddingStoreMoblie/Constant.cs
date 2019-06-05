@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace WeddingStoreMoblie
+{
+    public class Constant
+    {
+        public const string RestApiWeddingStore = "http://192.168.1.217:1997/api/";
+        //public const string RestApiWeddingStore = "http://192.168.178.2:3011/api/";
+        //public const string RestApiWeddingStore = "http://192.168.1.218:1997/api/";
+        public static bool isNew { get; set; }
+    }
+}

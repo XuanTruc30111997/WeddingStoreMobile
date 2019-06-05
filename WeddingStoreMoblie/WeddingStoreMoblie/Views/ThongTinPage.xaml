@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeddingStoreMoblie.Views.ThongTinPage"
+             xmlns:converter="clr-namespace:WeddingStoreMoblie.Converters">
+
+    <ContentPage.Resources>
+        <converter:ConvertDateTimeToStringV2 x:Key="myDateTime"/>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
+                               IsVisible="{Binding isBusy,Mode=TwoWay}"
+                               IsRunning="{Binding isBusy,Mode=TwoWay}"
+                               AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
+            
+            <StackLayout Orientation="Vertical" BackgroundColor="Transparent">
+                <StackLayout Orientation="Vertical" BackgroundColor="Transparent">
+                    <Label
+                    Text="Thông tin hóa đơn"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    TextColor="Chocolate"/>
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            Grid.Row="0"
+                            Grid.ColumnSpan="2"
+                            Text="{Binding MyHD.MaHD,StringFormat='Mã hóa đơn: {0:N}'}"
+                            TextColor="Red" FontAttributes="Bold"/>
+                        <Label
+                            Grid.Row="1" Grid.ColumnSpan="2"
+                            TextColor="Black" FontAttributes="Bold"
+                            Text="{Binding MyHD.NgayLap,StringFormat=' {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
+                        <Label
+                            Grid.Row="2" Grid.Column="0"
+                            TextColor="Black" FontAttributes="Italic"
+                            Text="{Binding MyHD.NgayTrangTri,StringFormat=' {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
+                        <Label
+                            Grid.Row="2" Grid.Column="1"
+                            TextColor="Black" FontAttributes="Italic"
+                            Text="{Binding MyHD.NgayThaoDo,StringFormat=' {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
+                        <!--<Label
+                            Grid.Row="1" Grid.ColumnSpan="2"
+                            TextColor="Black" FontAttributes="Bold"
+                            Text="{Binding MyHD.NgayLap,StringFormat=' {0:yyyy/MM/dd}'}"/>
+                        <Label
+                            Grid.Row="2" Grid.Column="0"
+                            TextColor="Black" FontAttributes="Italic"
+                            Text="{Binding MyHD.NgayTrangTri,StringFormat=' {0:yyyy/MM/dd}'}"/>
+                        <Label
+                            Grid.Row="2" Grid.Column="1"
+                            TextColor="Black" FontAttributes="Italic"
+                            Text="{Binding MyHD.NgayThaoDo,StringFormat=' {0:yyyy/MM/dd}'}"/>-->
+                        <Label
+                            Grid.Row="3" Grid.ColumnSpan="2"
+                            TextColor="Red" FontAttributes="Bold"
+                            Text="{Binding MyHD.TongTien,StringFormat='Tổng tiền: {0:0,0.0} VND'}"/>
+                    </Grid>
+                    <Label
+                        Text="Thông tin khách hàng"
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        TextColor="Chocolate"/>
+                    <StackLayout Orientation="Vertical" Padding="10">
+                        <Label TextColor="Black" FontAttributes="Bold" 
+                               Text="{Binding MyKH.MaKH,StringFormat='Mã khách hàng: {0:N}'}"/>
+                        <Label TextColor="Black" FontAttributes="Bold" 
+                               Text="{Binding MyKH.TenKH,StringFormat='Tên khách hàng: {0:N}'}"/>
+                        <Label TextColor="Black" FontAttributes="Bold" 
+                               Text="{Binding MyKH.DiaChi,StringFormat='Địa chỉ: {0:N}'}"/>
+                        <Label TextColor="Black" FontAttributes="Bold" 
+                               Text="{Binding MyKH.SoDT,StringFormat='Số điện thoại: {0:N}'}"/>
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

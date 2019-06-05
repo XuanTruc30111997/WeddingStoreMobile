@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeddingStoreMoblie.Views.PhatSinhPage"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:markup="clr-namespace:WeddingStoreMoblie.MarkupExtensions">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
+                           IsVisible="{Binding isBusy,Mode=TwoWay}"
+                           IsRunning="{Binding isBusy,Mode=TwoWay}"
+                           AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
+            <Grid>
+                <Grid>
+                    <syncfusion:SfListView ItemsSource="{Binding LstThongTinPhatSinh}" Margin="5" x:Name="listView"
+                                           SelectedItem="{Binding SelectedVL}" AllowSwiping="True" AutoFitMode="Height">
+                        <!--<syncfusion:SfListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid x:Name="myGrid">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding Key}" BackgroundColor="Green"/>
+                                    <Image Grid.Column="1" HorizontalOptions="End"/>
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </syncfusion:SfListView.GroupHeaderTemplate>-->
+                        <syncfusion:SfListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Grid HeightRequest="80" Padding="5">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="70"/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Grid.Column="0" Source="{Binding AnhMoTa, Converter={StaticResource myImage}}" WidthRequest="80"/>
+                                            <Grid Grid.Column="1" VerticalOptions="Center">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Text="{Binding TenVL}" Grid.Row="0" Grid.ColumnSpan="2"/>
+                                                <Label Text="{Binding DonVi,StringFormat='Số Lượng: {0:N}'}" Grid.Row="1" Grid.Column="0"
+                                       HorizontalOptions="Start"/>
+                                                <Label Text="{Binding ThanhTien,StringFormat=' {0:0,0.0} VNĐ'}" HorizontalOptions="End"
+                                       Grid.Row="1" Grid.Column="1"/>
+                                            </Grid>
+                                        </Grid>
+                                    </ViewCell.View>
+                                    <!--<StackLayout Orientation="Horizontal" Padding="5">
+                                <Image
+                                            BackgroundColor="DarkBlue"
+                                            WidthRequest="65"
+                                            HeightRequest="65"/>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding TenSP}"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding DonVi,StringFormat='Số Lượng: {0:N}'}"/>
+                                        <Label Text="{Binding ThanhTien,StringFormat=' {0:0,0.0} VNĐ'}" HorizontalTextAlignment="End"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>-->
+                                </ViewCell>
+                            </DataTemplate>
+                        </syncfusion:SfListView.ItemTemplate>
+
+                        <syncfusion:SfListView.RightSwipeTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid BackgroundColor="#009EDA" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0">
+                                        <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                            <Image 
+                                        Grid.Column="0"
+                                            Grid.Row="0"
+                                            BackgroundColor="Transparent"
+                                            HeightRequest="35"
+                                            WidthRequest="35"
+                                            Source="pen.png"
+                                        BindingContextChanged="modifyImage_BindingContextChanged"/>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid BackgroundColor="#DC595F" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="1">
+                                        <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                            <Image 
+                                        Grid.Column="0"
+                                            Grid.Row="0"
+                                            HeightRequest="35"
+                                            WidthRequest="35"
+                                            BackgroundColor="Transparent"
+                                            Source="trash.png"
+                                        BindingContextChanged="deleteImage_BindingContextChanged"/>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </syncfusion:SfListView.RightSwipeTemplate>
+                    </syncfusion:SfListView>
+                </Grid>
+
+                <Grid HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="Transparent">
+                    <Image x:Name="them" WidthRequest="50" HeightRequest="50"
+                   Source="{markup:EmbeddedImage add.png}"/>
+                </Grid>
+            </Grid>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

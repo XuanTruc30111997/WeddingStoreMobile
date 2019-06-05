@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:markEx="clr-namespace:WeddingStoreMoblie.MarkupExtensions"
+             mc:Ignorable="d"
+             x:Class="WeddingStoreMoblie.Views.LoginPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Source="{markEx:EmbeddedImage loginBackground.jpg}" 
+                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
+            <Grid AbsoluteLayout.LayoutBounds="0.5,0.1,400,600" AbsoluteLayout.LayoutFlags="PositionProportional"
+                  BackgroundColor="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="2.5*"/>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" VerticalOptions="FillAndExpand" Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="8*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="{markEx:EmbeddedImage home.jpg}" HorizontalOptions="CenterAndExpand" Aspect="Fill" VerticalOptions="Center"
+                           WidthRequest="300" HeightRequest="300"/>
+                    <Label Grid.Row="1" Text="Login" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
+                           FontSize="Large" FontAttributes="Bold">
+                    </Label>
+                </Grid>
+
+                <Frame Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#7FCAAE" Opacity="0.8" HasShadow="True"
+                       WidthRequest="300">
+                    <StackLayout Orientation="Vertical" Spacing="5">
+                        <Entry Placeholder="User Name" Grid.Row="0" Text="{Binding UserName}"/>
+                        <Entry Placeholder="Password" Grid.Row="1" IsPassword="True" Text="{Binding Password}"/>
+                    </StackLayout>
+                </Frame>
+
+                <Button Text="Login" WidthRequest="300" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#F08C32"
+                        Command="{Binding LoginCommand}"/>
+
+                <ActivityIndicator Grid.Row="3" IsEnabled="{Binding isBusy,Mode=TwoWay}"
+                           IsVisible="{Binding isBusy,Mode=TwoWay}"
+                           IsRunning="{Binding isBusy,Mode=TwoWay}"
+                           AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
+            </Grid>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

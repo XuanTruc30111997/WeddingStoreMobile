@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeddingStoreMoblie.Views.ThemChiTietHDPopupView"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animation="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 xmlns:converter="clr-namespace:WeddingStoreMoblie.Converters">
+    <pages:PopupPage.Resources>
+        <converter:ConvertBoolToPhuDinh x:Key="myBool"/>
+    </pages:PopupPage.Resources>
+    <pages:PopupPage.Animation>
+        <animation:ScaleAnimation DurationIn="400"
+                                  DurationOut="300"
+                                  EasingIn="SinOut"
+                                  EasingOut="SinIn"
+                                  HasBackgroundAnimation="True"
+                                  PositionIn="Center"
+                                  PositionOut="Center"
+                                  ScaleIn="1.2"
+                                  ScaleOut="0.8"/>
+    </pages:PopupPage.Animation>
+    <pages:PopupPage.Content>
+        <AbsoluteLayout BackgroundColor="#EDB8B8" Margin="25" VerticalOptions="Center">
+            <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
+                           IsVisible="{Binding isBusy,Mode=TwoWay}"
+                           IsRunning="{Binding isBusy,Mode=TwoWay}"
+                           AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
+            <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                <StackLayout Padding="15" Orientation="Vertical">
+                    <Label Text="-- Chọn Mẫu Trang Trí --" TextColor="Crimson" FontSize="Medium"/>
+                    <ListView ItemsSource="{Binding LstSanPhamAo}" 
+                      SelectedItem="{Binding SelectedSanPhamAo}"
+                      HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Margin="5" HeightRequest="90">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="60"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" Source="{Binding HinhMoTa, Converter={StaticResource myImage}}" Margin="5"/>
+                                        <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="CenterAndExpand" Margin="5,0,0,0">
+                                            <Label Text="{Binding TenSP}" FontAttributes="Bold"/>
+                                            <Label Text="{Binding SoLuong,StringFormat='Số lượng: {0:0,0}'}" IsVisible="{Binding AllNhap, Converter={StaticResource myBool}}"/>
+                                            <Label Text="{Binding GiaTien,StringFormat='Giá Tiền: {0:0,0} VNĐ'}" FontAttributes="Italic"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Entry Placeholder="Số lượng" Text="{Binding soLuong}"/>
+                        <Button Text="Thêm" Command="{Binding ThemCommand}" BackgroundColor="DodgerBlue"/>
+                        <Button Text="Done" Command="{Binding DoneCommand}" BackgroundColor="#fc0a36"/>
+                    </StackLayout>
+                </StackLayout>
+
+            </Grid>
+        </AbsoluteLayout>
+
+    </pages:PopupPage.Content>
+</pages:PopupPage>

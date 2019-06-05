@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="WeddingStoreMoblie.Views.ThemPhanCongPopupView"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:animation="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 xmlns:ctrls="clr-namespace:WeddingStoreMoblie.Controls"
+                 xmlns:converter="clr-namespace:WeddingStoreMoblie.Converters">
+    <pages:PopupPage.Animation>
+        <animation:ScaleAnimation DurationIn="400"
+                                  DurationOut="300"
+                                  EasingIn="SinOut"
+                                  EasingOut="SinIn"
+                                  HasBackgroundAnimation="True"
+                                  PositionIn="Center"
+                                  PositionOut="Center"
+                                  ScaleIn="1.2"
+                                  ScaleOut="0.8"/>
+    </pages:PopupPage.Animation>
+
+    <pages:PopupPage.Resources>
+        <converter:ConvertDateTimeToStringV2 x:Key="myDateTime"/>
+    </pages:PopupPage.Resources>
+
+    <StackLayout BackgroundColor="White"
+                 Padding="24"
+                 Margin="24"
+                 Orientation="Vertical">
+        <Label Text="-- Danh Sách Nhân Viên --"/>
+        <ListView ItemsSource="{Binding LstNhanVien}"
+                  SelectedItem="{Binding SelectedNV}"
+                  HasUnevenRows="True"
+                  Margin="5">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="5">
+                            <Image Source="{Binding Avatarr, Converter={StaticResource myImage}}" WidthRequest="50" HeightRequest="50"/>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding TenNV}"/>
+                                <Label Text="{Binding GioiTinh}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Grid Padding="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="38"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <ctrls:MyCheckbox Grid.Row="0" Grid.Column="0" Checked="{Binding checkNTT}"/>
+            <Label Grid.Row="0" Grid.Column="1" Text="{Binding hoaDon.NgayTrangTri, StringFormat=' {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
+
+            <ctrls:MyCheckbox Grid.Row="1" Grid.Column="0" Checked="{Binding checkNTD}"/>
+            <Label Grid.Row="1" Grid.Column="1" Text="{Binding hoaDon.NgayThaoDo, StringFormat=' {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
+        </Grid>
+
+        <StackLayout Orientation="Horizontal" Padding="5" Margin="5">
+            <Button Text="Save" BackgroundColor="Blue" Command="{Binding SaveCommand}"/>
+            <Button Text="Done" BackgroundColor="Red" Command="{Binding DoneCommand}"/>
+        </StackLayout>
+    </StackLayout>
+</pages:PopupPage>
