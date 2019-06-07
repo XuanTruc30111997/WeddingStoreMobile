@@ -91,6 +91,10 @@ namespace WeddingStoreMoblie.ViewModels
         #region Methods
         public async Task GetData()
         {
+            Device.BeginInvokeOnMainThread(() => {
+                isBusy = true;
+            });
+
             var t1 = Task.Run(async () =>
             {
                 await GetThongTinHoaDon();
@@ -101,6 +105,10 @@ namespace WeddingStoreMoblie.ViewModels
             });
             await Task.WhenAll(t1, t2);
             isFirst = false;
+
+            Device.BeginInvokeOnMainThread(() => {
+                isBusy = false;
+            });
         }
 
         public async Task GetThongTinHoaDon()

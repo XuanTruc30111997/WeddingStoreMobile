@@ -12,19 +12,19 @@ namespace WeddingStoreMoblie.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ThongTinNhanVienPage : ContentPage
 	{
-		//public ThongTinNhanVienPage (NhanVienModel nhanVien)
-		//{
-		//	InitializeComponent ();
-  //          //Title = "Thông tin nhân viên " + nhanVien.TenNV;
-  //          Title = "Thông tin nhân viên";
-  //          BindingContext = new ViewModels.ThongTinNhanVienViewModel(nhanVien);
-		//}
-
+        ViewModels.ThongTinNhanVienViewModel vm;
         public ThongTinNhanVienPage(string maNV)
         {
             InitializeComponent();
             Title = "Thông tin nhân viên";
-            BindingContext = new ViewModels.ThongTinNhanVienViewModel(maNV);
+            vm = new ViewModels.ThongTinNhanVienViewModel(maNV);
+            BindingContext = vm;
         }
-	}
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await vm.GetData();
+        }
+    }
 }

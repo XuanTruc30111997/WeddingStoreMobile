@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeddingStoreMoblie.Views.ThongTinNhanVienPage"
-             xmlns:converter="clr-namespace:WeddingStoreMoblie.Converters" BackgroundColor="#F5D790">
+             xmlns:converter="clr-namespace:WeddingStoreMoblie.Converters" 
+             BackgroundColor="#F5D790">
 
     <ContentPage.Resources>
         <converter:ConvertTimeSpanToString x:Key="myTime"/>
@@ -26,7 +27,8 @@
                 <!--<Image Grid.RowSpan="5" Grid.ColumnSpan="2" 
                        Source="backgroundNhanVien.jpg" Aspect="Fill"/>-->
                 <StackLayout Orientation="Vertical" Grid.Column="0">
-                    <Image HeightRequest="80" Source="{Binding Avatar, Converter={StaticResource myImage}}" Aspect="AspectFill"/>
+                    <Image HeightRequest="80" WidthRequest="90" Margin="5"
+                           Source="{Binding Avatar, Converter={StaticResource myImage}}"/>
                     <Label HorizontalTextAlignment="Center" Margin="0,5"
                            Text="{Binding myNhanVien.MaNV}" TextColor="Black" FontAttributes="Bold"/>
                 </StackLayout>
@@ -35,6 +37,7 @@
                     <Label Text="{Binding myNhanVien.GioiTinh, StringFormat='Giới tính: {0:N}'}" FontAttributes="Bold"/>
                     <Label Text="{Binding myNhanVien.SoDT, StringFormat='Số điện thoại: {0:N}'}"/>
                     <Label Text="{Binding myNhanVien.DiaChi, StringFormat='Địa chỉ: {0:N}'}" FontAttributes="Italic"/>
+                    <Label Text="{Binding myNhanVien.Luong, StringFormat='Lương: {0:0,0} VNĐ / h'}" FontAttributes="Bold"/>
                 </StackLayout>
             </Grid>
 

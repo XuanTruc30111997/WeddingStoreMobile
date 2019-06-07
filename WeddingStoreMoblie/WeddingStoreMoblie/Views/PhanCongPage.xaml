@@ -47,8 +47,8 @@
                                                         <ColumnDefinition/>
                                                         <ColumnDefinition/>
                                                     </Grid.ColumnDefinitions>
-                                                    <Label Text="{Binding ThoiGianDen, Converter={StaticResource myTime}}" HorizontalOptions="Start" Grid.Column="0"/>
-                                                    <Label Text="{Binding ThoiGianDi, Converter={StaticResource myTime}}" HorizontalOptions="End" Grid.Column="1"/>
+                                                    <Label Text="{Binding ThoiGianDen, StringFormat=' {0:HH:mm:ss}', Converter={StaticResource myTime}}" HorizontalOptions="Start" Grid.Column="0"/>
+                                                    <Label Text="{Binding ThoiGianDi, StringFormat=' {0:HH:mm:ss}', Converter={StaticResource myTime}}" HorizontalOptions="End" Grid.Column="1"/>
                                                 </Grid>
                                             </StackLayout>
                                         </StackLayout>

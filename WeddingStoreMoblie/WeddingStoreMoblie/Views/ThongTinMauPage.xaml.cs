@@ -12,12 +12,10 @@ namespace WeddingStoreMoblie.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ThongTinMauPage : ContentPage
     {
-        private string _maHD;
         ViewModels.ThongTinMauViewModel myVM;
         public ThongTinMauPage(string maHD)
         {
             InitializeComponent();
-            _maHD = maHD;
 
             myVM = new ViewModels.ThongTinMauViewModel(maHD);
             BindingContext = myVM;
@@ -43,9 +41,7 @@ namespace WeddingStoreMoblie.Views
             base.OnAppearing();
             if (myVM.isFirst)
             {
-                myVM.isBusy = true;
-                await myVM.GetData(_maHD);
-                myVM.isBusy = false;
+                await myVM.GetData();
             }
         }
     }

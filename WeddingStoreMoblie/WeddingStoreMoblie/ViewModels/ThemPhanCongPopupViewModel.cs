@@ -155,7 +155,7 @@ namespace WeddingStoreMoblie.ViewModels
                                       Device.BeginInvokeOnMainThread(async () =>
                                       {
                                           await page.DisplayAlert("SaveCompleted"
-                                          , "Thêm nhân viên: " + SelectedNV.TenNV + " vào ngày " + hoaDon.NgayTrangTri + " thành công!!"
+                                          , "Thêm nhân viên: " + SelectedNV.TenNV + " vào ngày " + hoaDon.NgayTrangTri.Date + " thành công!!"
                                           , "OK");
                                       });
                                   else
@@ -173,7 +173,7 @@ namespace WeddingStoreMoblie.ViewModels
                                   Device.BeginInvokeOnMainThread(async () =>
                                   {
                                       await page.DisplayAlert("Fail!!!!"
-                                          , "Nhân viên: " + SelectedNV.TenNV + "đã được phân công vào ngày " + hoaDon.NgayTrangTri
+                                          , "Nhân viên: " + SelectedNV.TenNV + "đã được phân công vào ngày " + hoaDon.NgayTrangTri.Date
                                           , "OK");
                                   });
                               }
@@ -192,7 +192,7 @@ namespace WeddingStoreMoblie.ViewModels
                                       Device.BeginInvokeOnMainThread(async () =>
                                       {
                                           await page.DisplayAlert("SaveCompleted"
-                                          , "Thêm nhân viên: " + SelectedNV.TenNV + " vào ngày " + hoaDon.NgayThaoDo + "thành công!!"
+                                          , "Thêm nhân viên: " + SelectedNV.TenNV + " vào ngày " + hoaDon.NgayThaoDo.Date + "thành công!!"
                                           , "OK");
                                       });
                                   }
@@ -211,7 +211,7 @@ namespace WeddingStoreMoblie.ViewModels
                                   Device.BeginInvokeOnMainThread(async () =>
                                   {
                                       await page.DisplayAlert("Fail!!!!"
-                                          , "Nhân viên: " + SelectedNV.TenNV + "đã được phân công vào ngày " + hoaDon.NgayThaoDo
+                                          , "Nhân viên: " + SelectedNV.TenNV + "đã được phân công vào ngày " + hoaDon.NgayThaoDo.Date
                                           , "OK");
                                   });
                               }

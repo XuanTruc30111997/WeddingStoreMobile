@@ -118,11 +118,11 @@ namespace WeddingStoreMoblie.ViewModels
             Nam = DateTime.Now.Year.ToString();
             _SelectedThang = "Tháng " + DateTime.Now.Month;
             _maNV = maNV;
-            GetData().GetAwaiter();
+            // GetData().GetAwaiter();
             Console.WriteLine("All Done");
         }
 
-        async Task GetData()
+        public async Task GetData()
         {
             //var taskPhanCong = GetPhanCongAsync();
             var taskPhanCong = Search();
@@ -130,8 +130,7 @@ namespace WeddingStoreMoblie.ViewModels
 
             await Task.WhenAll(taskNhanVien, taskPhanCong); // wait for all Task complete
 
-            gioCong = TongGioCong();
-            tongLuong = TinhLuong(TimeSpan.Parse(gioCong), _myNhanVien.Luong);
+            LuongNhanVien();
         }
 
         async Task GetNhanVienAsync()
@@ -216,7 +215,11 @@ namespace WeddingStoreMoblie.ViewModels
         {
             get
             {
-                return _SearchCommand ?? (_SearchCommand = new Command(async () => await Search()));
+                return _SearchCommand ?? (_SearchCommand = new Command(async () =>
+                {
+                    await Search();
+                    LuongNhanVien();
+                }));;
             }
         }
 
@@ -229,6 +232,12 @@ namespace WeddingStoreMoblie.ViewModels
             {
                 await GetPhanCongAsync(myThang, myNam);
             }
+        }
+
+        void LuongNhanVien()
+        {
+            gioCong = TongGioCong();
+            tongLuong = TinhLuong(TimeSpan.Parse(gioCong), _myNhanVien.Luong);
         }
 
         //private double TinhLuong(string gioCong, double luong)

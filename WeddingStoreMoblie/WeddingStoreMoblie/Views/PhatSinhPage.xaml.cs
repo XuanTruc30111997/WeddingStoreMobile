@@ -116,9 +116,7 @@ namespace WeddingStoreMoblie.Views
 
             if (myVM.isFirst)
             {
-                myVM.isBusy = true;
                 await myVM.GetData();
-                myVM.isBusy = false;
             }
         }
     }

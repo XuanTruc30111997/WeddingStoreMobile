@@ -9,6 +9,7 @@
     <ContentPage.Resources>
         <converter:ConvertDateTimeToStringV2 x:Key="myDate"/>
         <converter:ConvertTinhTrangToImage x:Key="myTinhTrang"/>
+        <converter:ConvertTinhTrangToBrush x:Key="myTinhTrangColor"/>
     </ContentPage.Resources>
 
     <ContentPage.Content>
@@ -54,6 +55,7 @@
                             <ViewCell>
                                 <Grid Margin="5" Padding="5" HeightRequest="80">
                                     <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5"/>
                                         <ColumnDefinition/>
                                         <ColumnDefinition/>
                                         <ColumnDefinition Width="60"/>
@@ -62,22 +64,23 @@
                                         <RowDefinition/>
                                         <RowDefinition/>
                                     </Grid.RowDefinitions>
-                                    <Label Text="{Binding TenKH}" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="Large"
+                                    <Frame Grid.Column="0" Grid.RowSpan="2" BackgroundColor="{Binding TinhTrang,Converter={StaticResource myTinhTrangColor}}"/>
+                                    <Label Text="{Binding TenKH}" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Large"
                                            VerticalOptions="Center"/>
-                                    <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Horizontal" VerticalOptions="Center">
+                                    <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalOptions="Center">
                                         <Image Source="{markEx:EmbeddedImage TrangTri.png}" Margin="5,0" HeightRequest="30" WidthRequest="30"
                                                Aspect="Fill"/>
                                         <Label Text="{Binding NgayTrangTri, Converter={StaticResource myDate}}" HorizontalOptions="Start"
                                             FontAttributes="Italic"/>
                                     </StackLayout>
-                                    <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalOptions="Center">
+                                    <StackLayout Grid.Row="1" Grid.Column="2" Orientation="Horizontal" VerticalOptions="Center">
                                         <Image Source="{markEx:EmbeddedImage ThaoDo.png}" Margin="5,0" HeightRequest="30" WidthRequest="30"
                                                Aspect="Fill"/>
                                         <Label Text="{Binding NgayThaoDo, Converter={StaticResource myDate}}" HorizontalOptions="End"
                                             FontAttributes="Italic"/>
                                     </StackLayout>
                                     <Image Aspect="Fill" Margin="7" Source="{Binding TinhTrang, Converter={StaticResource myTinhTrang}}"
-                                           Grid.RowSpan="2" Grid.Column="2"/>
+                                           Grid.RowSpan="2" Grid.Column="3"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

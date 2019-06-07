@@ -40,11 +40,12 @@ namespace WeddingStoreMoblie.ViewModels
         #endregion
 
         private MockThongTinChiTietHoaDonRepository _thongTinChiTietHD;
-        
+
         #region Constructor
         public ThongTinMauViewModel(string maHD)
         {
             isFirst = true;
+            _maHD = maHD;
             //GetData(maHD).GetAwaiter();
         }
         #endregion
@@ -74,19 +75,28 @@ namespace WeddingStoreMoblie.ViewModels
         #endregion
 
         #region Methods
-        public async Task GetData(string maHD)
+        public async Task GetData()
         {
-            _maHD = maHD;
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                isBusy = true;
+            });
+
             _showMenu = false;
             _thongTinChiTietHD = new MockThongTinChiTietHoaDonRepository();
-            LstThongTinChiTietHoaDon = await _thongTinChiTietHD.GetThongTinChiTietHoaDon(maHD);
+            LstThongTinChiTietHoaDon = await _thongTinChiTietHD.GetThongTinChiTietHoaDon(_maHD);
             isFirst = false;
+
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                isBusy = false;
+            });
         }
         private void ThemChiTiet()
         {
             Constant.isNew = true;
             var themChiTietHoaDonPopupView = new ThemChiTietHDPopupView(_maHD);
-            themChiTietHoaDonPopupView.CallbackEvent += (object sender, bool e) => GetData(_maHD).GetAwaiter();
+            themChiTietHoaDonPopupView.CallbackEvent += (object sender, bool e) => GetData().GetAwaiter();
             PopupNavigation.Instance.PushAsync(themChiTietHoaDonPopupView);
         }
         private void Ahihi(object obj)
@@ -97,11 +107,11 @@ namespace WeddingStoreMoblie.ViewModels
         {
             Constant.isNew = true;
             var modifyThongTinMau = new ModifyThongTinMauPopupView(_maHD);
-            modifyThongTinMau.CallbackEvent += (object sender, bool e) => GetData(_maHD).GetAwaiter();
-            var ahihi= PopupNavigation.Instance.PushAsync(modifyThongTinMau);
+            modifyThongTinMau.CallbackEvent += (object sender, bool e) => GetData().GetAwaiter();
+            var ahihi = PopupNavigation.Instance.PushAsync(modifyThongTinMau);
         }
         #endregion
 
-        
+
     }
 }
