@@ -30,9 +30,11 @@
     <None Remove="Images\noimage.png" />
     <None Remove="Images\PhanCongbackground.png" />
     <None Remove="Images\PhatSinhBackground.jpg" />
+    <None Remove="Images\ThaoDo.png" />
     <None Remove="Images\ThongTinBackground.jpg" />
     <None Remove="Images\ThongTinMauBackground.jpg" />
     <None Remove="Images\Tim.png" />
+    <None Remove="Images\TrangTri.png" />
     <None Remove="Images\unchecked.png" />
     <None Remove="Images\vatlieu.png" />
   </ItemGroup>
@@ -57,9 +59,11 @@
     <EmbeddedResource Include="Images\noimage.png" />
     <EmbeddedResource Include="Images\PhanCongbackground.png" />
     <EmbeddedResource Include="Images\PhatSinhBackground.jpg" />
+    <EmbeddedResource Include="Images\ThaoDo.png" />
     <EmbeddedResource Include="Images\ThongTinBackground.jpg" />
     <EmbeddedResource Include="Images\ThongTinMauBackground.jpg" />
     <EmbeddedResource Include="Images\Tim.png" />
+    <EmbeddedResource Include="Images\TrangTri.png" />
     <EmbeddedResource Include="Images\unchecked.png" />
     <EmbeddedResource Include="Images\vatlieu.png" />
   </ItemGroup>

@@ -63,7 +63,7 @@ namespace WeddingStoreMoblie.ViewModels
         #region Commands
         public Command ChangeTinhTrangTo1Command
         {
-            get => new Command(() =>  ChangeTinhTrang1());
+            get => new Command(() => ChangeTinhTrang1());
         }
 
         public Command ChangeTinhTrangTo2Command
@@ -109,15 +109,18 @@ namespace WeddingStoreMoblie.ViewModels
                 result = await page.DisplayAlert("Thông báo!", "Thay đổi tình trạng hóa đơn --> Chưa trang trí?", "Yes", "No").ConfigureAwait(false);
                 if (result)
                 {
+                    isBusy = true;
                     if (_myHD.TinhTrang == 1) // Đã trang trí
                     {
                         await UpdateKhoVatLieuThat(false);
                     }
 
                     MyHD.TinhTrang = 0;
-                    bool response = await _hoaDon.SaveDataAsync(_myHD, "HoaDon", false);
+                    bool response = await _hoaDon.SaveDataAsync(_myHD, "HoaDon", false).ConfigureAwait(false);
                     //MyHD.TinhTrang = 0;
                     Constant.isNewPS = true;
+
+                    isBusy = false;
                 }
             });
 
@@ -132,13 +135,16 @@ namespace WeddingStoreMoblie.ViewModels
                 result = await page.DisplayAlert("Thông báo!", "Thay đổi tình trạng hóa đơn --> Đã trang trí?", "Yes", "No").ConfigureAwait(false);
                 if (result)
                 {
+                    isBusy = true;
                     if (_myHD.TinhTrang == 0 || _myHD.TinhTrang == 2)
                     {
-                        await UpdateKhoVatLieuThat(true);
+                        await UpdateKhoVatLieuThat(true).ConfigureAwait(false);
                     }
                     MyHD.TinhTrang = 1;
-                    bool response = await _hoaDon.SaveDataAsync(_myHD, "HoaDon", false);
+                    bool response = await _hoaDon.SaveDataAsync(_myHD, "HoaDon", false).ConfigureAwait(false);
                     Constant.isNewPS = true;
+
+                    isBusy = false;
                 }
             });
         }
@@ -153,40 +159,54 @@ namespace WeddingStoreMoblie.ViewModels
 
                 if (result)
                 {
+                    isBusy = true;
                     if (_myHD.TinhTrang == 1) // Đã trang trí
                     {
-                        await UpdateKhoVatLieuThat(false);
+                        await UpdateKhoVatLieuThat(false).ConfigureAwait(false);
                     }
                     MyHD.TinhTrang = 2;
-                    bool response = await _hoaDon.SaveDataAsync(_myHD, "HoaDon", false);
+                    bool response = await _hoaDon.SaveDataAsync(_myHD, "HoaDon", false).ConfigureAwait(false);
                     Constant.isNewPS = true;
+
+                    isBusy = false;
                 }
             });
         }
 
         async Task UpdateKhoVatLieuThat(bool type)
         {
-            // Update vật liệu trong chi tiết hóa đơn
-            var t1 = Task.Run(async () =>
-            {
-                List<ChiTietHoaDonModel> lstChiTietHoaDon = await _chiTietHoaDon.GetByIdHD(_myHD.MaHD);
-                Parallel.ForEach(lstChiTietHoaDon, async (cthd) =>
-                {
-                    await UpdateVatLieuInCTHD(cthd, type);
-                });
-            });
+            //// Update vật liệu trong chi tiết hóa đơn
+            //var t1 = Task.Run(async () =>
+            //{
+            //    List<ChiTietHoaDonModel> lstChiTietHoaDon = await _chiTietHoaDon.GetByIdHD(_myHD.MaHD);
+            //    Parallel.ForEach(lstChiTietHoaDon, async (cthd) =>
+            //    {
+            //        await UpdateVatLieuInCTHD(cthd, type);
+            //    });
+            //});
 
-            // Update vật liệu trong danh sách phát sinh.
-            var t2 = Task.Run(async () =>
-            {
-                List<PhatSinhModel> lstPhatSinh = await _phatSinh.GetByIdHD(_myHD.MaHD);
-                Parallel.ForEach(lstPhatSinh, async (ps) =>
-                {
-                    await UpdateVatLieuInPS(ps, type);
-                });
-            });
+            //// Update vật liệu trong danh sách phát sinh.
+            //var t2 = Task.Run(async () =>
+            //{
+            //    List<PhatSinhModel> lstPhatSinh = await _phatSinh.GetByIdHD(_myHD.MaHD);
+            //    Parallel.ForEach(lstPhatSinh, async (ps) =>
+            //    {
+            //        await UpdateVatLieuInPS(ps, type).ConfigureAwait(false);
+            //    });
+            //});
 
-            await Task.WhenAll(t1, t2);
+            //await Task.WhenAll(t1, t2);
+
+            List<ChiTietHoaDonModel> lstChiTietHoaDon = await _chiTietHoaDon.GetByIdHD(_myHD.MaHD);
+            foreach (var cthd in lstChiTietHoaDon)
+            {
+                await UpdateVatLieuInCTHD(cthd, type);
+            }
+            List<PhatSinhModel> lstPhatSinh = await _phatSinh.GetByIdHD(_myHD.MaHD);
+            foreach (var ps in lstPhatSinh)
+            {
+                await UpdateVatLieuInPS(ps, type);
+            }
         }
 
         // type: true ==> - vật liệu tồn (chưa trang trí, đã tháo dở ==> đã trang trí)
@@ -204,7 +224,7 @@ namespace WeddingStoreMoblie.ViewModels
                     else
                         myVatLieu.SoLuongTon += (cthd.SoLuong * ctsp.SoLuong);
                     bool resule = await _vatLieu.SaveDataAsync(myVatLieu, "VatLieu", false);
-                    Console.WriteLine("Update --> " + myVatLieu.SoLuongTon);
+                    Console.WriteLine("Update in chi tiet " + myVatLieu.MaVL + " --> " + myVatLieu.SoLuongTon);
                 }
             }
         }
@@ -223,7 +243,7 @@ namespace WeddingStoreMoblie.ViewModels
                     myVatLieu.SoLuongTon += ps.SoLuong;
                 }
                 bool resule = await _vatLieu.SaveDataAsync(myVatLieu, "VatLieu", false);
-                Console.WriteLine("Update --> ", +myVatLieu.SoLuongTon);
+                Console.WriteLine("Update in phat sinh " + myVatLieu.MaVL + " --> " + myVatLieu.SoLuongTon);
             }
         }
     }
