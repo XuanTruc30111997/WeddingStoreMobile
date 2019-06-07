@@ -35,7 +35,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" Padding="5">
-                            <Image Source="{Binding Avatarr, Converter={StaticResource myImage}}" WidthRequest="50" HeightRequest="50"/>
+                            <Image Source="{Binding Avatar, Converter={StaticResource myImage}}" WidthRequest="50" HeightRequest="50"/>
                             <StackLayout Orientation="Vertical">
                                 <Label Text="{Binding TenNV}"/>
                                 <Label Text="{Binding GioiTinh}"/>

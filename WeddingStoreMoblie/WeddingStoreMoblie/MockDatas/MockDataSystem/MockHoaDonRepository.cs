@@ -36,6 +36,13 @@ namespace WeddingStoreMoblie.MockDatas.MockDataSystem
                 || (myHD.NgayTrangTri - hd.NgayThaoDo).TotalDays > 3).ToList();
             return myLst;
         }
+        public async Task<List<HoaDonModel>> GetLstHOaDonByThangNam(int thang,int nam,bool type)
+        {
+            List<HoaDonModel> lstHoaDon = await GetDataAsync();
+            if (type) // trang trí
+                return lstHoaDon.Where(hd => hd.NgayTrangTri.Month == thang && hd.NgayTrangTri.Year == nam).ToList();
+            return lstHoaDon.Where(hd => hd.NgayThaoDo.Month == thang && hd.NgayThaoDo.Year == nam).ToList();
+        }
 
         public async Task<List<HoaDonModel>> GetDataAsync()
         {

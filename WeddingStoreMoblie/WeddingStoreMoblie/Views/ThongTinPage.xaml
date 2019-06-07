@@ -2,10 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeddingStoreMoblie.Views.ThongTinPage"
-             xmlns:converter="clr-namespace:WeddingStoreMoblie.Converters">
+             xmlns:converter="clr-namespace:WeddingStoreMoblie.Converters"
+             xmlns:markEx="clr-namespace:WeddingStoreMoblie.MarkupExtensions">
 
     <ContentPage.Resources>
         <converter:ConvertDateTimeToStringV2 x:Key="myDateTime"/>
+        <converter:ConvertTinhTrangToImage x:Key="myTinhTrang"/>
     </ContentPage.Resources>
     
     <ContentPage.Content>
@@ -14,14 +16,21 @@
                                IsVisible="{Binding isBusy,Mode=TwoWay}"
                                IsRunning="{Binding isBusy,Mode=TwoWay}"
                                AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
-            
+            <Image Source="{markEx:EmbeddedImage ThongTinBackground.jpg}" 
+                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
             <StackLayout Orientation="Vertical" BackgroundColor="Transparent">
                 <StackLayout Orientation="Vertical" BackgroundColor="Transparent">
-                    <Label
-                    Text="Thông tin hóa đơn"
-                    FontAttributes="Bold"
-                    FontSize="Large"
-                    TextColor="Chocolate"/>
+                    <Grid HeightRequest="50" BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Thông tin hóa đơn" FontAttributes="Bold" FontSize="Large" TextColor="Chocolate" VerticalOptions="Center"
+                               Margin="5" Grid.Column="0"/>
+                        <Image Aspect="Fill" Margin="7" Source="{Binding MyHD.TinhTrang, Converter={StaticResource myTinhTrang}}"
+                               Grid.Column="1"/>
+                    </Grid>
                     <Grid Padding="10">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -41,15 +50,15 @@
                         <Label
                             Grid.Row="1" Grid.ColumnSpan="2"
                             TextColor="Black" FontAttributes="Bold"
-                            Text="{Binding MyHD.NgayLap,StringFormat=' {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
+                            Text="{Binding MyHD.NgayLap,StringFormat='Ngày lập: {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
                         <Label
                             Grid.Row="2" Grid.Column="0"
                             TextColor="Black" FontAttributes="Italic"
-                            Text="{Binding MyHD.NgayTrangTri,StringFormat=' {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
+                            Text="{Binding MyHD.NgayTrangTri,StringFormat='Ngày trang trí: {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
                         <Label
                             Grid.Row="2" Grid.Column="1"
                             TextColor="Black" FontAttributes="Italic"
-                            Text="{Binding MyHD.NgayThaoDo,StringFormat=' {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
+                            Text="{Binding MyHD.NgayThaoDo,StringFormat='Ngày tháo dở: {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
                         <!--<Label
                             Grid.Row="1" Grid.ColumnSpan="2"
                             TextColor="Black" FontAttributes="Bold"
@@ -82,6 +91,20 @@
                         <Label TextColor="Black" FontAttributes="Bold" 
                                Text="{Binding MyKH.SoDT,StringFormat='Số điện thoại: {0:N}'}"/>
                     </StackLayout>
+
+                    <Grid Margin="5" BackgroundColor="Transparent" HeightRequest="50">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <ImageButton Grid.Column="0" BackgroundColor="Aqua" Source="{markEx:EmbeddedImage ChuaTrangTri.png}"
+                                     Command="{Binding ChangeTinhTrangTo1Command}"/>
+                        <ImageButton Grid.Column="1" BackgroundColor="Green" Source="{markEx:EmbeddedImage DaTrangTri.png}"
+                                     Command="{Binding ChangeTinhTrangTo2Command}"/>
+                        <ImageButton Grid.Column="2" BackgroundColor="Gray" Source="{markEx:EmbeddedImage DaThaoDo.png}"
+                                     Command="{Binding ChangeTinhTrangTo3Command}"/>
+                    </Grid>
 
                 </StackLayout>
             </StackLayout>

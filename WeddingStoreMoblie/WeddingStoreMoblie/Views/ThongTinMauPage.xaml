@@ -3,13 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeddingStoreMoblie.Views.ThongTinMauPage"
              xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
-             xmlns:markup="clr-namespace:WeddingStoreMoblie.MarkupExtensions">
+             xmlns:markEx="clr-namespace:WeddingStoreMoblie.MarkupExtensions">
 
     <AbsoluteLayout>
         <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
                            IsVisible="{Binding isBusy,Mode=TwoWay}"
                            IsRunning="{Binding isBusy,Mode=TwoWay}"
                            AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
+        <Image Source="{markEx:EmbeddedImage ThongTinMauBackground.jpg}" 
+                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
 
         <Grid>
             <Grid>
@@ -23,7 +26,7 @@
                     <ListView.GroupHeaderTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <RelativeLayout Margin="5" HeightRequest="70">
+                                <RelativeLayout Margin="5" HeightRequest="90">
                                     <Image Source="{Binding Hinh, Converter={StaticResource myImage}}"
                                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
                                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=SearchControlsGrid,Property=Width, Factor=1, Constant=0 }"
@@ -92,15 +95,15 @@
                  />
 
                 <Image x:Name="more" WidthRequest="50" HeightRequest="50"
-                   Source="{markup:EmbeddedImage list.png}"
+                   Source="{markEx:EmbeddedImage list.png}"
                    Grid.Column="2"/>
 
                 <Image x:Name="them" WidthRequest="50" HeightRequest="50"
-                Source="{markup:EmbeddedImage addmau.png}"
+                Source="{markEx:EmbeddedImage addmau.png}"
                 IsVisible="{Binding ShowMenu}"
                 Grid.Column="0"/>
                 <Image x:Name="modify" WidthRequest="50" HeightRequest="50"
-                Source="{markup:EmbeddedImage modify.png}"
+                Source="{markEx:EmbeddedImage modify.png}"
                 IsVisible="{Binding ShowMenu}"
                 Grid.Column="1"/>
             </Grid>

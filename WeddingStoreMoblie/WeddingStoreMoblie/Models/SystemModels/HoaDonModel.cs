@@ -9,7 +9,6 @@ namespace WeddingStoreMoblie.Models.SystemModels
         public string MaHD { get; set; }
         public string MaKH { get; set; }
         public DateTime NgayLap { get; set; }
-        //public string MaMau { get; set; }
         public DateTime NgayTrangTri { get; set; }
         public DateTime NgayThaoDo { get; set; }
         private float _TongTien { get; set; }
@@ -22,6 +21,8 @@ namespace WeddingStoreMoblie.Models.SystemModels
                 OnPropertyChanged();
             }
         }
-        public int TinhTrang { get; set; }
+        //public int TinhTrang { get; set; }
+        private int _TinhTrang { get; set; }
+        public int TinhTrang { get => _TinhTrang; set { _TinhTrang = value; OnPropertyChanged(); } }
     }
 }

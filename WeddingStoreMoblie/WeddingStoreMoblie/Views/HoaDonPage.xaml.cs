@@ -11,15 +11,21 @@ using WeddingStoreMoblie.Models.AppModels;
 
 namespace WeddingStoreMoblie.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class HoaDonPage : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class HoaDonPage : ContentPage
+    {
         HoaDonViewModel vm;
-		public HoaDonPage ()
-		{
-			InitializeComponent ();
+        public HoaDonPage()
+        {
+            InitializeComponent();
             vm = new HoaDonViewModel();
             BindingContext = vm;
         }
+
+        //protected override async void OnAppearing()
+        //{
+        //    base.OnAppearing();
+        //    await vm.GetDataAsync();
+        //}
     }
 }

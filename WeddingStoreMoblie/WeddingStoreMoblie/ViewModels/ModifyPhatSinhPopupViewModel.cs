@@ -70,9 +70,9 @@ namespace WeddingStoreMoblie.ViewModels
         #endregion
 
         #region Constructors
-        public ModifyPhatSinhPopupViewModel(ThongTinPhatSinh thongTin, HoaDonModel hoaDon)
+        public ModifyPhatSinhPopupViewModel(ThongTinPhatSinh thongTin, HoaDonModel myHoaDon)
         {
-            _myHoaDon = hoaDon;
+            _myHoaDon = myHoaDon;
             thongTinPhatSinh = thongTin;
             _soLuong = 1;
             GetData().GetAwaiter();

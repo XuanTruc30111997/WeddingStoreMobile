@@ -58,6 +58,7 @@ namespace WeddingStoreMoblie.ViewModels
         public PhatSinhViewModel(string maHD)
         {
             isFirst = true;
+            Constant.isNewPS = false;
             _maHD = maHD;
             //GetData(_maHD).GetAwaiter();
         }
@@ -102,9 +103,11 @@ namespace WeddingStoreMoblie.ViewModels
             isFirst = false;
         }
 
-        async Task GetThongTinHoaDon()
+        public async Task GetThongTinHoaDon()
         {
             _myHoaDon = await hoaDon.GetById(_maHD);
+            Constant.isNewPS = false;
+            Console.WriteLine("Tình trạng hóa đơn: " + _myHoaDon.TinhTrang);
         }
 
         async Task GetDanhSachPhatSinh()
@@ -124,6 +127,7 @@ namespace WeddingStoreMoblie.ViewModels
 
         private void Modify()
         {
+            Console.WriteLine("Tình trạng hóa đơn: " + _myHoaDon.TinhTrang);
             Constant.isNew = true;
             var modifyPhatSinhPopupView = new Views.ModifyPhatSinhPopupView(_selectedVL, _myHoaDon);
             modifyPhatSinhPopupView.CallbackEvent += (object sender, bool e) => GetData().GetAwaiter();

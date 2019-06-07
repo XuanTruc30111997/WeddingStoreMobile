@@ -18,26 +18,8 @@ namespace WeddingStoreMoblie.ViewModels
     {
         #region Properties
         private List<HoaDonModel> _lstHoaDon { get; set; }
-        public List<HoaDonModel> LstHoaDon
-        {
-            get { return _lstHoaDon; }
-            set
-            {
-                _lstHoaDon = value;
-                OnPropertyChanged();
-            }
-        }
 
         private List<KhachHangModel> _lstKhachHang { get; set; }
-        public List<KhachHangModel> LstKhachHang
-        {
-            get { return _lstKhachHang; }
-            set
-            {
-                _lstKhachHang = value;
-                OnPropertyChanged();
-            }
-        }
 
         private List<HoaDonKhachHang> _myList { get; set; }
         public List<HoaDonKhachHang> MyList
@@ -64,22 +46,94 @@ namespace WeddingStoreMoblie.ViewModels
                 }
             }
         }
+
+        public List<string> LstThang
+        {
+            get => new List<string>
+            {
+                "Tháng 1",
+                "Tháng 2",
+                "Tháng 3",
+                "Tháng 4",
+                "Tháng 5",
+                "Tháng 6",
+                "Tháng 7",
+                "Tháng 8",
+                "Tháng 9",
+                "Tháng 10",
+                "Tháng 11",
+                "Tháng 12",
+            };
+        }
+        private string _SelectedThang { get; set; }
+        public string SelectedThang
+        {
+            get => _SelectedThang;
+            set
+            {
+                if (_SelectedThang != value)
+                {
+                    _SelectedThang = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        private string _Nam { get; set; }
+        public string Nam
+        {
+            get => _Nam;
+            set
+            {
+                _Nam = value;
+                OnPropertyChanged();
+            }
+        }
+        public List<string> LstOption
+        {
+            get => new List<string>
+            {
+                "Ngày trang trí" ,
+                "Ngày tháo dở"
+            };
+        }
+
+        private string _SelectedOption { get; set; }
+        public string SelectedOption
+        {
+            get => _SelectedOption;
+            set
+            {
+                _SelectedOption = value;
+                OnPropertyChanged();
+            }
+        }
         #endregion
 
         #region Services
-        private MockHoaDonRepository _hoaDon;
-        private MockKhachHangRepository _khachHang;
+        private MockHoaDonRepository _hoaDon = new MockHoaDonRepository();
+        private MockKhachHangRepository _khachHang = new MockKhachHangRepository();
         #endregion
 
         #region Constructors
         public HoaDonViewModel()
         {
+            Nam = DateTime.Now.Year.ToString();
+            SelectedThang = "Tháng " + DateTime.Now.Month.ToString();
+            SelectedOption = "Ngày trang trí";
+
             GetDataAsync().GetAwaiter();
         }
         #endregion
 
         #region Commands
         public Command RefeshCommand
+        {
+            get => new Command(async () =>
+            {
+                await GetDataAsync();
+            });
+        }
+        public Command SearchCommand
         {
             get => new Command(async () =>
             {
@@ -98,29 +152,54 @@ namespace WeddingStoreMoblie.ViewModels
         }
         public async Task GetDataAsync()
         {
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                isBusy = true;
+            });
+
             _myList = new List<HoaDonKhachHang>();
 
             var t1 = GetHoaDonAsync();
             var t2 = GetKhachHangAsync();
 
             await Task.WhenAll(t1, t2);
-            foreach (var hoaDon in LstHoaDon)
+            foreach (var hoaDon in _lstHoaDon)
             {
-                KhachHangModel myKh = LstKhachHang.Find(kh => kh.MaKH == hoaDon.MaKH);
+                KhachHangModel myKh = _lstKhachHang.Find(kh => kh.MaKH == hoaDon.MaKH);
                 MyList.Add(new HoaDonKhachHang(hoaDon.MaHD, myKh.MaKH, hoaDon.NgayTrangTri, hoaDon.NgayThaoDo, hoaDon.TinhTrang, myKh.TenKH, myKh.SoDT, myKh.DiaChi, hoaDon.TongTien));
             }
+            OnPropertyChanged(nameof(MyList));
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                isBusy = false;
+            });
         }
 
         async Task GetHoaDonAsync()
         {
-            _hoaDon = new MockHoaDonRepository();
-            LstHoaDon = await _hoaDon.GetDataAsync();
+            if (int.TryParse(Nam, out int myNam))
+            {
+                string[] strThang = _SelectedThang.Split(' ');
+                if (_SelectedOption == "Ngày trang trí")
+                {
+                    _lstHoaDon = await _hoaDon.GetLstHOaDonByThangNam(int.Parse(strThang[1]), myNam, true);
+                }
+                else
+                {
+                    _lstHoaDon = await _hoaDon.GetLstHOaDonByThangNam(int.Parse(strThang[1]), myNam, false);
+                }
+            }
+            else
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    var currentPage = GetCurrentPage();
+                    await currentPage.DisplayAlert("Lỗi!", "Nằm không đúng định dạng", "OK");
+                });
         }
 
         async Task GetKhachHangAsync()
         {
-            _khachHang = new MockKhachHangRepository();
-            LstKhachHang = await _khachHang.GetDataAsync();
+            _lstKhachHang = await _khachHang.GetDataAsync();
         }
         #endregion
     }

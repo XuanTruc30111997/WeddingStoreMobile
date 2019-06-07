@@ -3,33 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeddingStoreMoblie.Views.PhatSinhPage"
              xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
-             xmlns:markup="clr-namespace:WeddingStoreMoblie.MarkupExtensions">
+             xmlns:markEx="clr-namespace:WeddingStoreMoblie.MarkupExtensions">
     <ContentPage.Content>
         <AbsoluteLayout>
             <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
                            IsVisible="{Binding isBusy,Mode=TwoWay}"
                            IsRunning="{Binding isBusy,Mode=TwoWay}"
                            AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
+            <Image Source="{markEx:EmbeddedImage PhatSinhBackground.jpg}" 
+                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
             <Grid>
                 <Grid>
                     <syncfusion:SfListView ItemsSource="{Binding LstThongTinPhatSinh}" Margin="5" x:Name="listView"
                                            SelectedItem="{Binding SelectedVL}" AllowSwiping="True" AutoFitMode="Height">
-                        <!--<syncfusion:SfListView.GroupHeaderTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <Grid x:Name="myGrid">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" Text="{Binding Key}" BackgroundColor="Green"/>
-                                    <Image Grid.Column="1" HorizontalOptions="End"/>
-                                </Grid>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </syncfusion:SfListView.GroupHeaderTemplate>-->
                         <syncfusion:SfListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -83,26 +70,16 @@
                                     </Grid.ColumnDefinitions>
                                     <Grid BackgroundColor="#009EDA" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0">
                                         <Grid VerticalOptions="Center" HorizontalOptions="Center">
-                                            <Image 
-                                        Grid.Column="0"
-                                            Grid.Row="0"
-                                            BackgroundColor="Transparent"
-                                            HeightRequest="35"
-                                            WidthRequest="35"
-                                            Source="pen.png"
-                                        BindingContextChanged="modifyImage_BindingContextChanged"/>
+                                            <Image Grid.Column="0" Grid.Row="0" BackgroundColor="Transparent"
+                                                   HeightRequest="35" WidthRequest="35" Source="{markEx:EmbeddedImage ChinhSua.png}"
+                                                   BindingContextChanged="modifyImage_BindingContextChanged"/>
                                         </Grid>
                                     </Grid>
                                     <Grid BackgroundColor="#DC595F" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="1">
                                         <Grid VerticalOptions="Center" HorizontalOptions="Center">
-                                            <Image 
-                                        Grid.Column="0"
-                                            Grid.Row="0"
-                                            HeightRequest="35"
-                                            WidthRequest="35"
-                                            BackgroundColor="Transparent"
-                                            Source="trash.png"
-                                        BindingContextChanged="deleteImage_BindingContextChanged"/>
+                                            <Image Grid.Column="0" Grid.Row="0" HeightRequest="35"  WidthRequest="35"
+                                                   BackgroundColor="Transparent" Source="{markEx:EmbeddedImage delete.png}"
+                                                   BindingContextChanged="deleteImage_BindingContextChanged"/>
                                         </Grid>
                                     </Grid>
                                 </Grid>
@@ -113,7 +90,7 @@
 
                 <Grid HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="Transparent">
                     <Image x:Name="them" WidthRequest="50" HeightRequest="50"
-                   Source="{markup:EmbeddedImage add.png}"/>
+                   Source="{markEx:EmbeddedImage add.png}"/>
                 </Grid>
             </Grid>
         </AbsoluteLayout>
