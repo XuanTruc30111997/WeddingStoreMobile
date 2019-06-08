@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converter="clr-namespace:WeddingStoreMoblie.Converters"
+             xmlns:markEx="clr-namespace:WeddingStoreMoblie.MarkupExtensions"
+             mc:Ignorable="d"
+             x:Class="WeddingStoreMoblie.Views.DanhSachVatLieuPage">
+    <ContentPage.Resources>
+        <converter:ConvertBoolToBrush x:Key="isNhap"/>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
+                           IsVisible="{Binding isBusy,Mode=TwoWay}"
+                           IsRunning="{Binding isBusy,Mode=TwoWay}"
+                           AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
+            <Image Source="{markEx:EmbeddedImage DanhSachVatLieuBackground.jpg}" 
+                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
+            
+            <Grid BackgroundColor="Transparent">
+                <ListView x:Name="listView" ItemsSource="{Binding LstDanhSachVatLieu}"
+                          Margin="5" BackgroundColor="Transparent" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid HeightRequest="60" Padding="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="5"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding AnhMoTa, Converter={StaticResource myImage}}" Grid.Column="0"/>
+                                    <Grid Grid.Column="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="4*"/>
+                                            <ColumnDefinition Width="6*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding TenVL}" FontSize="Medium" FontAttributes="Bold"
+                                                       Grid.Row="0" Grid.ColumnSpan="2"/>
+                                        <Label Text="{Binding SoLuong, StringFormat='Số lượng: {0:0}'}"
+                                                       HorizontalOptions="End" FontAttributes="Italic"
+                                                       Grid.Row="1" Grid.Column="0"/>
+                                    </Grid>
+                                    <Frame Grid.Column="2" BackgroundColor="{Binding IsNhap, Converter={StaticResource isNhap}}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

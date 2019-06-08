@@ -15,6 +15,7 @@ namespace WeddingStoreMoblie.ViewModels
 {
     public class ThongTinNhanVienViewModel : BaseViewModel
     {
+        #region Properties 
         private string _maNV;
         private List<PhanCongModel> _lstPhanCong { get; set; }
         public List<PhanCongModel> LstPhanCong
@@ -113,6 +114,12 @@ namespace WeddingStoreMoblie.ViewModels
             }
         }
 
+        #endregion
+
+        #region Services
+        #endregion
+
+        #region Constructors
         public ThongTinNhanVienViewModel(string maNV)
         {
             Nam = DateTime.Now.Year.ToString();
@@ -121,9 +128,27 @@ namespace WeddingStoreMoblie.ViewModels
             // GetData().GetAwaiter();
             Console.WriteLine("All Done");
         }
+        #endregion
 
+        #region Commands
+        private ICommand _SearchCommand;
+        public ICommand SearchCommand
+        {
+            get
+            {
+                return _SearchCommand ?? (_SearchCommand = new Command(async () =>
+                {
+                    await Search();
+                    LuongNhanVien();
+                })); ;
+            }
+        }
+        #endregion
+
+        #region Methods
         public async Task GetData()
         {
+            Device.BeginInvokeOnMainThread(() => { isBusy = true; });
             //var taskPhanCong = GetPhanCongAsync();
             var taskPhanCong = Search();
             var taskNhanVien = GetNhanVienAsync();
@@ -131,6 +156,8 @@ namespace WeddingStoreMoblie.ViewModels
             await Task.WhenAll(taskNhanVien, taskPhanCong); // wait for all Task complete
 
             LuongNhanVien();
+
+            Device.BeginInvokeOnMainThread(() => { isBusy = false; });
         }
 
         async Task GetNhanVienAsync()
@@ -160,67 +187,14 @@ namespace WeddingStoreMoblie.ViewModels
             return myTime.ToString();
         }
 
-        //private string TinhGioCong()
-        //{
-        //    double gio = 0;
-        //    double phut = 0;
-        //    string[] thoiGian;
-        //    foreach (var nhanvien in LstPhanCong)
-        //    {
-        //        if (nhanvien.ThoiGianDen != null && nhanvien.ThoiGianDi != null)
-        //        {
-        //            double gioDen = 0;
-        //            double phutDen = 0;
-        //            double gioDi = 0;
-        //            double phutDi = 0;
-
-        //            //thoiGian = nhanvien.ThoiGianDen.Split(':');
-        //            //gioDen = double.Parse(thoiGian[0]);
-        //            //phutDen = double.Parse(thoiGian[1]);
-
-        //            //thoiGian = nhanvien.ThoiGianDi.Split(':');
-        //            //gioDi = double.Parse(thoiGian[0]);
-        //            //phutDi = double.Parse(thoiGian[1]);
-
-        //            //if (phutDi < phutDen)
-        //            //{
-        //            //    phut += 60 + phutDi - phutDen;
-        //            //    gio += gioDi - gioDen - 1;
-        //            //}
-        //            //else
-        //            //{
-        //            //    phut += phutDi - phutDen;
-        //            //    gio += gioDi - gioDen;
-        //            //}
-        //        }
-        //    }
-
-        //    gio += phut / 60;
-        //    phut += phut % 60;
-
-        //    return gio + ":" + phut;
-        //}
-
         private float TinhLuong(TimeSpan? gioCong, float luong)
         {
             if (gioCong.HasValue)
             {
-                return (gioCong.Value.Hours * luong) + (gioCong.Value.Minutes * (luong / 60));
+                float ahaha = (gioCong.Value.Days * luong * 24) + (gioCong.Value.Hours * luong) + (gioCong.Value.Minutes * (luong / 60));
+                return (gioCong.Value.Days * luong * 24) + (gioCong.Value.Hours * luong) + (gioCong.Value.Minutes * (luong / 60));
             }
             return 0;
-        }
-
-        private ICommand _SearchCommand;
-        public ICommand SearchCommand
-        {
-            get
-            {
-                return _SearchCommand ?? (_SearchCommand = new Command(async () =>
-                {
-                    await Search();
-                    LuongNhanVien();
-                }));;
-            }
         }
 
         private async Task Search()
@@ -240,10 +214,6 @@ namespace WeddingStoreMoblie.ViewModels
             tongLuong = TinhLuong(TimeSpan.Parse(gioCong), _myNhanVien.Luong);
         }
 
-        //private double TinhLuong(string gioCong, double luong)
-        //{
-        //    string[] gc = gioCong.Split(':');
-        //    return (luong * double.Parse(gc[0])) + (luong / 60 * double.Parse(gc[1]));
-        //}
+        #endregion
     }
 }

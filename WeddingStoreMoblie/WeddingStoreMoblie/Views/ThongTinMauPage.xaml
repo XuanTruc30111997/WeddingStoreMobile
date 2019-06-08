@@ -79,10 +79,9 @@
                 </ListView>
             </Grid>
 
-            <Grid
-            HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"
-            RowSpacing="0" ColumnSpacing="10"
-            BackgroundColor="Transparent">
+            <Grid HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"
+                  RowSpacing="0" ColumnSpacing="10"
+                  BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto" />

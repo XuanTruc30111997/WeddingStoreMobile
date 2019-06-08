@@ -68,7 +68,7 @@ namespace WeddingStoreMoblie.ViewModels
         {
             _soLuong = 1;
             _maHD = maHD;
-            GetData().GetAwaiter();
+            // GetData().GetAwaiter();
         }
         #endregion
 
@@ -94,11 +94,13 @@ namespace WeddingStoreMoblie.ViewModels
         #endregion
 
         #region Methods
-        async Task GetData()
+        public async Task GetData()
         {
+            Device.BeginInvokeOnMainThread(() => { isBusy = true; });
             _myHoaDon = await hoaDon.GetById(_maHD);
             // LstVatLieu = await GetThongTin.getLstVatLieu(_maHD);
             LstVatLieu = await khoVatLieuAo.GetVatLieuCan(_myHoaDon.NgayTrangTri, _myHoaDon.NgayThaoDo, _myHoaDon.MaHD);
+            Device.BeginInvokeOnMainThread(() => { isBusy = false; });
         }
 
         private async Task Them()
@@ -127,6 +129,7 @@ namespace WeddingStoreMoblie.ViewModels
                         var result = await currentPage.DisplayAlert("Thêm mới!!", "Thêm vật liệu " + _selectedVL.TenVL + " vào hóa đơn?", "OK", "Cancel").ConfigureAwait(false);
                         if (result)
                         {
+                            Constant.isNewDanhSachVatLieu = true;
                             List<PhatSinhModel> myLst = await phatSinh.GetByIdHD(_maHD).ConfigureAwait(false);
                             bool response;
                             bool isExist = false;
@@ -199,15 +202,6 @@ namespace WeddingStoreMoblie.ViewModels
         private async Task UpdateVatLieu()
         {
             VatLieuModel myVatLieu = await vatLieu.GetById(_selectedVL.MaVL).ConfigureAwait(false);
-            //bool responseVL = await vatLieu.SaveDataAsync(new VatLieuModel
-            //{
-            //    MaVL = _selectedVL.MaVL,
-            //    TenVL = _selectedVL.TenVL,
-            //    AnhMoTa = _selectedVL.AnhMoTa,
-            //    DonVi = _selectedVL.DonVi,
-            //    SoLuongTon = myVatLieu.SoLuongTon - _soLuong,
-            //    GiaTien = _selectedVL.GiaTien
-            //}, "VatLieu", false);
             myVatLieu.SoLuongTon -= _soLuong;
             bool responseVL = await vatLieu.SaveDataAsync(myVatLieu, "VatLieu", false);
         }

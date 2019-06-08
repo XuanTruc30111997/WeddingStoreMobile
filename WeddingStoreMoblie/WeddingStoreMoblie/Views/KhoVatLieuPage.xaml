@@ -4,7 +4,13 @@
              x:Class="WeddingStoreMoblie.Views.KhoVatLieuPage"
              Title="Danh Sách Vật Liệu"
              xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:converter="clr-namespace:WeddingStoreMoblie.Converters"
              BackgroundColor="#323d4f">
+
+    <ContentPage.Resources>
+        <converter:ConvertBoolToBrush x:Key="isNhap"/>
+    </ContentPage.Resources>
+    
     <AbsoluteLayout>
         <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
                            IsVisible="{Binding isBusy,Mode=TwoWay}"
@@ -31,6 +37,7 @@
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="70"/>
                                             <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="5"/>
                                         </Grid.ColumnDefinitions>
                                         <Image Source="{Binding AnhMoTa, Converter={StaticResource myImage}}" Grid.Column="0"/>
                                         <Grid Grid.Column="1">
@@ -51,6 +58,7 @@
                                                TextColor="White" HorizontalTextAlignment="End"
                                                Grid.Row="1" Grid.Column="1"/>
                                         </Grid>
+                                        <Frame Grid.Column="2" BackgroundColor="{Binding IsNhap, Converter={StaticResource isNhap}}"/>
                                     </Grid>
                                 </ViewCell>
                             </DataTemplate>

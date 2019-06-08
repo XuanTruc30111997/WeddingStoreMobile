@@ -17,20 +17,26 @@
     <None Remove="Images\ChinhSua.png" />
     <None Remove="Images\ChuaTrangTri.png" />
     <None Remove="Images\danhMucBackground.jpg" />
+    <None Remove="Images\DanhSachVatLieuBackground.jpg" />
     <None Remove="Images\DaThaoDo.png" />
     <None Remove="Images\DaTrangTri.png" />
     <None Remove="Images\delete.png" />
     <None Remove="Images\hoadon.png" />
+    <None Remove="Images\HoaDonBackground1.jpg" />
+    <None Remove="Images\HoaDonBackground2.jpg" />
     <None Remove="Images\home.jpg" />
+    <None Remove="Images\home.png" />
     <None Remove="Images\list.png" />
     <None Remove="Images\loginBackground.jpg" />
     <None Remove="Images\logout.png" />
+    <None Remove="Images\MasterBackground.jpg" />
     <None Remove="Images\modify.png" />
     <None Remove="Images\nhanvien.png" />
     <None Remove="Images\noimage.png" />
     <None Remove="Images\PhanCongbackground.png" />
     <None Remove="Images\PhatSinhBackground.jpg" />
     <None Remove="Images\ThaoDo.png" />
+    <None Remove="Images\ThemPhatSinhBackground.jpg" />
     <None Remove="Images\ThongTinBackground.jpg" />
     <None Remove="Images\ThongTinMauBackground.jpg" />
     <None Remove="Images\Tim.png" />
@@ -46,20 +52,26 @@
     <EmbeddedResource Include="Images\ChinhSua.png" />
     <EmbeddedResource Include="Images\ChuaTrangTri.png" />
     <EmbeddedResource Include="Images\danhMucBackground.jpg" />
+    <EmbeddedResource Include="Images\DanhSachVatLieuBackground.jpg" />
     <EmbeddedResource Include="Images\DaThaoDo.png" />
     <EmbeddedResource Include="Images\DaTrangTri.png" />
     <EmbeddedResource Include="Images\delete.png" />
     <EmbeddedResource Include="Images\hoadon.png" />
+    <EmbeddedResource Include="Images\HoaDonBackground1.jpg" />
+    <EmbeddedResource Include="Images\HoaDonBackground2.jpg" />
     <EmbeddedResource Include="Images\home.jpg" />
+    <EmbeddedResource Include="Images\home.png" />
     <EmbeddedResource Include="Images\list.png" />
     <EmbeddedResource Include="Images\loginBackground.jpg" />
     <EmbeddedResource Include="Images\logout.png" />
+    <EmbeddedResource Include="Images\MasterBackground.jpg" />
     <EmbeddedResource Include="Images\modify.png" />
     <EmbeddedResource Include="Images\nhanvien.png" />
     <EmbeddedResource Include="Images\noimage.png" />
     <EmbeddedResource Include="Images\PhanCongbackground.png" />
     <EmbeddedResource Include="Images\PhatSinhBackground.jpg" />
     <EmbeddedResource Include="Images\ThaoDo.png" />
+    <EmbeddedResource Include="Images\ThemPhatSinhBackground.jpg" />
     <EmbeddedResource Include="Images\ThongTinBackground.jpg" />
     <EmbeddedResource Include="Images\ThongTinMauBackground.jpg" />
     <EmbeddedResource Include="Images\Tim.png" />
@@ -90,6 +102,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\DanhSachVatLieuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\HoaDonPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

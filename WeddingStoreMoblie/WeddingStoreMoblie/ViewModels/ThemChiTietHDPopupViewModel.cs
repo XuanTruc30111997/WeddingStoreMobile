@@ -123,6 +123,7 @@ namespace WeddingStoreMoblie.ViewModels
                         var result = await ahihi.DisplayAlert("Thêm mẫu!!!", "Bạn muốn thêm mẫu " + _SelectedSanPhamAo.TenSP + " ?", "Yes", "No").ConfigureAwait(false);
                         if (result)
                         {
+                            Constant.isNewDanhSachVatLieu = true;
                             // Danh sách các mẫu có trong hóa đơn
                             List<ChiTietHoaDonModel> lstChiTiet = await chiTietHoaDon.GetByIdHD(_maHD).ConfigureAwait(false);
                             bool isNew = true;

@@ -136,6 +136,7 @@ namespace WeddingStoreMoblie.ViewModels
                         var result = await ahihi.DisplayAlert("Chỉnh sủa mẫu!", "Chỉnh sửa mẫu " + SelectedMau.TenSP + " số lượng " + SelectedMau.SoLuong + " --> " + soLuong + " ?", "OK", "Cancel");
                         if (result)
                         {
+                            Constant.isNewDanhSachVatLieu = true;
                             ChinhSua().GetAwaiter();
                             // Update kho sản phẩm ảo
                             SanPhamAo mySpAo = _lstAo.FirstOrDefault(sp => sp.MaSP == _selectedMau.MaSP);
@@ -150,35 +151,6 @@ namespace WeddingStoreMoblie.ViewModels
                         await ahihi.DisplayAlert("Fail!!!", "Save mẫu " + SelectedMau.TenSP + " thất bại. Số lượng tối đa: " + (mySPAo.SoLuong + _selectedMau.SoLuong), "OK");
                     });
                 }
-
-                //if (_soLuong <= _selectedMau.SoLuong)
-                //{
-                //    Device.BeginInvokeOnMainThread(async () =>
-                //    {
-                //        var result = await ahihi.DisplayAlert("Chỉnh sủa mẫu!", "Chỉnh sửa mẫu " + SelectedMau.TenSP + " số lượng " + SelectedMau.SoLuong + " --> " + soLuong + " ?", "OK", "Cancel");
-                //        if (result)
-                //        {
-                //            Constant.isChange = true;
-                //            ChinhSua().GetAwaiter();
-                //        }
-                //    });
-                //}
-                //else
-                //{
-                //    int maxSoLuong = await Check.CheckMau(_maHD, _selectedMau.MaSP);
-                //    if (_soLuong > maxSoLuong + _selectedMau.SoLuong)
-                //        Device.BeginInvokeOnMainThread(async () =>
-                //        {
-                //            await ahihi.DisplayAlert("Fail!!!", "Save mẫu " + SelectedMau.TenSP + " thất bại. Số lượng tối đa: " + (maxSoLuong + _selectedMau.SoLuong), "OK");
-                //        });
-                //    else
-                //    {
-                //        Device.BeginInvokeOnMainThread(async () =>
-                //        {
-                //            await ahihi.DisplayAlert("Success!!!", "Save mẫu " + SelectedMau.TenSP + " số lượng " + _selectedMau.SoLuong + " --> " + _soLuong + " thành công.", "OK", "Cancel");
-                //        });
-                //    }
-                //}
             }
             else
                 Device.BeginInvokeOnMainThread(async () =>
@@ -200,6 +172,7 @@ namespace WeddingStoreMoblie.ViewModels
                 var result = await ahihi.DisplayAlert("Xóa mẫu?", "Xóa mẫu " + _selectedMau.TenSP + " ?", "OK", "Cancel").ConfigureAwait(false);
                 if (result)
                 {
+                    Constant.isNewDanhSachVatLieu = true;
                     bool response = await chiTietHoaDon.DeleteDataAsync(new ChiTietHoaDonModel
                     {
                         MaHD = _maHD,

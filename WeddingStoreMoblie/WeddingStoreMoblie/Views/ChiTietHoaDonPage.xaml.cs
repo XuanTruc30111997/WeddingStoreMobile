@@ -44,9 +44,18 @@ namespace WeddingStoreMoblie.Views
                 return phatSinhPage;
             }
 
+            Page ReadyDanhSachVatLieuPage()
+            {
+                var danhSachVLPage = new DanhSachVatLieuPage(_maHD);
+                danhSachVLPage.Title = "Vật Liệu";
+
+                return danhSachVLPage;
+            }
+
             List<Task<Page>> myTasks = new List<Task<Page>>();
             myTasks.Add(Task.Run(() => ReadyThongTinMauPage()));
             myTasks.Add(Task.Run(() => ReadyPhatSinhPage()));
+            myTasks.Add(Task.Run(() => ReadyDanhSachVatLieuPage()));
 
             var results = await Task.WhenAll(myTasks);
             foreach (var myResult in results)

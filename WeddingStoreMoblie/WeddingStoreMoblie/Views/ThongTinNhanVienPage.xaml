@@ -16,7 +16,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="40"/>
+                <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
             <!--<Image Source="backgroundNhanVien.jpg" Aspect="Fill" HeightRequest="120"/>-->
             <Grid Grid.Row="0" Margin="5">
@@ -28,7 +28,7 @@
                        Source="backgroundNhanVien.jpg" Aspect="Fill"/>-->
                 <StackLayout Orientation="Vertical" Grid.Column="0">
                     <Image HeightRequest="80" WidthRequest="90" Margin="5"
-                           Source="{Binding Avatar, Converter={StaticResource myImage}}"/>
+                           Source="{Binding myNhanVien.Avatar, Converter={StaticResource myImage}}"/>
                     <Label HorizontalTextAlignment="Center" Margin="0,5"
                            Text="{Binding myNhanVien.MaNV}" TextColor="Black" FontAttributes="Bold"/>
                 </StackLayout>
@@ -67,6 +67,7 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                     <RowDefinition/>
+                                    <RowDefinition Height="5"/>
                                 </Grid.RowDefinitions>
                                 <Label Text="{Binding Ngay,StringFormat=' {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}" Grid.Row="0" Grid.Column="0"/>
                                 <Label Text="{Binding MaHD, StringFormat='Mã hóa đơn: {0:N}'}" Grid.Row="1" Grid.Column="0"/>
@@ -78,19 +79,20 @@
                                     <Label Text="Thời gian đi: "/>
                                     <Label Text="{Binding ThoiGianDi, Converter={StaticResource myTime}}" />
                                 </StackLayout>
+                                <Frame BackgroundColor="#1C4CEB" Grid.Row="2" Grid.ColumnSpan="2"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
 
-            <Grid Grid.Row="3" VerticalOptions="CenterAndExpand">
+            <Grid Grid.Row="3" VerticalOptions="CenterAndExpand" Margin="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Label Grid.Column="0" TextColor="#ea415b" FontAttributes="Bold"
-                        Text="{Binding gioCong, StringFormat='Tổng giờ công: {0:N}'}"/>
+                        Text="{Binding gioCong, StringFormat='Tổng giờ công: {0:DD:HH:mm:ss}'}"/>
                 <Label Grid.Column="1" TextColor="#e01e14" FontAttributes="Bold"
                         Text="{Binding tongLuong,StringFormat='Tổng lương: {0:0,0} VNĐ'}"/>
             </Grid>

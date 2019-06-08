@@ -84,5 +84,10 @@ namespace WeddingStoreMoblie.ViewModels
             //var _currentPage = Application.Current.MainPage;
             return _currentPage;
         }
+
+        protected Page CurrentMainPage()
+        {
+            return App.Current.MainPage;
+        }
     }
 }

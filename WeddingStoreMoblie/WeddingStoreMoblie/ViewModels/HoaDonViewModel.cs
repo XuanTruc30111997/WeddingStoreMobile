@@ -163,12 +163,16 @@ namespace WeddingStoreMoblie.ViewModels
             var t2 = GetKhachHangAsync();
 
             await Task.WhenAll(t1, t2);
-            foreach (var hoaDon in _lstHoaDon)
+            if (_lstHoaDon != null)
             {
-                KhachHangModel myKh = _lstKhachHang.Find(kh => kh.MaKH == hoaDon.MaKH);
-                MyList.Add(new HoaDonKhachHang(hoaDon.MaHD, myKh.MaKH, hoaDon.NgayTrangTri, hoaDon.NgayThaoDo, hoaDon.TinhTrang, myKh.TenKH, myKh.SoDT, myKh.DiaChi, hoaDon.TongTien));
+                foreach (var hoaDon in _lstHoaDon)
+                {
+                    KhachHangModel myKh = _lstKhachHang.Find(kh => kh.MaKH == hoaDon.MaKH);
+                    MyList.Add(new HoaDonKhachHang(hoaDon.MaHD, myKh.MaKH, hoaDon.NgayTrangTri, hoaDon.NgayThaoDo, hoaDon.TinhTrang, myKh.TenKH, myKh.SoDT, myKh.DiaChi, hoaDon.TongTien));
+                }
+                OnPropertyChanged(nameof(MyList));
             }
-            OnPropertyChanged(nameof(MyList));
+
             Device.BeginInvokeOnMainThread(() =>
             {
                 isBusy = false;

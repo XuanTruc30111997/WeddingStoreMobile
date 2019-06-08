@@ -151,6 +151,7 @@ namespace WeddingStoreMoblie.ViewModels
                 var result = await currentPage.DisplayAlert("Xóa phát sinh!", "Xóa vật liệu " + _selectedVL.TenVL + " khỏi danh sách phát sinh?", "Yes", "No").ConfigureAwait(false);
                 if (result)
                 {
+                    Constant.isNewDanhSachVatLieu = true;
                     bool response = await phatSinh.DeleteDataAsync(new PhatSinhModel
                     {
                         MaHD = _maHD,

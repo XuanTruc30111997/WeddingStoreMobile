@@ -33,16 +33,13 @@ namespace WeddingStoreMoblie.ViewModels
             get => _selectedNV;
             set
             {
-                if (_selectedNV != value)
-                {
-                    _selectedNV = value;
-                    OnPropertyChanged();
-                    //if (_selectedNV != null)
-                    //{
-                    //    GoToThongTinPage().GetAwaiter();
-                    //}
-                    GoToThongTinPage().GetAwaiter();
-                }
+                _selectedNV = value;
+                OnPropertyChanged();
+                //if (_selectedNV != null)
+                //{
+                //    GoToThongTinPage().GetAwaiter();
+                //}
+                GoToThongTinPage().GetAwaiter();
             }
         }
         #endregion
@@ -76,7 +73,7 @@ namespace WeddingStoreMoblie.ViewModels
         private async Task GoToThongTinPage()
         {
             var currentPage = GetCurrentPage();
-            await currentPage.Navigation.PushAsync(new ThongTinNhanVienPage(SelectedNV.MaNV));
+            await currentPage.Navigation.PushAsync(new ThongTinNhanVienPage(_selectedNV.MaNV));
         }
         #endregion
     }

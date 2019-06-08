@@ -13,6 +13,7 @@ namespace WeddingStoreMoblie.ViewModels
 {
     public class VatLieuViewModel : BaseViewModel
     {
+        #region Properties
         private List<VatLieuModel> _lstVatLieu { get; set; }
         public List<VatLieuModel> LstVatLieu
         {
@@ -68,14 +69,18 @@ namespace WeddingStoreMoblie.ViewModels
             }
         }
 
+        private bool isSearching;
         // Danh sách lưu tất cả vật liệu không thay đổi
         private List<VatLieuModel> _lstAllVatLieu = new List<VatLieuModel>();
         // Danh sách lưu vật liệu sắp xếp theo Option
         private List<VatLieuModel> _lstVatLieuOption = new List<VatLieuModel>();
+        #endregion
 
-        private bool isSearching;
+        #region Services
         private MockVatLieuRepository _vatLieu;
+        #endregion
 
+        #region Constructors
         public VatLieuViewModel()
         {
             //GetData().GetAwaiter();
@@ -83,6 +88,19 @@ namespace WeddingStoreMoblie.ViewModels
 
             //OptionClick = new Command(ClickOnOption);
         }
+        #endregion
+
+        #region Commands
+        public Command SearchCommand
+        {
+            get
+            {
+                return new Command(Search);
+            }
+        }
+        #endregion
+
+        #region Methods
 
         public async Task GetData()
         {
@@ -126,81 +144,6 @@ namespace WeddingStoreMoblie.ViewModels
             Search();
         }
 
-        //public ICommand OptionClick { get; set; }
-        //public void ClickOnOption()
-        //{
-        //    switch (selectedOption)
-        //    {
-        //        case "All":
-        //            _myLstVatLieuByOption = _lstAllVatLieu;
-        //            if (isSearching)
-        //            {
-        //                Search();
-        //            }
-        //            else
-        //            {
-        //                LstVatLieu = _myLstVatLieuByOption;
-        //            }
-        //            break;
-        //        case "Còn Hàng":
-        //            _myLstVatLieuByOption = _lstAllVatLieu.Where(vl => vl.SoLuongTon >= 1).ToList();
-        //            if (isSearching)
-        //            {
-        //                Search();
-        //            }
-        //            else
-        //            {
-        //                LstVatLieu = _myLstVatLieuByOption;
-        //            }
-        //            break;
-        //        case "$->$$":
-        //            _myLstVatLieuByOption = _lstAllVatLieu.OrderBy(vl => vl.GiaTien).ToList();
-        //            if (isSearching)
-        //            {
-        //                Search();
-        //            }
-        //            else
-        //            {
-        //                LstVatLieu = _myLstVatLieuByOption;
-        //            }
-        //            break;
-        //        case "$$->$":
-        //            _myLstVatLieuByOption = _lstAllVatLieu.OrderByDescending(vl => vl.GiaTien).ToList();
-        //            if (isSearching)
-        //            {
-        //                Search();
-        //            }
-        //            else
-        //            {
-        //                LstVatLieu = _myLstVatLieuByOption;
-        //            }
-        //            break;
-        //    }
-        //}
-
-        public Command SearchCommand
-        {
-            get
-            {
-                return new Command(Search);
-            }
-        }
-
-        //private void Search()
-        //{
-        //    if (!string.IsNullOrEmpty(keyWord))
-        //    {
-        //        LstVatLieu = _myLstVatLieuByOption.Where(vl => vl.TenVL.ToLower().Contains(keyWord.ToLower())).ToList();
-        //        isSearching = true;
-        //    }
-        //    else
-        //    {
-        //        if (isSearching)
-        //        {
-        //            LstVatLieu = _myLstVatLieuByOption;
-        //            isSearching = false;
-        //        }
-        //    }
-        //}
+        #endregion
     }
 }

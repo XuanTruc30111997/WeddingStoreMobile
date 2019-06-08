@@ -20,72 +20,91 @@
                                AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="70"/>
-                    <RowDefinition Height="42"/>
+                    <RowDefinition Height="120"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0" Margin="5" VerticalOptions="CenterAndExpand">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Picker ItemsSource="{Binding LstThang}" SelectedItem="{Binding SelectedThang, Mode=TwoWay}"
-                            Grid.Column="0" Margin="5" Title="Tháng"/>
-                    <StackLayout Grid.Column="1" Orientation="Horizontal">
-                        <Label Text="Năm: " FontSize="Medium" FontAttributes="Bold"  VerticalOptions="Center"/>
-                        <Entry Placeholder="Năm" VerticalOptions="Center" Text="{Binding Nam}"/>
-                    </StackLayout>
 
-                </Grid>
-                <Grid Grid.Row="1" VerticalOptions="Center">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Picker ItemsSource="{Binding LstOption}" SelectedItem="{Binding SelectedOption, Mode=TwoWay}"
+                <RelativeLayout Grid.Row="0">
+                    <Image Source="{markEx:EmbeddedImage HoaDonBackground1.jpg}"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=SearchControlsGrid,Property=Width, Factor=1, Constant=0 }"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=SearchControlsGrid, Property=Height,Factor=1, Constant=0}"/>
+                    <Grid Margin="5,0" BackgroundColor="Transparent">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"/>
+                            <RowDefinition Height="42"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Margin="5" VerticalOptions="CenterAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Picker ItemsSource="{Binding LstThang}" SelectedItem="{Binding SelectedThang, Mode=TwoWay}"
+                            Grid.Column="0" Margin="5" Title="Tháng"/>
+                            <StackLayout Grid.Column="1" Orientation="Horizontal">
+                                <Label Text="Năm: " FontSize="Medium" FontAttributes="Bold"  VerticalOptions="Center"/>
+                                <Entry Placeholder="Năm" VerticalOptions="Center" Text="{Binding Nam}"/>
+                            </StackLayout>
+
+                        </Grid>
+                        <Grid Grid.Row="1" VerticalOptions="Center" BackgroundColor="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Picker ItemsSource="{Binding LstOption}" SelectedItem="{Binding SelectedOption, Mode=TwoWay}"
                             Title="-- Tùy chọn --" Margin="5,0" Grid.Column="0"/>
-                    <ImageButton Source="{markEx:EmbeddedImage Tim.png}" Command="{Binding SearchCommand}" 
-                                 Grid.Column="1" HorizontalOptions="Center" WidthRequest="70"/>
-                </Grid>
-                <ListView ItemsSource="{Binding MyList}" SelectedItem="{Binding SelectedHDKH, Mode=TwoWay}"
-                          HasUnevenRows="True" RefreshCommand="{Binding RefeshCommand}"
-                          Grid.Row="2">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Grid Margin="5" Padding="5" HeightRequest="80">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="5"/>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition Width="60"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition/>
-                                        <RowDefinition/>
-                                    </Grid.RowDefinitions>
-                                    <Frame Grid.Column="0" Grid.RowSpan="2" BackgroundColor="{Binding TinhTrang,Converter={StaticResource myTinhTrangColor}}"/>
-                                    <Label Text="{Binding TenKH}" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Large"
+                            <ImageButton Source="{markEx:EmbeddedImage Tim.png}" Command="{Binding SearchCommand}" 
+                                 Grid.Column="1" HorizontalOptions="Center" WidthRequest="70" BackgroundColor="Transparent"/>
+                        </Grid>
+
+                    </Grid>
+                </RelativeLayout>
+
+                <RelativeLayout Grid.Row="1">
+                    <Image Source="{markEx:EmbeddedImage HoaDonBackground2.jpg}"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=SearchControlsGrid,Property=Width, Factor=1, Constant=0 }"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=SearchControlsGrid, Property=Height,Factor=1, Constant=0}"/>
+                    <ListView ItemsSource="{Binding MyList}" SelectedItem="{Binding SelectedHDKH, Mode=TwoWay}"
+                              HasUnevenRows="True" RefreshCommand="{Binding RefeshCommand}" BackgroundColor="Transparent">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Margin="5" Padding="5" HeightRequest="80">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="5"/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="60"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Frame Grid.Column="0" Grid.RowSpan="2" BackgroundColor="{Binding TinhTrang,Converter={StaticResource myTinhTrangColor}}"/>
+                                        <Label Text="{Binding TenKH}" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Large"
                                            VerticalOptions="Center"/>
-                                    <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalOptions="Center">
-                                        <Image Source="{markEx:EmbeddedImage TrangTri.png}" Margin="5,0" HeightRequest="30" WidthRequest="30"
+                                        <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalOptions="Center">
+                                            <Image Source="{markEx:EmbeddedImage TrangTri.png}" Margin="5,0" HeightRequest="30" WidthRequest="30"
                                                Aspect="Fill"/>
-                                        <Label Text="{Binding NgayTrangTri, Converter={StaticResource myDate}}" HorizontalOptions="Start"
+                                            <Label Text="{Binding NgayTrangTri, Converter={StaticResource myDate}}" HorizontalOptions="Start"
                                             FontAttributes="Italic"/>
-                                    </StackLayout>
-                                    <StackLayout Grid.Row="1" Grid.Column="2" Orientation="Horizontal" VerticalOptions="Center">
-                                        <Image Source="{markEx:EmbeddedImage ThaoDo.png}" Margin="5,0" HeightRequest="30" WidthRequest="30"
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="1" Grid.Column="2" Orientation="Horizontal" VerticalOptions="Center">
+                                            <Image Source="{markEx:EmbeddedImage ThaoDo.png}" Margin="5,0" HeightRequest="30" WidthRequest="30"
                                                Aspect="Fill"/>
-                                        <Label Text="{Binding NgayThaoDo, Converter={StaticResource myDate}}" HorizontalOptions="End"
+                                            <Label Text="{Binding NgayThaoDo, Converter={StaticResource myDate}}" HorizontalOptions="End"
                                             FontAttributes="Italic"/>
-                                    </StackLayout>
-                                    <Image Aspect="Fill" Margin="7" Source="{Binding TinhTrang, Converter={StaticResource myTinhTrang}}"
+                                        </StackLayout>
+                                        <Image Aspect="Fill" Margin="7" Source="{Binding TinhTrang, Converter={StaticResource myTinhTrang}}"
                                            Grid.RowSpan="2" Grid.Column="3"/>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </RelativeLayout>
             </Grid>
         </AbsoluteLayout>
     </ContentPage.Content>

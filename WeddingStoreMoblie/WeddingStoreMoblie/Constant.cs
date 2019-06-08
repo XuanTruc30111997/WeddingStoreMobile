@@ -11,5 +11,6 @@ namespace WeddingStoreMoblie
         //public const string RestApiWeddingStore = "http://192.168.1.218:1997/api/";
         public static bool isNew { get; set; }
         public static bool isNewPS { get; set; }
+        public static bool isNewDanhSachVatLieu { get; set; }
     }
 }

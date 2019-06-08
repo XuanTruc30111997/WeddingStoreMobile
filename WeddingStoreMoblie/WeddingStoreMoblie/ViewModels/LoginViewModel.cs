@@ -56,10 +56,6 @@ namespace WeddingStoreMoblie.ViewModels
                 return new Command(async () => await Login());
             }
         }
-        public ICommand LogoutCommand
-        {
-            get;
-        }
         #endregion
 
         #region Methods
@@ -69,27 +65,39 @@ namespace WeddingStoreMoblie.ViewModels
         }
         async Task Login()
         {
-            Device.BeginInvokeOnMainThread(async () =>
+            Device.BeginInvokeOnMainThread(() =>
             {
                 isBusy = true;
             });
             await GetData();
-            Device.BeginInvokeOnMainThread(async () =>
+
+            Device.BeginInvokeOnMainThread(() =>
             {
                 isBusy = false;
             });
-            var ahihi = GetCurrentPage();
-            TaiKhoanModel myTK = _LstTaiKhoan.FirstOrDefault(tk => tk.UserName == _UserName && tk.PassWord == _Password);
-            if (myTK != null)
+            var ahihi = CurrentMainPage();
+            if (!String.IsNullOrEmpty(_UserName) || !String.IsNullOrEmpty(_Password))
             {
-                _myNavigationService.NavigateToMaster(myTK.MaNV);
+                TaiKhoanModel myTK = new TaiKhoanModel();
+                myTK = _LstTaiKhoan.FirstOrDefault(tk => tk.UserName == _UserName && tk.PassWord == _Password);
+
+                if (myTK != null)
+                {
+                    _myNavigationService.NavigateToMaster(myTK.MaNV);
+                }
+                else
+                {
+                    Device.BeginInvokeOnMainThread(async () =>
+                    {
+                        await ahihi.DisplayAlert("Thất bại!", "UserName hoặc Password không đúng. Mời nhập lại.", "OK").ConfigureAwait(false);
+                    });
+                }
             }
             else
             {
-
                 Device.BeginInvokeOnMainThread(async () =>
                 {
-                    await ahihi.DisplayAlert("UserName hoặc Password không đúng. Mời nhập lại.", "Thất bại!", "OK");
+                    await ahihi.DisplayAlert("Thất bại!", "UserName hoặc Password không đúng. Mời nhập lại.", "OK").ConfigureAwait(false);
                 });
             }
         }

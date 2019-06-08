@@ -113,6 +113,7 @@ namespace WeddingStoreMoblie.ViewModels
                     bool result = await currentPage.DisplayAlert("Chỉnh sửa!!", "Chỉnh sửa " + _thongTinPhatSinh.TenVL + " số lượng: " + _thongTinPhatSinh.SoLuong + "--> " + _soLuong, "OK", "Cancel").ConfigureAwait(false);
                     if (result)
                     {
+                        Constant.isNewDanhSachVatLieu = true;
                         bool response = await phatSinh.SaveDataAsync(new PhatSinhModel
                         {
                             MaHD = _myHoaDon.MaHD,

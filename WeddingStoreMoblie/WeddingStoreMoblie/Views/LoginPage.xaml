@@ -26,7 +26,7 @@
                         <RowDefinition Height="8*"/>
                         <RowDefinition Height="2*"/>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="{markEx:EmbeddedImage home.jpg}" HorizontalOptions="CenterAndExpand" Aspect="Fill" VerticalOptions="Center"
+                    <Image Grid.Row="0" Source="{markEx:EmbeddedImage home.png}" HorizontalOptions="CenterAndExpand" Aspect="Fill" VerticalOptions="Center"
                            WidthRequest="300" HeightRequest="300"/>
                     <Label Grid.Row="1" Text="Login" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
                            FontSize="Large" FontAttributes="Bold">
