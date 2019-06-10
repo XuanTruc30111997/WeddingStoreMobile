@@ -22,7 +22,11 @@
                     <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
                 <Image VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="130" Grid.Row="0"
-                       Source="{markEx:EmbeddedImage home.jpg}"/>
+                       Source="{markEx:EmbeddedImage home.jpg}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ToDanhMucCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
                 <ListView Grid.Row="1"
                            ItemsSource="{Binding LstTinhNang}" SelectedItem="{Binding SelectedTinhNang}"
                            BackgroundColor="Transparent">
@@ -36,6 +40,9 @@
                     </ListView.ItemTemplate>
                 </ListView>
                 <StackLayout Grid.Row="2" Orientation="Horizontal" VerticalOptions="Center">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ThonTinTaiKhoanCommand}"/>
+                    </StackLayout.GestureRecognizers>
                     <Image Source="{Binding MyNhanVien.Avatar,Converter={StaticResource myImage}}" WidthRequest="50" HeightRequest="50"
                        Aspect="Fill" Margin="5"/>
                     <Label Text="{Binding MyNhanVien.TenNV}" FontAttributes="Bold" VerticalOptions="Center" FontSize="Large"/>

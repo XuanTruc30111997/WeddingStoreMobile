@@ -12,7 +12,7 @@ using WeddingStoreMoblie.MockDatas.MockDataSystem;
 
 namespace WeddingStoreMoblie.MockDatas.MockDataSystem
 {
-    class MockTaiKhoanRepository : IBaseRepository<TaiKhoanModel>
+    class MockTaiKhoanRepository : WorkData<TaiKhoanModel>,IBaseRepository<TaiKhoanModel>
     {
         private string _name = "TaiKhoan";
         private string _action;
@@ -40,6 +40,17 @@ namespace WeddingStoreMoblie.MockDatas.MockDataSystem
 
             }
             return null;
+        }
+
+        public async Task<TaiKhoanModel> GetByIdNhanVien(string maNV)
+        {
+            List<TaiKhoanModel> lstTaiKhoan = await GetDataAsync();
+            return lstTaiKhoan.FirstOrDefault(tk => tk.MaNV == maNV);
+        }
+
+        public override async Task<bool> SaveDataAsync(TaiKhoanModel obj, string name, bool isNew)
+        {
+            return await base.SaveDataAsync(obj, name, isNew);
         }
     }
 }

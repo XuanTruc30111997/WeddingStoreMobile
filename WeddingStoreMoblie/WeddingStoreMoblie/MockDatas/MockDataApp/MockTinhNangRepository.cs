@@ -19,8 +19,7 @@ namespace WeddingStoreMoblie.MockDatas.MockDataApp
 
                 new TinhNang{id=1,icon="nhanvien.png",ChucNang="Nhân Viên"},
                 new TinhNang{id=2,icon="hoadon.png",ChucNang="Hóa Đơn"},
-                new TinhNang{id=3,icon="vatlieu.png",ChucNang="Vật Liệu"},
-                new TinhNang{id=4,icon="logout.png",ChucNang="Đăng xuất"}
+                new TinhNang{id=3,icon="vatlieu.png",ChucNang="Vật Liệu"}
             };
         }
 

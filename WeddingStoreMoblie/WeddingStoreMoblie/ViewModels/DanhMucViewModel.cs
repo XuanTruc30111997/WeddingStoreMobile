@@ -7,6 +7,7 @@ using WeddingStoreMoblie.Models.SystemModels;
 using WeddingStoreMoblie.MockDatas.MockDataApp;
 using WeddingStoreMoblie.MockDatas.MockDataSystem;
 using Xamarin.Forms;
+using WeddingStoreMoblie.Services;
 
 namespace WeddingStoreMoblie.ViewModels
 {
@@ -14,16 +15,6 @@ namespace WeddingStoreMoblie.ViewModels
     {
         #region Properties
         private string _maNV;
-        private List<TinhNang> _lstTinhNang;
-        public List<TinhNang> LstTinhNang
-        {
-            get { return _lstTinhNang; }
-            set
-            {
-                _lstTinhNang = value;
-                OnPropertyChanged();
-            }
-        }
 
         private TinhNang _SelectedTinhNang { get; set; }
         public TinhNang SelectedTinhNang
@@ -50,8 +41,8 @@ namespace WeddingStoreMoblie.ViewModels
         #endregion
 
         #region Services
-        MockTinhNangRepository tinhNang = new MockTinhNangRepository();
         MockNhanVienRepository nhanVien = new MockNhanVienRepository();
+        NavigationService _myNavigationService = new NavigationService();
         #endregion
 
         #region Constructors
@@ -60,6 +51,27 @@ namespace WeddingStoreMoblie.ViewModels
             _maNV = maNV;
         }
         #endregion
+
+        #region Commands
+        public Command ThongTinCommand
+        {
+            get => new Command(ToThongTin);
+        }
+        public Command NhanVienCommand
+        {
+            get => new Command(ToNhanVien);
+        }
+        public Command HoaDonCommand
+        {
+            get => new Command(ToHoaDon);
+        }
+        public Command VatLieuCommand
+        {
+            get => new Command(ToVatLieu);
+        }
+        #endregion
+
+        #region Methods
         public async Task GetData()
         {
             Device.BeginInvokeOnMainThread(() =>
@@ -67,11 +79,28 @@ namespace WeddingStoreMoblie.ViewModels
                 isBusy = true;
             });
             MyNhanVien = await nhanVien.GetById(_maNV);
-            LstTinhNang = tinhNang.GetTinhNang();
             Device.BeginInvokeOnMainThread(() =>
             {
                 isBusy = false;
             });
         }
+
+        void ToThongTin()
+        {
+            _myNavigationService.NavigateToMaster(_maNV, 2, 4);
+        }
+        void ToNhanVien()
+        {
+            _myNavigationService.NavigateToMaster(_maNV, 2, 1);
+        }
+        void ToHoaDon()
+        {
+            _myNavigationService.NavigateToMaster(_maNV, 2, 2);
+        }
+        void ToVatLieu()
+        {
+            _myNavigationService.NavigateToMaster(_maNV, 2, 3);
+        }
+        #endregion
     }
 }

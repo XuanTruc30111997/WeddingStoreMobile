@@ -56,6 +56,15 @@ namespace WeddingStoreMoblie.ViewModels
             _maNV = maNV;
         }
 
+        public Command ToDanhMucCommand
+        {
+            get => new Command(ToDanhMuc);
+        }
+
+        public Command ThonTinTaiKhoanCommand
+        {
+            get => new Command(ToThongTinTaiKhoan);
+        }
         public async Task GetDataAsync()
         {
             Device.BeginInvokeOnMainThread(() =>
@@ -72,7 +81,16 @@ namespace WeddingStoreMoblie.ViewModels
 
         private void CLickOnChucNang()
         {
-            _myNavigationService.NavigateOnMaster(_SelectedTinhNang.id);
+            _myNavigationService.NavigateOnMaster(_SelectedTinhNang.id, null);
+        }
+        void ToDanhMuc()
+        {
+            _myNavigationService.NavigateToMaster(_maNV, 1, null);
+        }
+
+        void ToThongTinTaiKhoan()
+        {
+            _myNavigationService.NavigateOnMaster(4, _maNV);
         }
     }
 }

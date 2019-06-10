@@ -69,6 +69,7 @@ namespace WeddingStoreMoblie.ViewModels
             {
                 isBusy = true;
             });
+
             await GetData();
 
             Device.BeginInvokeOnMainThread(() =>
@@ -83,7 +84,7 @@ namespace WeddingStoreMoblie.ViewModels
 
                 if (myTK != null)
                 {
-                    _myNavigationService.NavigateToMaster(myTK.MaNV);
+                    _myNavigationService.NavigateToMaster(myTK.MaNV,1,null);
                 }
                 else
                 {

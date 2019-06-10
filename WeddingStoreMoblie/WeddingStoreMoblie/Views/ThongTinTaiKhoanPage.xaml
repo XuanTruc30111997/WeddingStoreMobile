@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WeddingStoreMoblie.Views.ThongTinTaiKhoanPage"
+             xmlns:markEx="clr-namespace:WeddingStoreMoblie.MarkupExtensions">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label" x:Key="myLabel">
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="17"/>
+        </Style>
+        <Style TargetType="Entry" x:Key="myEntry">
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
+                               IsVisible="{Binding isBusy,Mode=TwoWay}"
+                               IsRunning="{Binding isBusy,Mode=TwoWay}"
+                               AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
+            <Image Source="{markEx:EmbeddedImage ThongTinTaiKhoanBackground.jpg}" 
+                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
+            <Image Source="{Binding MyNhanVien.Avatar, Converter={StaticResource myImage}}" AbsoluteLayout.LayoutBounds=".5,100,150,140" AbsoluteLayout.LayoutFlags="XProportional"/>
+            <Label Text="{Binding MyNhanVien.TenNV}" FontAttributes="Bold" FontSize="26" Style="{StaticResource myLabel}"
+                   AbsoluteLayout.LayoutBounds=".5,240,1,80" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,350,1,50" AbsoluteLayout.LayoutFlags="WidthProportional" 
+                            BackgroundColor="Transparent" Padding="5">
+                <Label AbsoluteLayout.LayoutBounds="10,16,.35,50" AbsoluteLayout.LayoutFlags="WidthProportional" Text="UserName:" Style="{StaticResource myLabel}"/>
+                <Entry AbsoluteLayout.LayoutBounds="1,0,.65,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                       Text="{Binding MyTaiKhoan.UserName}" Style="{StaticResource myEntry}"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,420,1,50" AbsoluteLayout.LayoutFlags="WidthProportional" Padding="5"
+                            BackgroundColor="Transparent">
+                <Label AbsoluteLayout.LayoutBounds="10,16,.35,50" AbsoluteLayout.LayoutFlags="WidthProportional" Text="Password:" Style="{StaticResource myLabel}"/>
+                <Entry AbsoluteLayout.LayoutBounds="1,0,.65,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                       Text="{Binding MyTaiKhoan.PassWord}" Style="{StaticResource myEntry}"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,500,1,80" AbsoluteLayout.LayoutFlags="WidthProportional" 
+                            BackgroundColor="Transparent" Padding="5">
+                <Button AbsoluteLayout.LayoutBounds=".25,.5,100,50" AbsoluteLayout.LayoutFlags="XProportional,YProportional" Text="Lưu"
+                        Command="{Binding LuuCommand}"/>
+                <Button AbsoluteLayout.LayoutBounds=".75,.5,100,50" AbsoluteLayout.LayoutFlags="XProportional,YProportional" Text="Hủy"
+                        Command="{Binding HuyCommand}"/>
+            </AbsoluteLayout>
+
+            <Image AbsoluteLayout.LayoutBounds=".9,.96,60,60" d:AbsoluteLayout.LayoutFlags="XProportional,YProportional"
+                   Source="{markEx:EmbeddedImage logout.png}">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding LogoutCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

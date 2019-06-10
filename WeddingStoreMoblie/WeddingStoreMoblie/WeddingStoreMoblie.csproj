@@ -17,6 +17,7 @@
     <None Remove="Images\ChinhSua.png" />
     <None Remove="Images\ChuaTrangTri.png" />
     <None Remove="Images\danhMucBackground.jpg" />
+    <None Remove="Images\DanhMucBackgroundTop.jpg" />
     <None Remove="Images\DanhSachVatLieuBackground.jpg" />
     <None Remove="Images\DaThaoDo.png" />
     <None Remove="Images\DaTrangTri.png" />
@@ -41,6 +42,7 @@
     <None Remove="Images\ThemPhatSinhBackground.jpg" />
     <None Remove="Images\ThongTinBackground.jpg" />
     <None Remove="Images\ThongTinMauBackground.jpg" />
+    <None Remove="Images\ThongTinTaiKhoanBackground.jpg" />
     <None Remove="Images\Tim.png" />
     <None Remove="Images\TrangTri.png" />
     <None Remove="Images\unchecked.png" />
@@ -54,6 +56,7 @@
     <EmbeddedResource Include="Images\ChinhSua.png" />
     <EmbeddedResource Include="Images\ChuaTrangTri.png" />
     <EmbeddedResource Include="Images\danhMucBackground.jpg" />
+    <EmbeddedResource Include="Images\DanhMucBackgroundTop.jpg" />
     <EmbeddedResource Include="Images\DanhSachVatLieuBackground.jpg" />
     <EmbeddedResource Include="Images\DaThaoDo.png" />
     <EmbeddedResource Include="Images\DaTrangTri.png" />
@@ -78,6 +81,7 @@
     <EmbeddedResource Include="Images\ThemPhatSinhBackground.jpg" />
     <EmbeddedResource Include="Images\ThongTinBackground.jpg" />
     <EmbeddedResource Include="Images\ThongTinMauBackground.jpg" />
+    <EmbeddedResource Include="Images\ThongTinTaiKhoanBackground.jpg" />
     <EmbeddedResource Include="Images\Tim.png" />
     <EmbeddedResource Include="Images\TrangTri.png" />
     <EmbeddedResource Include="Images\unchecked.png" />
@@ -106,6 +110,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\ThongTinTaiKhoanPage.xaml.cs">
+      <DependentUpon>ThongTinTaiKhoanPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Views\DanhSachVatLieuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -119,6 +129,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\NhanVienPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ThongTinTaiKhoanPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\TinhNangPage.xaml">

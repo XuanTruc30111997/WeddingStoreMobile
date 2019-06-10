@@ -9,58 +9,100 @@
              mc:Ignorable="d"
              x:Class="WeddingStoreMoblie.Views.DanhMucPage"
              NavigationPage.HasBackButton="False" NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label" x:Key="myLabel">
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+
+        <Style TargetType="Frame" x:Key="myFrame">
+            <Setter Property="Opacity" Value="0.8"/>
+            <Setter Property="HasShadow" Value="True"/>
+        </Style>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <AbsoluteLayout>
-            <Image Source="{markEx:EmbeddedImage danhMucBackground.jpg}" 
-                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
-                   AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
             <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
                            IsVisible="{Binding isBusy,Mode=TwoWay}"
                            IsRunning="{Binding isBusy,Mode=TwoWay}"
                            AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
-
-            <Grid AbsoluteLayout.LayoutBounds="0.5,0.5,300,500" AbsoluteLayout.LayoutFlags="PositionProportional"
-                  BackgroundColor="Transparent">
+            <Image Source="{markEx:EmbeddedImage danhMucBackground.jpg}" 
+                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
+            <Image Source="{markEx:EmbeddedImage DanhMucBackgroundTop.jpg}" 
+                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
+                   AbsoluteLayout.LayoutBounds="0,0,1,200" AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional"/>
+            <Image Source="{markEx:EmbeddedImage home.png}" AbsoluteLayout.LayoutBounds=".5,100,150,120" AbsoluteLayout.LayoutFlags="XProportional"/>
+            <Label Text="Wedding Store" FontAttributes="Bold" FontSize="26"
+                   TextColor="Black" HorizontalTextAlignment="Center" AbsoluteLayout.LayoutBounds=".5,220,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+            <Grid AbsoluteLayout.LayoutBounds="0,270,1,1" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional,HeightProportional"
+                  Padding="15" HorizontalOptions="Center">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="120"/>
-                    <RowDefinition/>
+                    <RowDefinition Height="210"/>
+                    <RowDefinition Height="210"/>
                 </Grid.RowDefinitions>
-                <Image Grid.Row="0" WidthRequest="120" HeightRequest="100" VerticalOptions="Center" HorizontalOptions="Center"
-                       Source="{Binding MyNhanVien.Avatar,Converter={StaticResource myImage}}"/>
-                <!--<sync:SfListView Grid.Row="1" BackgroundColor="Transparent" Margin="5" ItemsSource="{Binding LstTinhNang}"
-                          SelectedItem="{Binding SelectedTinhNang}" Orientation="Horizontal" IsScrollBarVisible="True">
-                        <sync:SfListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <Grid HeightRequest="120" WidthRequest="130">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition/>
-                                            <RowDefinition Height="30"/>
-                                        </Grid.RowDefinitions>
-                                        <Image Source="{Binding icon,Converter={StaticResource myImageApp}}" Aspect="Fill" Grid.Row="0"
-                                               HeightRequest="90" WidthRequest="70"/>
-                                        <Label Grid.Row="1" HorizontalOptions="Center" Text="{Binding ChucNang}"/>
-                                    </Grid>
-                                </ViewCell>
-                            </DataTemplate>
-                        </sync:SfListView.ItemTemplate>
-                    </sync:SfListView>-->
-                <sync:SfListView ItemsSource="{Binding LstTinhNang}" Orientation="Horizontal" Grid.Row="1"
-                                 ItemSpacing="5" SelectionMode="None">
-                    <sync:SfListView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="30"/>
-                                </Grid.RowDefinitions>
-                                <Image Source="{Binding icon, Converter={StaticResource myImageApp}}"
-                                           Grid.Row="0" Aspect="Fill"/>
-                                <Label Text="{Binding ChucNang}" Grid.Row="1"/>
-                            </Grid>
-                        </DataTemplate>
-                    </sync:SfListView.ItemTemplate>
-                </sync:SfListView>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#5C89DC" Style="{StaticResource myFrame}">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ThongTinCommand}"/>
+                    </Frame.GestureRecognizers>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="6*"/>
+                            <RowDefinition Height="4*"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source="{Binding MyNhanVien.Avatar, Converter={StaticResource myImage}}"/>
+                        <Label Text="{Binding MyNhanVien.TenNV}" Grid.Row="1" Style="{StaticResource myLabel}"/>
+                    </Grid>
+                </Frame>
+                <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#5C89DC" Style="{StaticResource myFrame}">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NhanVienCommand}"/>
+                    </Frame.GestureRecognizers>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="7*"/>
+                            <RowDefinition Height="3*"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="{markEx:EmbeddedImage nhanvien.png}" Grid.Row="0"/>
+                        <Label Text="Nhân Viên" Grid.Row="1" Style="{StaticResource myLabel}"/>
+                    </Grid>
+                </Frame>
+                <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="#5C89DC" Style="{StaticResource myFrame}">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding HoaDonCommand}"/>
+                    </Frame.GestureRecognizers>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="7*"/>
+                            <RowDefinition Height="3*"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="{markEx:EmbeddedImage hoadon.png}" Grid.Row="0"/>
+                        <Label Text="Hóa Đơn" Grid.Row="1" Style="{StaticResource myLabel}"/>
+                    </Grid>
+                </Frame>
+                <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#5C89DC" Style="{StaticResource myFrame}">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding VatLieuCommand}"/>
+                    </Frame.GestureRecognizers>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="7*"/>
+                            <RowDefinition Height="3*"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="{markEx:EmbeddedImage vatlieu.png}" Grid.Row="0"/>
+                        <Label Text="Vật Liệu" Grid.Row="1" Style="{StaticResource myLabel}"/>
+                    </Grid>
+                </Frame>
             </Grid>
         </AbsoluteLayout>
     </ContentPage.Content>
