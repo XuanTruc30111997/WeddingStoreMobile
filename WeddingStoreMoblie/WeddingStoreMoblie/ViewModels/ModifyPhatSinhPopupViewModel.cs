@@ -114,6 +114,7 @@ namespace WeddingStoreMoblie.ViewModels
                     if (result)
                     {
                         Constant.isNewDanhSachVatLieu = true;
+                        Constant.isNewPS = true;
                         bool response = await phatSinh.SaveDataAsync(new PhatSinhModel
                         {
                             MaHD = _myHoaDon.MaHD,

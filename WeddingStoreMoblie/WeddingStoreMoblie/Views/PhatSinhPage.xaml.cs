@@ -107,17 +107,13 @@ namespace WeddingStoreMoblie.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            if(Constant.isNewPS)
+            if (Constant.isNewTinhTrang)
             {
                 myVM.isBusy = true;
                 await myVM.GetThongTinHoaDon();
                 myVM.isBusy = false;
             }
-
-            if (myVM.isFirst)
-            {
-                await myVM.GetData();
-            }
+            await myVM.GetData();
         }
     }
 }

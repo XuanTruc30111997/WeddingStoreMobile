@@ -124,6 +124,7 @@ namespace WeddingStoreMoblie.ViewModels
                         if (result)
                         {
                             Constant.isNewDanhSachVatLieu = true;
+                            Constant.isNewMau = true;
                             // Danh sách các mẫu có trong hóa đơn
                             List<ChiTietHoaDonModel> lstChiTiet = await chiTietHoaDon.GetByIdHD(_maHD).ConfigureAwait(false);
                             bool isNew = true;

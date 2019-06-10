@@ -44,7 +44,8 @@ namespace WeddingStoreMoblie.ViewModels
         #region Constructor
         public ThongTinMauViewModel(string maHD)
         {
-            isFirst = true;
+            //isFirst = true;
+            Constant.isNewMau = true;
             _maHD = maHD;
             //GetData(maHD).GetAwaiter();
         }
@@ -77,20 +78,23 @@ namespace WeddingStoreMoblie.ViewModels
         #region Methods
         public async Task GetData()
         {
-            Device.BeginInvokeOnMainThread(() =>
+            if (Constant.isNewMau)
             {
-                isBusy = true;
-            });
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    isBusy = true;
+                });
 
-            _showMenu = false;
-            _thongTinChiTietHD = new MockThongTinChiTietHoaDonRepository();
-            LstThongTinChiTietHoaDon = await _thongTinChiTietHD.GetThongTinChiTietHoaDon(_maHD);
-            isFirst = false;
+                _showMenu = false;
+                _thongTinChiTietHD = new MockThongTinChiTietHoaDonRepository();
+                LstThongTinChiTietHoaDon = await _thongTinChiTietHD.GetThongTinChiTietHoaDon(_maHD);
 
-            Device.BeginInvokeOnMainThread(() =>
-            {
-                isBusy = false;
-            });
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    isBusy = false;
+                });
+                Constant.isNewMau = false;
+            }
         }
         private void ThemChiTiet()
         {

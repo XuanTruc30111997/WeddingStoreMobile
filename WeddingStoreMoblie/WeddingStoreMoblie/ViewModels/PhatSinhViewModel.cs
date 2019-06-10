@@ -57,8 +57,7 @@ namespace WeddingStoreMoblie.ViewModels
         #region Constructors
         public PhatSinhViewModel(string maHD)
         {
-            isFirst = true;
-            Constant.isNewPS = false;
+            Constant.isNewPS = true;
             _maHD = maHD;
             //GetData(_maHD).GetAwaiter();
         }
@@ -91,30 +90,35 @@ namespace WeddingStoreMoblie.ViewModels
         #region Methods
         public async Task GetData()
         {
-            Device.BeginInvokeOnMainThread(() => {
-                isBusy = true;
-            });
-
-            var t1 = Task.Run(async () =>
+            if (Constant.isNewPS)
             {
-                await GetThongTinHoaDon();
-            });
-            var t2 = Task.Run(async () =>
-            {
-                await GetDanhSachPhatSinh();
-            });
-            await Task.WhenAll(t1, t2);
-            isFirst = false;
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    isBusy = true;
+                });
 
-            Device.BeginInvokeOnMainThread(() => {
-                isBusy = false;
-            });
+                var t1 = Task.Run(async () =>
+                {
+                    await GetThongTinHoaDon();
+                });
+                var t2 = Task.Run(async () =>
+                {
+                    await GetDanhSachPhatSinh();
+                });
+                await Task.WhenAll(t1, t2);
+
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    isBusy = false;
+                });
+                Constant.isNewPS = false;
+            }
         }
 
         public async Task GetThongTinHoaDon()
         {
             _myHoaDon = await hoaDon.GetById(_maHD);
-            Constant.isNewPS = false;
+            Constant.isNewTinhTrang = false;
             Console.WriteLine("Tình trạng hóa đơn: " + _myHoaDon.TinhTrang);
         }
 

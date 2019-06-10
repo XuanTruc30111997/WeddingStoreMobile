@@ -137,6 +137,7 @@ namespace WeddingStoreMoblie.ViewModels
                         if (result)
                         {
                             Constant.isNewDanhSachVatLieu = true;
+                            Constant.isNewMau = true;
                             ChinhSua().GetAwaiter();
                             // Update kho sản phẩm ảo
                             SanPhamAo mySpAo = _lstAo.FirstOrDefault(sp => sp.MaSP == _selectedMau.MaSP);
@@ -173,6 +174,7 @@ namespace WeddingStoreMoblie.ViewModels
                 if (result)
                 {
                     Constant.isNewDanhSachVatLieu = true;
+                    Constant.isNewMau = true;
                     bool response = await chiTietHoaDon.DeleteDataAsync(new ChiTietHoaDonModel
                     {
                         MaHD = _maHD,

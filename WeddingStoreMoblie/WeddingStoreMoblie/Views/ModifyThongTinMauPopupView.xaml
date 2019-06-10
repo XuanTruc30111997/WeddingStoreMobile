@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WeddingStoreMoblie.Views.ModifyThongTinMauPopupView"
-             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
-                 xmlns:animation="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup">
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="WeddingStoreMoblie.Views.ModifyThongTinMauPopupView"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:animation="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 xmlns:markEx="clr-namespace:WeddingStoreMoblie.MarkupExtensions">
     <pages:PopupPage.Animation>
         <animation:ScaleAnimation DurationIn="400"
                                   DurationOut="300"
@@ -15,25 +16,26 @@
                                   ScaleIn="1.2"
                                   ScaleOut="0.8"/>
     </pages:PopupPage.Animation>
-    <AbsoluteLayout Padding="24" Margin="24" BackgroundColor="#EB9898">
+    <AbsoluteLayout Padding="24" Margin="24">
         <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
                                IsVisible="{Binding isBusy,Mode=TwoWay}"
-                               IsRunning="{Binding isBusy,Mode=TwoWay}"
+                               IsRunning="{Binding isBusy,Mode=TwoWay}" Color="Black"
                                AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
+        <Image Source="{markEx:EmbeddedImage ModifyChiTietHoaDonBackground.jpg}" 
+                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.8"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
         
-        <Grid Padding="5" HorizontalOptions="Center" VerticalOptions="Center">
+        <Grid HorizontalOptions="Center" VerticalOptions="Center" Padding="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
                 <RowDefinition/>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Text="Danh sách mẫu trong hóa đơn"/>
+            <Label Grid.Row="0" Text="Danh sách mẫu trong hóa đơn" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
 
-            <ListView Grid.Row="1"
-                  ItemsSource="{Binding LstThongTinMau}"
-                  HasUnevenRows="True"
-                  SelectedItem="{Binding SelectedMau}">
+            <ListView Grid.Row="1" ItemsSource="{Binding LstThongTinMau}" HasUnevenRows="True"
+                      SelectedItem="{Binding SelectedMau}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -42,7 +44,7 @@
                                     <ColumnDefinition Width="60"/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.Column="0" Source="{Binding Hinh, Converter={StaticResource myImage}}"/>
+                                <Image Grid.Column="0" HeightRequest="50" Source="{Binding Hinh, Converter={StaticResource myImage}}"/>
                                 <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="Center">
                                     <Label Text="{Binding TenSP}" FontAttributes="Bold"/>
                                     <Label Text="{Binding SoLuong, StringFormat='Số lượng: {0:0,0}'}"/>

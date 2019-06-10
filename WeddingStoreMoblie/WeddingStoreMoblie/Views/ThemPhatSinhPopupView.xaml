@@ -21,57 +21,60 @@
     <pages:PopupPage.Resources>
         <converter:ConvertBoolToBrush x:Key="isNhap"/>
     </pages:PopupPage.Resources>
-    
+
     <pages:PopupPage.Content>
-        <AbsoluteLayout>
+        <AbsoluteLayout Margin="25" VerticalOptions="Center">
             <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
                                IsVisible="{Binding isBusy,Mode=TwoWay}"
-                               IsRunning="{Binding isBusy,Mode=TwoWay}"
+                               IsRunning="{Binding isBusy,Mode=TwoWay}" Color="Black"
                                AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
             <Image Source="{markEx:EmbeddedImage ThemPhatSinhBackground.jpg}" 
-                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
+                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.8"
                    AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
-            <StackLayout
-                 Padding="24"
-                 Margin="24"
-                 Orientation="Vertical"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center">
-                <Label Text="-- Chọn Vật Liệu --" TextColor="Brown" FontSize="Medium"/>
-                <ListView ItemsSource="{Binding LstVatLieu}"
-                  SelectedItem="{Binding SelectedVL}" 
-                  HasUnevenRows="True">
+            <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Text="-- Chọn Vật Liệu --" TextColor="Brown" FontSize="Medium" Margin="15"/>
+                <ListView ItemsSource="{Binding LstVatLieu}" SelectedItem="{Binding SelectedVL}" 
+                          HasUnevenRows="True" Grid.Row="1" Margin="5">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Grid Padding="5" HorizontalOptions="Center">
+                                <Grid Margin="5" HeightRequest="100">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="5"/>
                                     </Grid.ColumnDefinitions>
-                                    <Image Source="{Binding AnhMoTa,Converter={StaticResource myImage}}" 
-                                   WidthRequest="50" HeightRequest="50" Grid.Column="0"/>
+                                    <Image Source="{Binding AnhMoTa, Converter={StaticResource myImage}}" Grid.Column="0"
+                                           HeightRequest="50"/>
                                     <Grid Grid.Column="1">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition/>
-                                            <ColumnDefinition/>
-                                        </Grid.ColumnDefinitions>
-                                        <Label Text="{Binding SoLuongTon, StringFormat='Số lượng tồn: {0:0}'}" Grid.Column="0"/>
-                                        <Label Text="{Binding GiaTien,StringFormat=' {0:0,0.0} VNĐ'}" Grid.Column="1"/>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding TenVL}" FontSize="Medium" FontAttributes="Bold" Grid.Row="0"/>
+                                        <Label Text="{Binding SoLuongTon, StringFormat='Số lượng tồn: {0:0}'}" Grid.Row="1"/>
+                                        <Label Text="{Binding GiaTien,StringFormat=' {0:0,0.0} VNĐ'}" Grid.Row="2"/>
+
                                     </Grid>
-                                    <Frame Grid.Column="2" BackgroundColor="{Binding IsNhap, Converter={StaticResource isNhap}}"/>
+                                    <Frame Grid.Column="2" BackgroundColor="{Binding IsNhap, Converter={StaticResource isNhap}}"
+                                           HorizontalOptions="End"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" Grid.Row="2" Margin="5">
                     <Entry Placeholder="Số lượng" Text="{Binding soLuong}"/>
-                    <Button Text="Thêm" Command="{Binding ThemCommand}" BackgroundColor="DodgerBlue"/>
+                    <Button Text="Thêm" Command="{Binding ThemCommand}" BackgroundColor="#81EB47"/>
                     <Button Text="Done" Command="{Binding DoneCommand}" BackgroundColor="#68E477"/>
                 </StackLayout>
-            </StackLayout>
+            </Grid>
         </AbsoluteLayout>
     </pages:PopupPage.Content>
 </pages:PopupPage>

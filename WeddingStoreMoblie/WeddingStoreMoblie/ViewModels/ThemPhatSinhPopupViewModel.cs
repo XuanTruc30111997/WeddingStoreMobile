@@ -130,6 +130,7 @@ namespace WeddingStoreMoblie.ViewModels
                         if (result)
                         {
                             Constant.isNewDanhSachVatLieu = true;
+                            Constant.isNewPS = true;
                             List<PhatSinhModel> myLst = await phatSinh.GetByIdHD(_maHD).ConfigureAwait(false);
                             bool response;
                             bool isExist = false;

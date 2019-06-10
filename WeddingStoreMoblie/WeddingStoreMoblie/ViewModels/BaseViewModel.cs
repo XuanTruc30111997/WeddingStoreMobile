@@ -45,16 +45,16 @@ namespace WeddingStoreMoblie.ViewModels
             }
         }
 
-        private bool _isFirst { get; set; }
-        public bool isFirst
-        {
-            get => _isFirst;
-            set
-            {
-                _isFirst = value;
-                OnPropertyChanged();
-            }
-        }
+        //private bool _isFirst { get; set; }
+        //public bool isFirst
+        //{
+        //    get => _isFirst;
+        //    set
+        //    {
+        //        _isFirst = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
         #endregion
 

@@ -31,11 +31,13 @@
     <None Remove="Images\logout.png" />
     <None Remove="Images\MasterBackground.jpg" />
     <None Remove="Images\modify.png" />
+    <None Remove="Images\ModifyChiTietHoaDonBackground.jpg" />
     <None Remove="Images\nhanvien.png" />
     <None Remove="Images\noimage.png" />
     <None Remove="Images\PhanCongbackground.png" />
     <None Remove="Images\PhatSinhBackground.jpg" />
     <None Remove="Images\ThaoDo.png" />
+    <None Remove="Images\ThemChiTietHoaDonBackground.jpg" />
     <None Remove="Images\ThemPhatSinhBackground.jpg" />
     <None Remove="Images\ThongTinBackground.jpg" />
     <None Remove="Images\ThongTinMauBackground.jpg" />
@@ -66,11 +68,13 @@
     <EmbeddedResource Include="Images\logout.png" />
     <EmbeddedResource Include="Images\MasterBackground.jpg" />
     <EmbeddedResource Include="Images\modify.png" />
+    <EmbeddedResource Include="Images\ModifyChiTietHoaDonBackground.jpg" />
     <EmbeddedResource Include="Images\nhanvien.png" />
     <EmbeddedResource Include="Images\noimage.png" />
     <EmbeddedResource Include="Images\PhanCongbackground.png" />
     <EmbeddedResource Include="Images\PhatSinhBackground.jpg" />
     <EmbeddedResource Include="Images\ThaoDo.png" />
+    <EmbeddedResource Include="Images\ThemChiTietHoaDonBackground.jpg" />
     <EmbeddedResource Include="Images\ThemPhatSinhBackground.jpg" />
     <EmbeddedResource Include="Images\ThongTinBackground.jpg" />
     <EmbeddedResource Include="Images\ThongTinMauBackground.jpg" />

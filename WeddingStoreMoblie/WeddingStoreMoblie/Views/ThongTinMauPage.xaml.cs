@@ -39,10 +39,7 @@ namespace WeddingStoreMoblie.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            if (myVM.isFirst)
-            {
-                await myVM.GetData();
-            }
+            await myVM.GetData();
         }
     }
 }
