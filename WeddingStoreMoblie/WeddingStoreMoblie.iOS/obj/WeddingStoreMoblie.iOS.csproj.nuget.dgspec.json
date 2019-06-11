@@ -48,7 +48,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[3.6.0.264807, )"
+              "version": "[4.0.0.482894, )"
             }
           }
         }
@@ -124,11 +124,7 @@
             },
             "Syncfusion.Xamarin.SfListView": {
               "target": "Package",
-              "version": "[17.1.0.48, )"
-            },
-            "ThriveGmbH.BottomNavigationBar.XF": {
-              "target": "Package",
-              "version": "[1.0.2, )"
+              "version": "[17.1.0.50, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -136,7 +132,11 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.0.0.425677, )"
+              "version": "[4.0.0.482894, )"
+            },
+            "Xamarin.Forms.Behavior": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "imports": [

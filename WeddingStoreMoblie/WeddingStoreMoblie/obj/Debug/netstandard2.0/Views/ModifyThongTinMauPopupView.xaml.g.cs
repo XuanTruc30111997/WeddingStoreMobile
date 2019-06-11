@@ -16,7 +16,7 @@ namespace WeddingStoreMoblie.Views {
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\ModifyThongTinMauPopupView.xaml")]
     public partial class ModifyThongTinMauPopupView : global::Rg.Plugins.Popup.Pages.PopupPage {
         
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ModifyThongTinMauPopupView));
         }

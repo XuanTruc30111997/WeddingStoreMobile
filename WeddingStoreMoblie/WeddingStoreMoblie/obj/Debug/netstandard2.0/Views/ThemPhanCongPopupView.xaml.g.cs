@@ -16,7 +16,7 @@ namespace WeddingStoreMoblie.Views {
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\ThemPhanCongPopupView.xaml")]
     public partial class ThemPhanCongPopupView : global::Rg.Plugins.Popup.Pages.PopupPage {
         
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ThemPhanCongPopupView));
         }

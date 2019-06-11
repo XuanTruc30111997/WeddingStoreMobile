@@ -1,11 +1,9 @@
-BottomBar.Droid
-BottomBar.XamarinForms
-BottomNavigationBar
 FormsViewGroup
 Microsoft.AspNet.SignalR.Client
 Newtonsoft.Json
 Rg.Plugins.Popup
 Rg.Plugins.Popup.Droid
+SweetBehavior
 Syncfusion.Core.XForms.Android
 Syncfusion.Core.XForms
 Syncfusion.DataSource.Portable

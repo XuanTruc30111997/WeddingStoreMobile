@@ -37,7 +37,7 @@
           "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
         }
       },
-      "Syncfusion.Licensing/17.1.0.48": {
+      "Syncfusion.Licensing/17.1.0.50": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
@@ -46,10 +46,10 @@
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Core/17.1.0.48": {
+      "Syncfusion.Xamarin.Core/17.1.0.50": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Licensing": "17.1.0.48"
+          "Syncfusion.Licensing": "17.1.0.50"
         },
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll": {},
@@ -60,7 +60,7 @@
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.DataSource/17.1.0.48": {
+      "Syncfusion.Xamarin.DataSource/17.1.0.50": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
@@ -69,7 +69,7 @@
           "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.GridCommon/17.1.0.48": {
+      "Syncfusion.Xamarin.GridCommon/17.1.0.50": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
@@ -78,12 +78,12 @@
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfListView/17.1.0.48": {
+      "Syncfusion.Xamarin.SfListView/17.1.0.50": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "17.1.0.48",
-          "Syncfusion.Xamarin.DataSource": "17.1.0.48",
-          "Syncfusion.Xamarin.GridCommon": "17.1.0.48",
+          "Syncfusion.Xamarin.Core": "17.1.0.50",
+          "Syncfusion.Xamarin.DataSource": "17.1.0.50",
+          "Syncfusion.Xamarin.GridCommon": "17.1.0.50",
           "Xamarin.Forms": "3.1.0.697729"
         },
         "compile": {
@@ -104,15 +104,6 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
-        }
-      },
       "Xamarin.Essentials/1.0.1": {
         "type": "package",
         "dependencies": {
@@ -125,7 +116,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/3.6.0.264807": {
+      "Xamarin.Forms/4.0.0.482894": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -203,8 +194,8 @@
           "lib/Xamarin.iOS10/pl/Xamarin.Forms.Platform.iOS.resources.dll": {
             "locale": "pl"
           },
-          "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Platform.iOS.resources.dll": {
-            "locale": "pt-BR"
+          "lib/Xamarin.iOS10/pt-br/Xamarin.Forms.Platform.iOS.resources.dll": {
+            "locale": "pt-br"
           },
           "lib/Xamarin.iOS10/pt/Xamarin.Forms.Platform.iOS.resources.dll": {
             "locale": "pt"
@@ -248,6 +239,18 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.Behavior/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.121934"
+        },
+        "compile": {
+          "lib/netstandard2.0/SweetBehavior.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SweetBehavior.dll": {}
+        }
+      },
       "WeddingStoreMoblie/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -255,10 +258,10 @@
           "Microsoft.AspNet.SignalR.Client": "2.4.1",
           "Newtonsoft.Json": "12.0.2",
           "Rg.Plugins.Popup": "1.1.5.188",
-          "Syncfusion.Xamarin.SfListView": "17.1.0.48",
-          "ThriveGmbH.BottomNavigationBar.XF": "1.0.2",
+          "Syncfusion.Xamarin.SfListView": "17.1.0.50",
           "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "4.0.0.425677"
+          "Xamarin.Forms": "4.0.0.482894",
+          "Xamarin.Forms.Behavior": "1.0.0"
         },
         "compile": {
           "bin/placeholder/WeddingStoreMoblie.dll": {}
@@ -304,7 +307,7 @@
           "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
         }
       },
-      "Syncfusion.Licensing/17.1.0.48": {
+      "Syncfusion.Licensing/17.1.0.50": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
@@ -313,10 +316,10 @@
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Core/17.1.0.48": {
+      "Syncfusion.Xamarin.Core/17.1.0.50": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Licensing": "17.1.0.48"
+          "Syncfusion.Licensing": "17.1.0.50"
         },
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll": {},
@@ -327,7 +330,7 @@
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.DataSource/17.1.0.48": {
+      "Syncfusion.Xamarin.DataSource/17.1.0.50": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
@@ -336,7 +339,7 @@
           "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.GridCommon/17.1.0.48": {
+      "Syncfusion.Xamarin.GridCommon/17.1.0.50": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
@@ -345,12 +348,12 @@
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfListView/17.1.0.48": {
+      "Syncfusion.Xamarin.SfListView/17.1.0.50": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "17.1.0.48",
-          "Syncfusion.Xamarin.DataSource": "17.1.0.48",
-          "Syncfusion.Xamarin.GridCommon": "17.1.0.48",
+          "Syncfusion.Xamarin.Core": "17.1.0.50",
+          "Syncfusion.Xamarin.DataSource": "17.1.0.50",
+          "Syncfusion.Xamarin.GridCommon": "17.1.0.50",
           "Xamarin.Forms": "3.1.0.697729"
         },
         "compile": {
@@ -371,15 +374,6 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
-        }
-      },
       "Xamarin.Essentials/1.0.1": {
         "type": "package",
         "dependencies": {
@@ -392,7 +386,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/3.6.0.264807": {
+      "Xamarin.Forms/4.0.0.482894": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -470,8 +464,8 @@
           "lib/Xamarin.iOS10/pl/Xamarin.Forms.Platform.iOS.resources.dll": {
             "locale": "pl"
           },
-          "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Platform.iOS.resources.dll": {
-            "locale": "pt-BR"
+          "lib/Xamarin.iOS10/pt-br/Xamarin.Forms.Platform.iOS.resources.dll": {
+            "locale": "pt-br"
           },
           "lib/Xamarin.iOS10/pt/Xamarin.Forms.Platform.iOS.resources.dll": {
             "locale": "pt"
@@ -515,6 +509,18 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.Behavior/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.121934"
+        },
+        "compile": {
+          "lib/netstandard2.0/SweetBehavior.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SweetBehavior.dll": {}
+        }
+      },
       "WeddingStoreMoblie/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -522,10 +528,10 @@
           "Microsoft.AspNet.SignalR.Client": "2.4.1",
           "Newtonsoft.Json": "12.0.2",
           "Rg.Plugins.Popup": "1.1.5.188",
-          "Syncfusion.Xamarin.SfListView": "17.1.0.48",
-          "ThriveGmbH.BottomNavigationBar.XF": "1.0.2",
+          "Syncfusion.Xamarin.SfListView": "17.1.0.50",
           "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "4.0.0.425677"
+          "Xamarin.Forms": "4.0.0.482894",
+          "Xamarin.Forms.Behavior": "1.0.0"
         },
         "compile": {
           "bin/placeholder/WeddingStoreMoblie.dll": {}
@@ -571,7 +577,7 @@
           "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
         }
       },
-      "Syncfusion.Licensing/17.1.0.48": {
+      "Syncfusion.Licensing/17.1.0.50": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
@@ -580,10 +586,10 @@
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Core/17.1.0.48": {
+      "Syncfusion.Xamarin.Core/17.1.0.50": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Licensing": "17.1.0.48"
+          "Syncfusion.Licensing": "17.1.0.50"
         },
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll": {},
@@ -594,7 +600,7 @@
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.DataSource/17.1.0.48": {
+      "Syncfusion.Xamarin.DataSource/17.1.0.50": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
@@ -603,7 +609,7 @@
           "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.GridCommon/17.1.0.48": {
+      "Syncfusion.Xamarin.GridCommon/17.1.0.50": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
@@ -612,12 +618,12 @@
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfListView/17.1.0.48": {
+      "Syncfusion.Xamarin.SfListView/17.1.0.50": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "17.1.0.48",
-          "Syncfusion.Xamarin.DataSource": "17.1.0.48",
-          "Syncfusion.Xamarin.GridCommon": "17.1.0.48",
+          "Syncfusion.Xamarin.Core": "17.1.0.50",
+          "Syncfusion.Xamarin.DataSource": "17.1.0.50",
+          "Syncfusion.Xamarin.GridCommon": "17.1.0.50",
           "Xamarin.Forms": "3.1.0.697729"
         },
         "compile": {
@@ -638,15 +644,6 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
-        }
-      },
       "Xamarin.Essentials/1.0.1": {
         "type": "package",
         "dependencies": {
@@ -659,7 +656,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/3.6.0.264807": {
+      "Xamarin.Forms/4.0.0.482894": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -737,8 +734,8 @@
           "lib/Xamarin.iOS10/pl/Xamarin.Forms.Platform.iOS.resources.dll": {
             "locale": "pl"
           },
-          "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Platform.iOS.resources.dll": {
-            "locale": "pt-BR"
+          "lib/Xamarin.iOS10/pt-br/Xamarin.Forms.Platform.iOS.resources.dll": {
+            "locale": "pt-br"
           },
           "lib/Xamarin.iOS10/pt/Xamarin.Forms.Platform.iOS.resources.dll": {
             "locale": "pt"
@@ -782,6 +779,18 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.Behavior/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.121934"
+        },
+        "compile": {
+          "lib/netstandard2.0/SweetBehavior.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SweetBehavior.dll": {}
+        }
+      },
       "WeddingStoreMoblie/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -789,10 +798,10 @@
           "Microsoft.AspNet.SignalR.Client": "2.4.1",
           "Newtonsoft.Json": "12.0.2",
           "Rg.Plugins.Popup": "1.1.5.188",
-          "Syncfusion.Xamarin.SfListView": "17.1.0.48",
-          "ThriveGmbH.BottomNavigationBar.XF": "1.0.2",
+          "Syncfusion.Xamarin.SfListView": "17.1.0.50",
           "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "4.0.0.425677"
+          "Xamarin.Forms": "4.0.0.482894",
+          "Xamarin.Forms.Behavior": "1.0.0"
         },
         "compile": {
           "bin/placeholder/WeddingStoreMoblie.dll": {}
@@ -838,7 +847,7 @@
           "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
         }
       },
-      "Syncfusion.Licensing/17.1.0.48": {
+      "Syncfusion.Licensing/17.1.0.50": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
@@ -847,10 +856,10 @@
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Core/17.1.0.48": {
+      "Syncfusion.Xamarin.Core/17.1.0.50": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Licensing": "17.1.0.48"
+          "Syncfusion.Licensing": "17.1.0.50"
         },
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll": {},
@@ -861,7 +870,7 @@
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.DataSource/17.1.0.48": {
+      "Syncfusion.Xamarin.DataSource/17.1.0.50": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
@@ -870,7 +879,7 @@
           "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.GridCommon/17.1.0.48": {
+      "Syncfusion.Xamarin.GridCommon/17.1.0.50": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
@@ -879,12 +888,12 @@
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfListView/17.1.0.48": {
+      "Syncfusion.Xamarin.SfListView/17.1.0.50": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "17.1.0.48",
-          "Syncfusion.Xamarin.DataSource": "17.1.0.48",
-          "Syncfusion.Xamarin.GridCommon": "17.1.0.48",
+          "Syncfusion.Xamarin.Core": "17.1.0.50",
+          "Syncfusion.Xamarin.DataSource": "17.1.0.50",
+          "Syncfusion.Xamarin.GridCommon": "17.1.0.50",
           "Xamarin.Forms": "3.1.0.697729"
         },
         "compile": {
@@ -905,15 +914,6 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
-        }
-      },
       "Xamarin.Essentials/1.0.1": {
         "type": "package",
         "dependencies": {
@@ -926,7 +926,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/3.6.0.264807": {
+      "Xamarin.Forms/4.0.0.482894": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -1004,8 +1004,8 @@
           "lib/Xamarin.iOS10/pl/Xamarin.Forms.Platform.iOS.resources.dll": {
             "locale": "pl"
           },
-          "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Platform.iOS.resources.dll": {
-            "locale": "pt-BR"
+          "lib/Xamarin.iOS10/pt-br/Xamarin.Forms.Platform.iOS.resources.dll": {
+            "locale": "pt-br"
           },
           "lib/Xamarin.iOS10/pt/Xamarin.Forms.Platform.iOS.resources.dll": {
             "locale": "pt"
@@ -1049,6 +1049,18 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.Behavior/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.121934"
+        },
+        "compile": {
+          "lib/netstandard2.0/SweetBehavior.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SweetBehavior.dll": {}
+        }
+      },
       "WeddingStoreMoblie/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1056,10 +1068,10 @@
           "Microsoft.AspNet.SignalR.Client": "2.4.1",
           "Newtonsoft.Json": "12.0.2",
           "Rg.Plugins.Popup": "1.1.5.188",
-          "Syncfusion.Xamarin.SfListView": "17.1.0.48",
-          "ThriveGmbH.BottomNavigationBar.XF": "1.0.2",
+          "Syncfusion.Xamarin.SfListView": "17.1.0.50",
           "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "4.0.0.425677"
+          "Xamarin.Forms": "4.0.0.482894",
+          "Xamarin.Forms.Behavior": "1.0.0"
         },
         "compile": {
           "bin/placeholder/WeddingStoreMoblie.dll": {}
@@ -1155,10 +1167,10 @@
         "rg.plugins.popup.nuspec"
       ]
     },
-    "Syncfusion.Licensing/17.1.0.48": {
-      "sha512": "xIlyScb+t+9D7hmf9G+83HFVCrhwFFCZBpLj3OD377TEuBUKRVQFK88vlGG2KRtVB4oBiMCjKC4yZutLNmsvig==",
+    "Syncfusion.Licensing/17.1.0.50": {
+      "sha512": "sDtpkEpJSTvJOiQxrxe8b9erLQaK//wRzRhp+r9Bm6h1dQyGBVAnd7VjSXyUHxPvXgAZ/e/n9BDwR9gpibPa7Q==",
       "type": "package",
-      "path": "syncfusion.licensing/17.1.0.48",
+      "path": "syncfusion.licensing/17.1.0.50",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1178,14 +1190,14 @@
         "lib/netstandard2.0/Syncfusion.Licensing.dll",
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
         "lib/uap10.0/Syncfusion.Licensing.dll",
-        "syncfusion.licensing.17.1.0.48.nupkg.sha512",
+        "syncfusion.licensing.17.1.0.50.nupkg.sha512",
         "syncfusion.licensing.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.Core/17.1.0.48": {
-      "sha512": "ZSGV2fye4IrNfaQfwcT1hbAYp5SyPjuUccOoohSCK+PomlFKZf8YsXJsGtHrFsUn24apmJuhoPJcPBN77sUqMA==",
+    "Syncfusion.Xamarin.Core/17.1.0.50": {
+      "sha512": "Ky1hCn/sHNLtUIKDCmATrftwdyXpu2NXtaYmM4KOZnCZ+4wfKywk8r7W0bMndi6D+C1txkdeQFOMomch+Jq9OA==",
       "type": "package",
-      "path": "syncfusion.xamarin.core/17.1.0.48",
+      "path": "syncfusion.xamarin.core/17.1.0.50",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1208,14 +1220,14 @@
         "lib/uap10.0/Syncfusion.Core.XForms.UWP/ToggleIcons/ToggleVisibleIcon.xaml",
         "lib/uap10.0/Syncfusion.Core.XForms.dll",
         "lib/uap10.0/Syncfusion.Core.XForms.xml",
-        "syncfusion.xamarin.core.17.1.0.48.nupkg.sha512",
+        "syncfusion.xamarin.core.17.1.0.50.nupkg.sha512",
         "syncfusion.xamarin.core.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.DataSource/17.1.0.48": {
-      "sha512": "gDZcMP77TM9DuAUWEB/QWsbIkQjU96ulyaQdgvd/jBvvIEaYQVW2z4rB25rQgEDQXr7quPEbvtHLWQvUPKxRvg==",
+    "Syncfusion.Xamarin.DataSource/17.1.0.50": {
+      "sha512": "55h/DLe0wKnl4+CpWokIePe3ETjcChN9a4rWW9MmfAKGtmYNYipwfuX4ZruxR7uHdTE51I3Ri1klTWli9PjRCg==",
       "type": "package",
-      "path": "syncfusion.xamarin.datasource/17.1.0.48",
+      "path": "syncfusion.xamarin.datasource/17.1.0.50",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1229,14 +1241,14 @@
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.DataSource.Portable.dll",
         "lib/uap10.0/Syncfusion.DataSource.Portable.XML",
         "lib/uap10.0/Syncfusion.DataSource.Portable.dll",
-        "syncfusion.xamarin.datasource.17.1.0.48.nupkg.sha512",
+        "syncfusion.xamarin.datasource.17.1.0.50.nupkg.sha512",
         "syncfusion.xamarin.datasource.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.GridCommon/17.1.0.48": {
-      "sha512": "xONPJsq4QQHXw0H52olRniQUxvX6WFSsquk/5bCghNzu6axp83r51l7l0dQkIEwi8l7QqM3Osi7RvFXp/OBZkw==",
+    "Syncfusion.Xamarin.GridCommon/17.1.0.50": {
+      "sha512": "Goa7mwiOLE3QsCHSRJGYR01EfydRUQ1cFr7qSY9PoxLlNCDSY14E7AQJ9UDPX24QcqWP/5lfqknVH8FU2oiu3Q==",
       "type": "package",
-      "path": "syncfusion.xamarin.gridcommon/17.1.0.48",
+      "path": "syncfusion.xamarin.gridcommon/17.1.0.50",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1252,14 +1264,14 @@
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.GridCommon.Portable.dll",
         "lib/uap10.0/Syncfusion.GridCommon.Portable.XML",
         "lib/uap10.0/Syncfusion.GridCommon.Portable.dll",
-        "syncfusion.xamarin.gridcommon.17.1.0.48.nupkg.sha512",
+        "syncfusion.xamarin.gridcommon.17.1.0.50.nupkg.sha512",
         "syncfusion.xamarin.gridcommon.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.SfListView/17.1.0.48": {
-      "sha512": "3+sQ+kEonW7CbfqJeQqUyVqFJVJaYxTThtH7N6uqepGOchLdyQcXU/UCRTtRZA6ShrsjFw4rJEW090GpxZ/5xA==",
+    "Syncfusion.Xamarin.SfListView/17.1.0.50": {
+      "sha512": "/MqrmZOYTjSbL9joPcMC8+tXTied1+8kUbAGjEPFJhVTh9jrRjnleIzh0x/wLwL8OYFm2jPYog0tdSI8+imyGg==",
       "type": "package",
-      "path": "syncfusion.xamarin.sflistview/17.1.0.48",
+      "path": "syncfusion.xamarin.sflistview/17.1.0.50",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1273,7 +1285,7 @@
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfListView.XForms.dll",
         "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll",
         "lib/uap10.0/Syncfusion.SfListView.XForms.dll",
-        "syncfusion.xamarin.sflistview.17.1.0.48.nupkg.sha512",
+        "syncfusion.xamarin.sflistview.17.1.0.50.nupkg.sha512",
         "syncfusion.xamarin.sflistview.nuspec"
       ]
     },
@@ -1324,21 +1336,6 @@
         "version.txt"
       ]
     },
-    "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
-      "sha512": "CAxjraz7v27mWxrChvLLggDRq5Icf3OA0IL3lpGY+rfUGH488kZzBB3WJmfbgh7q5yfBbva51Iuv4tFleepV2A==",
-      "type": "package",
-      "path": "thrivegmbh.bottomnavigationbar.xf/1.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid10/BottomBar.Droid.dll",
-        "lib/MonoAndroid10/BottomBar.XamarinForms.dll",
-        "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll",
-        "lib/portable-net45+win8+wpa81/BottomBar.XamarinForms.dll",
-        "thrivegmbh.bottomnavigationbar.xf.1.0.2.nupkg.sha512",
-        "thrivegmbh.bottomnavigationbar.xf.nuspec"
-      ]
-    },
     "Xamarin.Essentials/1.0.1": {
       "sha512": "cGSje2LlYsCdscPt2zAG4e0Zzr08zc21Cj4DAMub3GR37lc/vzAVwGxco8NeCSzcZs147wYbXkFCXwOr4LUO9A==",
       "type": "package",
@@ -1373,10 +1370,10 @@
         "xamarin.essentials.nuspec"
       ]
     },
-    "Xamarin.Forms/3.6.0.264807": {
-      "sha512": "PbnXpStyxNYJzPrXXMW17F4YeMsFAs6YT9LL2vxObDWCGtaKkLia4UyBPF3Qbhy+lQPeap/ijV1Rlvasp4DFiA==",
+    "Xamarin.Forms/4.0.0.482894": {
+      "sha512": "2K1/jCyor3CYYxEBMDMrIUhTOD0sxiipdmJTbj9NYBnV3iJKblnBRWPoi06Is4cSoXC7G6sWSuF2b6cYxigEjg==",
       "type": "package",
-      "path": "xamarin.forms/3.6.0.264807",
+      "path": "xamarin.forms/4.0.0.482894",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1414,6 +1411,26 @@
         "lib/MonoAndroid81/Xamarin.Forms.Xaml.dll",
         "lib/MonoAndroid81/Xamarin.Forms.Xaml.pdb",
         "lib/MonoAndroid81/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid81/de/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid81/de/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid81/es/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid81/es/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid81/fr/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid81/fr/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid81/it/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid81/it/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid81/ja/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid81/ja/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid81/ko/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid81/ko/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid81/pt-br/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid81/pt-br/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid81/ru/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid81/ru/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid81/zh-Hans/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid81/zh-Hans/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid81/zh-Hant/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid81/zh-Hant/Xamarin.Forms.Xaml.xml",
         "lib/MonoAndroid90/Design/Xamarin.Forms.Core.Design.dll",
         "lib/MonoAndroid90/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/MonoAndroid90/FormsViewGroup.dll",
@@ -1427,6 +1444,26 @@
         "lib/MonoAndroid90/Xamarin.Forms.Xaml.dll",
         "lib/MonoAndroid90/Xamarin.Forms.Xaml.pdb",
         "lib/MonoAndroid90/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid90/de/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid90/de/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid90/es/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid90/es/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid90/fr/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid90/fr/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid90/it/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid90/it/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid90/ja/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid90/ja/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid90/ko/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid90/ko/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid90/pt-br/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid90/pt-br/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid90/ru/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid90/ru/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid90/zh-Hans/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid90/zh-Hans/Xamarin.Forms.Xaml.xml",
+        "lib/MonoAndroid90/zh-Hant/Xamarin.Forms.Core.xml",
+        "lib/MonoAndroid90/zh-Hant/Xamarin.Forms.Xaml.xml",
         "lib/Xamarin.Mac/Design/Xamarin.Forms.Core.Design.dll",
         "lib/Xamarin.Mac/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/Xamarin.Mac/Xamarin.Forms.Core.dll",
@@ -1448,27 +1485,43 @@
         "lib/Xamarin.iOS10/ca/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/cs/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/da/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/de/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/de/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/de/Xamarin.Forms.Xaml.xml",
         "lib/Xamarin.iOS10/el/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/es/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/es/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/es/Xamarin.Forms.Xaml.xml",
         "lib/Xamarin.iOS10/fi/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/fr/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/fr/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/fr/Xamarin.Forms.Xaml.xml",
         "lib/Xamarin.iOS10/he/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/hi/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/hr/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/hu/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/id/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/it/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/it/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/it/Xamarin.Forms.Xaml.xml",
+        "lib/Xamarin.iOS10/ja/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/ja/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/ja/Xamarin.Forms.Xaml.xml",
+        "lib/Xamarin.iOS10/ko/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/ko/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/ko/Xamarin.Forms.Xaml.xml",
         "lib/Xamarin.iOS10/ms/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/nb/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/nl/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/pl/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/pt-br/Xamarin.Forms.Core.xml",
+        "lib/Xamarin.iOS10/pt-br/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/pt-br/Xamarin.Forms.Xaml.xml",
         "lib/Xamarin.iOS10/pt/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/ro/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/ru/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/ru/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/ru/Xamarin.Forms.Xaml.xml",
         "lib/Xamarin.iOS10/sk/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/sv/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/th/Xamarin.Forms.Platform.iOS.resources.dll",
@@ -1476,8 +1529,12 @@
         "lib/Xamarin.iOS10/uk/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/vi/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/zh-HK/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/zh-Hans/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/zh-Hans/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/zh-Hans/Xamarin.Forms.Xaml.xml",
+        "lib/Xamarin.iOS10/zh-Hant/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll",
+        "lib/Xamarin.iOS10/zh-Hant/Xamarin.Forms.Xaml.xml",
         "lib/netstandard1.0/Design/Xamarin.Forms.Core.Design.dll",
         "lib/netstandard1.0/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/netstandard1.0/Xamarin.Forms.Core.dll",
@@ -1496,6 +1553,26 @@
         "lib/netstandard2.0/Xamarin.Forms.Xaml.dll",
         "lib/netstandard2.0/Xamarin.Forms.Xaml.pdb",
         "lib/netstandard2.0/Xamarin.Forms.Xaml.xml",
+        "lib/netstandard2.0/de/Xamarin.Forms.Core.xml",
+        "lib/netstandard2.0/de/Xamarin.Forms.Xaml.xml",
+        "lib/netstandard2.0/es/Xamarin.Forms.Core.xml",
+        "lib/netstandard2.0/es/Xamarin.Forms.Xaml.xml",
+        "lib/netstandard2.0/fr/Xamarin.Forms.Core.xml",
+        "lib/netstandard2.0/fr/Xamarin.Forms.Xaml.xml",
+        "lib/netstandard2.0/it/Xamarin.Forms.Core.xml",
+        "lib/netstandard2.0/it/Xamarin.Forms.Xaml.xml",
+        "lib/netstandard2.0/ja/Xamarin.Forms.Core.xml",
+        "lib/netstandard2.0/ja/Xamarin.Forms.Xaml.xml",
+        "lib/netstandard2.0/ko/Xamarin.Forms.Core.xml",
+        "lib/netstandard2.0/ko/Xamarin.Forms.Xaml.xml",
+        "lib/netstandard2.0/pt-br/Xamarin.Forms.Core.xml",
+        "lib/netstandard2.0/pt-br/Xamarin.Forms.Xaml.xml",
+        "lib/netstandard2.0/ru/Xamarin.Forms.Core.xml",
+        "lib/netstandard2.0/ru/Xamarin.Forms.Xaml.xml",
+        "lib/netstandard2.0/zh-Hans/Xamarin.Forms.Core.xml",
+        "lib/netstandard2.0/zh-Hans/Xamarin.Forms.Xaml.xml",
+        "lib/netstandard2.0/zh-Hant/Xamarin.Forms.Core.xml",
+        "lib/netstandard2.0/zh-Hant/Xamarin.Forms.Xaml.xml",
         "lib/tizen40/Design/Xamarin.Forms.Core.Design.dll",
         "lib/tizen40/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/tizen40/Xamarin.Forms.Core.dll",
@@ -1534,8 +1611,20 @@
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.3.6.0.264807.nupkg.sha512",
+        "xamarin.forms.4.0.0.482894.nupkg.sha512",
         "xamarin.forms.nuspec"
+      ]
+    },
+    "Xamarin.Forms.Behavior/1.0.0": {
+      "sha512": "GO3Z01crMupgrp8S6cX/s3BCWwKuFC1ceo+ZBgpQm0xkHtgSU3LRP1rxtKAzse8kp9pkgFjGjqn9w3vojqolVQ==",
+      "type": "package",
+      "path": "xamarin.forms.behavior/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/SweetBehavior.dll",
+        "xamarin.forms.behavior.1.0.0.nupkg.sha512",
+        "xamarin.forms.behavior.nuspec"
       ]
     },
     "WeddingStoreMoblie/1.0.0": {
@@ -1548,7 +1637,7 @@
     "Xamarin.iOS,Version=v1.0": [
       "WeddingStoreMoblie >= 1.0.0",
       "Xamarin.Essentials >= 1.0.1",
-      "Xamarin.Forms >= 3.6.0.264807"
+      "Xamarin.Forms >= 4.0.0.482894"
     ]
   },
   "packageFolders": {
@@ -1599,7 +1688,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[3.6.0.264807, )"
+            "version": "[4.0.0.482894, )"
           }
         }
       }
@@ -1623,19 +1712,6 @@
       "warningLevel": 1,
       "message": "Detected package downgrade: Xamarin.Essentials from 1.1.0 to 1.0.1. Reference the package directly from the project to select a different version. \r\n WeddingStoreMoblie.iOS -> WeddingStoreMoblie -> Xamarin.Essentials (>= 1.1.0) \r\n WeddingStoreMoblie.iOS -> Xamarin.Essentials (>= 1.0.1)",
       "libraryId": "Xamarin.Essentials",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package downgrade: Xamarin.Forms from 4.0.0.425677 to 3.6.0.264807. Reference the package directly from the project to select a different version. \r\n WeddingStoreMoblie.iOS -> WeddingStoreMoblie -> Xamarin.Forms (>= 4.0.0.425677) \r\n WeddingStoreMoblie.iOS -> Xamarin.Forms (>= 3.6.0.264807)",
-      "libraryId": "Xamarin.Forms",
       "targetGraphs": [
         "Xamarin.iOS,Version=v1.0",
         "Xamarin.iOS,Version=v1.0/win",

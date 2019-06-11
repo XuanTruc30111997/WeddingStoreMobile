@@ -33,6 +33,8 @@ namespace WeddingStoreMoblie.ViewModels
             set { _Password = value; OnPropertyChanged(); }
         }
 
+        public bool IsClicked;
+
         private List<TaiKhoanModel> _LstTaiKhoan = new List<TaiKhoanModel>();
 
         #endregion
@@ -45,6 +47,7 @@ namespace WeddingStoreMoblie.ViewModels
         #region Constructors
         public LoginViewModel()
         {
+            IsClicked = false;
         }
         #endregion
 

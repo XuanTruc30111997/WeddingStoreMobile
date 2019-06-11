@@ -5,7 +5,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:markEx="clr-namespace:WeddingStoreMoblie.MarkupExtensions"
              xmlns:controls="clr-namespace:WeddingStoreMoblie.Controls"
-             xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              mc:Ignorable="d"
              x:Class="WeddingStoreMoblie.Views.DanhMucPage"
              NavigationPage.HasBackButton="False" NavigationPage.HasNavigationBar="False">
@@ -35,12 +34,10 @@
             <Image Source="{markEx:EmbeddedImage danhMucBackground.jpg}" 
                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
                    AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
-            <Image Source="{markEx:EmbeddedImage DanhMucBackgroundTop.jpg}" 
-                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
-                   AbsoluteLayout.LayoutBounds="0,0,1,200" AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional"/>
-            <Image Source="{markEx:EmbeddedImage home.png}" AbsoluteLayout.LayoutBounds=".5,100,150,120" AbsoluteLayout.LayoutFlags="XProportional"/>
-            <Label Text="Wedding Store" FontAttributes="Bold" FontSize="26"
-                   TextColor="Black" HorizontalTextAlignment="Center" AbsoluteLayout.LayoutBounds=".5,220,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+            <Image Source="{markEx:EmbeddedImage home.png}" AbsoluteLayout.LayoutBounds=".5,80,160,150" AbsoluteLayout.LayoutFlags="XProportional"
+                   x:Name="imgTop"/>
+            <Label Text="Wedding Store" FontAttributes="Bold" FontSize="26" TextColor="Black" x:Name="lblTitle"
+                   HorizontalTextAlignment="Center" AbsoluteLayout.LayoutBounds=".5,220,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
             <Grid AbsoluteLayout.LayoutBounds="0,270,1,1" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional,HeightProportional"
                   Padding="15" HorizontalOptions="Center">
                 <Grid.RowDefinitions>
@@ -51,9 +48,10 @@
                     <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
-                <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#5C89DC" Style="{StaticResource myFrame}">
+                <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#5C89DC" Style="{StaticResource myFrame}" x:Name="frameThongTin">
                     <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ThongTinCommand}"/>
+                        <!--<TapGestureRecognizer Command="{Binding ThongTinCommand}"/>-->
+                        <TapGestureRecognizer Tapped="ThongTin_Tapped"/>
                     </Frame.GestureRecognizers>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -64,9 +62,10 @@
                         <Label Text="{Binding MyNhanVien.TenNV}" Grid.Row="1" Style="{StaticResource myLabel}"/>
                     </Grid>
                 </Frame>
-                <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#5C89DC" Style="{StaticResource myFrame}">
+                <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#5C89DC" Style="{StaticResource myFrame}" x:Name="frameNhanVien">
                     <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding NhanVienCommand}"/>
+                        <!--<TapGestureRecognizer Command="{Binding NhanVienCommand}"/>-->
+                        <TapGestureRecognizer Tapped="NhanVien_Tapped"/>
                     </Frame.GestureRecognizers>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -77,9 +76,10 @@
                         <Label Text="Nhân Viên" Grid.Row="1" Style="{StaticResource myLabel}"/>
                     </Grid>
                 </Frame>
-                <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="#5C89DC" Style="{StaticResource myFrame}">
+                <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="#5C89DC" Style="{StaticResource myFrame}" x:Name="frameHoaDon">
                     <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding HoaDonCommand}"/>
+                        <!--<TapGestureRecognizer Command="{Binding HoaDonCommand}"/>-->
+                        <TapGestureRecognizer Tapped="HoaDon_Tapped"/>
                     </Frame.GestureRecognizers>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -90,9 +90,10 @@
                         <Label Text="Hóa Đơn" Grid.Row="1" Style="{StaticResource myLabel}"/>
                     </Grid>
                 </Frame>
-                <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#5C89DC" Style="{StaticResource myFrame}">
+                <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#5C89DC" Style="{StaticResource myFrame}" x:Name="frameVatLieu">
                     <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding VatLieuCommand}"/>
+                        <!--<TapGestureRecognizer Command="{Binding VatLieuCommand}"/>-->
+                        <TapGestureRecognizer Tapped="VatLieu_Tapped"/>
                     </Frame.GestureRecognizers>
                     <Grid>
                         <Grid.RowDefinitions>

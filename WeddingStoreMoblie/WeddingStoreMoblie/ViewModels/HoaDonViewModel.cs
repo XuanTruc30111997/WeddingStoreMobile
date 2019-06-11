@@ -121,7 +121,7 @@ namespace WeddingStoreMoblie.ViewModels
             SelectedThang = "Tháng " + DateTime.Now.Month.ToString();
             SelectedOption = "Ngày trang trí";
 
-            GetDataAsync().GetAwaiter();
+            //GetDataAsync().GetAwaiter();
         }
         #endregion
 

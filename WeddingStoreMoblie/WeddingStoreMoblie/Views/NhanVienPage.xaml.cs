@@ -28,9 +28,15 @@ namespace WeddingStoreMoblie.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            vm.isBusy = true;
+            await MyAnimation();
             await vm.GetData();
-            vm.isBusy = false;
+        }
+
+        async Task MyAnimation()
+        {
+            await this.ScaleTo(4, 1000);
+            await this.ScaleTo(0.1, 500, Easing.BounceIn);
+            await this.ScaleTo(1, 1000, Easing.BounceOut);
         }
     }
 }

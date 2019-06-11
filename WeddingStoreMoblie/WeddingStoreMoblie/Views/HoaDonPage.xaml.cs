@@ -22,10 +22,17 @@ namespace WeddingStoreMoblie.Views
             BindingContext = vm;
         }
 
-        //protected override async void OnAppearing()
-        //{
-        //    base.OnAppearing();
-        //    await vm.GetDataAsync();
-        //}
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await MyAnimation();
+            await vm.GetDataAsync();
+        }
+        async Task MyAnimation()
+        {
+            await this.ScaleTo(4, 1000);
+            await this.ScaleTo(0.1, 500, Easing.BounceIn);
+            await this.ScaleTo(1, 1000, Easing.BounceOut);
+        }
     }
 }

@@ -1,7 +1,4 @@
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\WeddingStoreMoblie.Android.dll
-D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\BottomBar.Droid.dll
-D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\BottomBar.XamarinForms.dll
-D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\BottomNavigationBar.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\FormsViewGroup.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\Java.Interop.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\Microsoft.AspNet.SignalR.Client.dll
@@ -10,6 +7,7 @@ D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.And
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\Newtonsoft.Json.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\Rg.Plugins.Popup.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\Rg.Plugins.Popup.Droid.dll
+D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\SweetBehavior.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\Syncfusion.Core.XForms.Android.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\Syncfusion.Core.XForms.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\Syncfusion.DataSource.Portable.dll
@@ -49,17 +47,17 @@ D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.And
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.dll
-D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Runtime.dll
-D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.ComponentModel.Composition.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\netstandard.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Data.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Transactions.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.IO.Compression.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.IO.Compression.FileSystem.dll
+D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.ComponentModel.Composition.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Net.Http.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Runtime.Serialization.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.ServiceModel.Internals.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Web.Services.dll
+D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Runtime.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Threading.Tasks.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Collections.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Diagnostics.Debug.dll

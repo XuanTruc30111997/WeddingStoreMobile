@@ -104,11 +104,13 @@ namespace WeddingStoreMoblie.ViewModels
 
         public async Task GetData()
         {
+            Device.BeginInvokeOnMainThread(() => { isBusy = true; });
             _vatLieu = new MockVatLieuRepository();
             //_lstVatLieu = await _vatLieu.GetVatLieu();
             LstVatLieu = await _vatLieu.GetDataAsync();
             _lstAllVatLieu = _lstVatLieu;
             selectedOption = "All";
+            Device.BeginInvokeOnMainThread(() => { isBusy = false; });
         }
 
         private void Search()

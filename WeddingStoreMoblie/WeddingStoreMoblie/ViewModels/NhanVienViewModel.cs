@@ -67,8 +67,12 @@ namespace WeddingStoreMoblie.ViewModels
         #region Methods
         public async Task GetData()
         {
+            Device.BeginInvokeOnMainThread(() => { isBusy = true; });
+
             MockNhanVienRepository _nhanVien = new MockNhanVienRepository();
             LstNhanVien = await _nhanVien.GetDataAsync();
+
+            Device.BeginInvokeOnMainThread(() => { isBusy = false; });
         }
         private async Task GoToThongTinPage()
         {

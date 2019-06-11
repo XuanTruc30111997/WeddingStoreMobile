@@ -8,7 +8,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using WeddingStoreMoblie.Models.AppModels;
-using BottomBar.XamarinForms;
 using System.Threading;
 
 namespace WeddingStoreMoblie.Views

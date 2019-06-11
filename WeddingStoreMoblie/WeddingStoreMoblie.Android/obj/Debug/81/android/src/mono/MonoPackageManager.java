@@ -111,14 +111,12 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "WeddingStoreMoblie.Android.dll" comes first in this list. */
 		"WeddingStoreMoblie.Android.dll",
-		"BottomBar.Droid.dll",
-		"BottomBar.XamarinForms.dll",
-		"BottomNavigationBar.dll",
 		"FormsViewGroup.dll",
 		"Microsoft.AspNet.SignalR.Client.dll",
 		"Newtonsoft.Json.dll",
 		"Rg.Plugins.Popup.dll",
 		"Rg.Plugins.Popup.Droid.dll",
+		"SweetBehavior.dll",
 		"Syncfusion.Core.XForms.Android.dll",
 		"Syncfusion.Core.XForms.dll",
 		"Syncfusion.DataSource.Portable.dll",
