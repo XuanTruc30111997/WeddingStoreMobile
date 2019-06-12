@@ -59,9 +59,9 @@
             <Entry Grid.Row="2" Placeholder="Số lượng" Text="{Binding soLuong}" VerticalOptions="Center"/>
 
             <StackLayout Orientation="Horizontal" Grid.Row="3" HorizontalOptions="Center">
-                <Button Text="Lưu" Command="{Binding SaveCommand}" BackgroundColor="DodgerBlue"/>
-                <Button Text="Xóa" Command="{Binding DeleteCommand}" BackgroundColor="#DE171F"/>
-                <Button Text="Done" Command="{Binding DoneCommand}" BackgroundColor="#fc0a36"/>
+                <Button Text="Lưu" Command="{Binding SaveCommand}" BackgroundColor="DodgerBlue" CornerRadius="15"/>
+                <Button Text="Xóa" Command="{Binding DeleteCommand}" BackgroundColor="#DE171F" CornerRadius="15"/>
+                <Button Text="Done" Command="{Binding DoneCommand}" BackgroundColor="#fc0a36" CornerRadius="15"/>
             </StackLayout>
         </Grid>
     </AbsoluteLayout>

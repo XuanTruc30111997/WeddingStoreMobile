@@ -14,10 +14,12 @@ namespace WeddingStoreMoblie.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ModifyPhatSinhPopupView : PopupPage
 	{
-		public ModifyPhatSinhPopupView (ThongTinPhatSinh thongTin,HoaDonModel hoaDon)
+        ViewModels.ModifyPhatSinhPopupViewModel myVM;
+
+        public ModifyPhatSinhPopupView (ThongTinPhatSinh thongTin,HoaDonModel hoaDon)
 		{
 			InitializeComponent ();
-            ViewModels.ModifyPhatSinhPopupViewModel myVM = new ViewModels.ModifyPhatSinhPopupViewModel(thongTin, hoaDon);
+            myVM = new ViewModels.ModifyPhatSinhPopupViewModel(thongTin, hoaDon);
             BindingContext = myVM;
 		}
 
@@ -26,6 +28,11 @@ namespace WeddingStoreMoblie.Views
         private void InvoiceCallback()
         {
             CallbackEvent?.Invoke(this, true);
+        }
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await myVM.GetData();
         }
     }
 }

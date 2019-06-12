@@ -49,12 +49,12 @@
                     <Grid Grid.Row="1" VerticalOptions="Center" BackgroundColor="Transparent">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="70"/>
                         </Grid.ColumnDefinitions>
                         <Picker ItemsSource="{Binding LstOption}" SelectedItem="{Binding SelectedOption, Mode=TwoWay}"
                             Title="-- Tùy chọn --" Margin="5,0" Grid.Column="0"/>
                         <ImageButton Source="{markEx:EmbeddedImage Tim.png}" Command="{Binding SearchCommand}" 
-                                 Grid.Column="1" HorizontalOptions="Center" WidthRequest="70" BackgroundColor="Transparent"/>
+                                 Grid.Column="1" BackgroundColor="Transparent"/>
                     </Grid>
 
                 </Grid>

@@ -61,8 +61,8 @@
                     </ListView>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Grid.Row="2">
                         <Entry Placeholder="Số lượng" Text="{Binding soLuong}"/>
-                        <Button Text="Thêm" Command="{Binding ThemCommand}" BackgroundColor="#7BE437"/>
-                        <Button Text="Done" Command="{Binding DoneCommand}" BackgroundColor="#fc0a36"/>
+                        <Button Text="Thêm" Command="{Binding ThemCommand}" BackgroundColor="#7BE437" CornerRadius="15"/>
+                        <Button Text="Done" Command="{Binding DoneCommand}" BackgroundColor="#fc0a36" CornerRadius="15"/>
                     </StackLayout>
                 </Grid>
 

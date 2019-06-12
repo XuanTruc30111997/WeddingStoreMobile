@@ -37,6 +37,7 @@
     <None Remove="Images\MasterBackground.jpg" />
     <None Remove="Images\modify.png" />
     <None Remove="Images\ModifyChiTietHoaDonBackground.jpg" />
+    <None Remove="Images\ModifyPhatSinhBackground.jpg" />
     <None Remove="Images\nhanvien.png" />
     <None Remove="Images\nhanvien1.png" />
     <None Remove="Images\NhanVienBackground.jpg" />
@@ -83,6 +84,7 @@
     <EmbeddedResource Include="Images\MasterBackground.jpg" />
     <EmbeddedResource Include="Images\modify.png" />
     <EmbeddedResource Include="Images\ModifyChiTietHoaDonBackground.jpg" />
+    <EmbeddedResource Include="Images\ModifyPhatSinhBackground.jpg" />
     <EmbeddedResource Include="Images\nhanvien.png" />
     <EmbeddedResource Include="Images\nhanvien1.png" />
     <EmbeddedResource Include="Images\NhanVienBackground.jpg" />

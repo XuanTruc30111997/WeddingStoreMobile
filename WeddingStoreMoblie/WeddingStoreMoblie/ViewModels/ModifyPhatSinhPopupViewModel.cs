@@ -75,7 +75,7 @@ namespace WeddingStoreMoblie.ViewModels
             _myHoaDon = myHoaDon;
             thongTinPhatSinh = thongTin;
             _soLuong = 1;
-            GetData().GetAwaiter();
+            //GetData().GetAwaiter();
         }
         #endregion
 
@@ -91,8 +91,9 @@ namespace WeddingStoreMoblie.ViewModels
         #endregion
 
         #region Methods
-        async Task GetData()
+        public async Task GetData()
         {
+            Device.BeginInvokeOnMainThread(() =>{ isBusy = true; });
             if (!_thongTinPhatSinh.IsNhap)
             {
                 List<VatLieuModel> lstVatLieuAo = await vatLieuAoMock.GetVatLieuCan(_myHoaDon.NgayTrangTri, _myHoaDon.NgayThaoDo, _myHoaDon.MaHD);
@@ -101,6 +102,7 @@ namespace WeddingStoreMoblie.ViewModels
             else
                 myVL = await vatLieu.GetById(_thongTinPhatSinh.MaVL);
             tongTien = myVL.GiaTien * _soLuong;
+            Device.BeginInvokeOnMainThread(() => { isBusy = false; });
         }
 
         private async Task Save()

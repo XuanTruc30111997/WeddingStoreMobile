@@ -63,8 +63,8 @@
         </Grid>
 
         <StackLayout Orientation="Horizontal" Padding="5" Margin="5">
-            <Button Text="Save" BackgroundColor="Blue" Command="{Binding SaveCommand}"/>
-            <Button Text="Done" BackgroundColor="Red" Command="{Binding DoneCommand}"/>
+            <Button Text="Save" BackgroundColor="Blue" Command="{Binding SaveCommand}" CornerRadius="15"/>
+            <Button Text="Done" BackgroundColor="Red" Command="{Binding DoneCommand}" CornerRadius="15"/>
         </StackLayout>
     </StackLayout>
 </pages:PopupPage>

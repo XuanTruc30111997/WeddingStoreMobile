@@ -20,7 +20,7 @@
             <Image Source="{markEx:EmbeddedImage DanhSachVatLieuBackground.jpg}" 
                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
                    AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
-            
+
             <Grid BackgroundColor="Transparent">
                 <ListView x:Name="listView" ItemsSource="{Binding LstDanhSachVatLieu}"
                           Margin="5" BackgroundColor="Transparent" HasUnevenRows="True">

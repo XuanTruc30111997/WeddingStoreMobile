@@ -49,9 +49,9 @@
             <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,500,1,80" AbsoluteLayout.LayoutFlags="WidthProportional" 
                             BackgroundColor="Transparent" Padding="5" x:Name="abAction">
                 <Button AbsoluteLayout.LayoutBounds=".25,.5,100,50" AbsoluteLayout.LayoutFlags="XProportional,YProportional" Text="Lưu"
-                        Command="{Binding LuuCommand}"/>
+                        Command="{Binding LuuCommand}" CornerRadius="15" BackgroundColor="#B93232"/>
                 <Button AbsoluteLayout.LayoutBounds=".75,.5,100,50" AbsoluteLayout.LayoutFlags="XProportional,YProportional" Text="Hủy"
-                        Command="{Binding HuyCommand}"/>
+                        Command="{Binding HuyCommand}" CornerRadius="15" BackgroundColor="#B93232"/>
             </AbsoluteLayout>
 
             <Image AbsoluteLayout.LayoutBounds=".9,.96,60,60" AbsoluteLayout.LayoutFlags="XProportional,YProportional"

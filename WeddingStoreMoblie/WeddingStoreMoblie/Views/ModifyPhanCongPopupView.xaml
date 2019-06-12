@@ -60,16 +60,16 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Text="CheckIn" BackgroundColor="Blue" Command="{Binding CheckInCommand}"/>
-                <Button Grid.Column="1" Text="CheckOut" BackgroundColor="Green" Command="{Binding CheckOutCommand}"/>
+                <Button Grid.Column="0" Text="CheckIn" BackgroundColor="Blue" Command="{Binding CheckInCommand}" CornerRadius="15"/>
+                <Button Grid.Column="1" Text="CheckOut" BackgroundColor="Green" Command="{Binding CheckOutCommand}" CornerRadius="15"/>
             </Grid>
             <Grid Grid.Row="4" Padding="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Text="Delete" BackgroundColor="Red" Command="{Binding DeleteCommand}"/>
-                <Button Grid.Column="1" Text="Done" BackgroundColor="#F36464" Command="{Binding DoneCommand}"/>
+                <Button Grid.Column="0" Text="Delete" BackgroundColor="Red" Command="{Binding DeleteCommand}" CornerRadius="15"/>
+                <Button Grid.Column="1" Text="Done" BackgroundColor="#F36464" Command="{Binding DoneCommand}" CornerRadius="15"/>
             </Grid>
 
         </Grid>

@@ -39,8 +39,8 @@
                     </Label>
                 </Grid>
 
-                <Frame Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#7FCAAE" Opacity="0.8" HasShadow="True"
-                       WidthRequest="300" x:Name="frameNhap">
+                <Frame Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#7FCAAE" Opacity="0.8"
+                       HasShadow="True" WidthRequest="300" x:Name="frameNhap" CornerRadius="20">
                     <StackLayout Orientation="Vertical" Spacing="5">
                         <Entry Placeholder="User Name" Grid.Row="0" Text="{Binding UserName}"/>
                         <Entry Placeholder="Password" Grid.Row="1" IsPassword="True" Text="{Binding Password}"/>
@@ -48,7 +48,7 @@
                 </Frame>
 
                 <Button Margin="0,15,0,0" Text="Login" WidthRequest="300" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#F08C32"
-                        Command="{Binding LoginCommand}" x:Name="btnLogin"/>
+                        Command="{Binding LoginCommand}" x:Name="btnLogin" CornerRadius="35"/>
 
                 <ActivityIndicator Grid.Row="3" IsEnabled="{Binding isBusy,Mode=TwoWay}"
                            IsVisible="{Binding isBusy,Mode=TwoWay}"
