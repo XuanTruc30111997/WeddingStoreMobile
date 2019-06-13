@@ -99,11 +99,11 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <ImageButton Grid.Column="0" BackgroundColor="Aqua" Source="{markEx:EmbeddedImage ChuaTrangTri.png}"
-                                     Command="{Binding ChangeTinhTrangTo1Command}"/>
+                                     Command="{Binding ChangeTinhTrangTo1Command}" CornerRadius="15"/>
                         <ImageButton Grid.Column="1" BackgroundColor="Green" Source="{markEx:EmbeddedImage DaTrangTri.png}"
-                                     Command="{Binding ChangeTinhTrangTo2Command}"/>
+                                     Command="{Binding ChangeTinhTrangTo2Command}" CornerRadius="15"/>
                         <ImageButton Grid.Column="2" BackgroundColor="Gray" Source="{markEx:EmbeddedImage DaThaoDo.png}"
-                                     Command="{Binding ChangeTinhTrangTo3Command}"/>
+                                     Command="{Binding ChangeTinhTrangTo3Command}" CornerRadius="15"/>
                     </Grid>
 
                 </StackLayout>

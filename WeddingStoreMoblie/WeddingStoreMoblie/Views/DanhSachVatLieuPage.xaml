@@ -23,7 +23,8 @@
 
             <Grid BackgroundColor="Transparent">
                 <ListView x:Name="listView" ItemsSource="{Binding LstDanhSachVatLieu}"
-                          Margin="5" BackgroundColor="Transparent" HasUnevenRows="True">
+                          Margin="5" BackgroundColor="Transparent" HasUnevenRows="True"
+                          RefreshCommand="{Binding RefreshCommand}" IsPullToRefreshEnabled="True" IsRefreshing="{Binding isBusy}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

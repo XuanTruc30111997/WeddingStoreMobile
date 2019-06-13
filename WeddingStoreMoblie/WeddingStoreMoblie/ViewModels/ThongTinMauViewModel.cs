@@ -73,6 +73,14 @@ namespace WeddingStoreMoblie.ViewModels
                 return new Command(Modify);
             }
         }
+        public Command RefreshCommand
+        {
+            get => new Command(async () => 
+            {
+                Constant.isNewMau = false;
+                await GetData();
+            });
+        }
         #endregion
 
         #region Methods

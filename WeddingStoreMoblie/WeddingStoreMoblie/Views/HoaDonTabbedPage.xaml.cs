@@ -35,7 +35,7 @@ namespace WeddingStoreMoblie.Views
             {
                 var thongTinPage = new ThongTinPage(_hoaDonKH.MaHD, _hoaDonKH.MaKH);
                 thongTinPage.Title = "Thông tin";
-
+                thongTinPage.IconImageSource = Constant.ImagePatch + "thongtin.png";
                 return thongTinPage;
             }
 
@@ -43,7 +43,7 @@ namespace WeddingStoreMoblie.Views
             {
                 var chiTietPage = new ChiTietHoaDonPage(_hoaDonKH.MaHD);
                 chiTietPage.Title = "Chi tiết";
-
+                chiTietPage.IconImageSource = Constant.ImagePatch + "ChiTiet.png";
                 return chiTietPage;
             }
 
@@ -51,7 +51,7 @@ namespace WeddingStoreMoblie.Views
             {
                 var phanCongPage = new PhanCongPage(_hoaDonKH.MaHD);
                 phanCongPage.Title = "Phân công";
-
+                phanCongPage.IconImageSource = Constant.ImagePatch + "phancong.png";
                 return phanCongPage;
             }
 

@@ -139,22 +139,25 @@ namespace WeddingStoreMoblie.ViewModels
 
         private void Modify()
         {
-            Console.WriteLine("Tình trạng hóa đơn: " + _myHoaDon.TinhTrang);
-            Constant.isNew = true;
-            var modifyPhatSinhPopupView = new Views.ModifyPhatSinhPopupView(_selectedVL, _myHoaDon);
-            modifyPhatSinhPopupView.CallbackEvent += (object sender, bool e) => GetData().GetAwaiter();
-            PopupNavigation.Instance.PushAsync(modifyPhatSinhPopupView);
+            if (_selectedVL != null)
+            {
+                Console.WriteLine("Tình trạng hóa đơn: " + _myHoaDon.TinhTrang);
+                Constant.isNew = true;
+                var modifyPhatSinhPopupView = new Views.ModifyPhatSinhPopupView(_selectedVL, _myHoaDon);
+                modifyPhatSinhPopupView.CallbackEvent += (object sender, bool e) => GetData().GetAwaiter();
+                PopupNavigation.Instance.PushAsync(modifyPhatSinhPopupView);
+            }
         }
 
         private async Task Delete()
         {
-            Constant.isNew = true;
             if (_selectedVL != null)
             {
                 var currentPage = GetCurrentPage();
                 var result = await currentPage.DisplayAlert("Xóa phát sinh!", "Xóa vật liệu " + _selectedVL.TenVL + " khỏi danh sách phát sinh?", "Yes", "No").ConfigureAwait(false);
                 if (result)
                 {
+                    Constant.isNew = true;
                     Constant.isNewDanhSachVatLieu = true;
                     bool response = await phatSinh.DeleteDataAsync(new PhatSinhModel
                     {

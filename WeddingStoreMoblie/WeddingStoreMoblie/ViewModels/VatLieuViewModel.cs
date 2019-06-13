@@ -98,6 +98,13 @@ namespace WeddingStoreMoblie.ViewModels
                 return new Command(Search);
             }
         }
+        public Command RefreshCommand
+        {
+            get => new Command(async () =>
+             {
+                 await GetData();
+             });
+        }
         #endregion
 
         #region Methods

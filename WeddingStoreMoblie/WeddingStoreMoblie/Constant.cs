@@ -14,5 +14,6 @@ namespace WeddingStoreMoblie
         public static bool isNewPS { get; set; }
         public static bool isNewMau { get; set; }
         public static bool isNewDanhSachVatLieu { get; set; }
+        public const string ImagePatch = "WeddingStoreMoblie.Images.";
     }
 }

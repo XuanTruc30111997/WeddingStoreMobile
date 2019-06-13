@@ -23,9 +23,9 @@
                 <Grid>
                     <StackLayout Orientation="Vertical">
                         <ListView ItemsSource="{Binding LstPhanCongNhanVien, Mode=TwoWay}" IsGroupingEnabled="True"
-                              GroupDisplayBinding="{Binding Ngay,StringFormat='{0:dd/MM/yyy}',Converter={StaticResource myDate}}"
-                              HasUnevenRows="True"
-                              ItemTapped="Handler_NVTapped">
+                                  GroupDisplayBinding="{Binding Ngay,StringFormat='{0:dd/MM/yyy}',Converter={StaticResource myDate}}"
+                                  HasUnevenRows="True" ItemTapped="Handler_NVTapped"
+                                  RefreshCommand="{Binding RefreshCommand}" IsPullToRefreshEnabled="True" IsRefreshing="{Binding isBusy}">
                             <ListView.GroupHeaderTemplate>
                                 <DataTemplate>
                                     <ViewCell>

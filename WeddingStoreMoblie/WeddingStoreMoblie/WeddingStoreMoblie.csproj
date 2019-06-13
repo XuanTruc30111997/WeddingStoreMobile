@@ -17,13 +17,15 @@
     <None Remove="Images\addmau.png" />
     <None Remove="Images\checked.png" />
     <None Remove="Images\ChinhSua.png" />
+    <None Remove="Images\ChiTiet.png" />
     <None Remove="Images\ChuaTrangTri.png" />
     <None Remove="Images\danhMucBackground.jpg" />
-    <None Remove="Images\DanhMucBackgroundTop.jpg" />
+    <None Remove="Images\DanhSachVatLieu.png" />
     <None Remove="Images\DanhSachVatLieuBackground.jpg" />
     <None Remove="Images\DaThaoDo.png" />
     <None Remove="Images\DaTrangTri.png" />
     <None Remove="Images\delete.png" />
+    <None Remove="Images\DiemDanhNhanVien.jpg" />
     <None Remove="Images\Heart.png" />
     <None Remove="Images\hoadon.png" />
     <None Remove="Images\HoaDonBackground1.jpg" />
@@ -35,6 +37,7 @@
     <None Remove="Images\loginBackground.jpg" />
     <None Remove="Images\logout.png" />
     <None Remove="Images\MasterBackground.jpg" />
+    <None Remove="Images\mau.png" />
     <None Remove="Images\modify.png" />
     <None Remove="Images\ModifyChiTietHoaDonBackground.jpg" />
     <None Remove="Images\ModifyPhatSinhBackground.jpg" />
@@ -42,11 +45,14 @@
     <None Remove="Images\nhanvien1.png" />
     <None Remove="Images\NhanVienBackground.jpg" />
     <None Remove="Images\noimage.png" />
+    <None Remove="Images\phancong.png" />
     <None Remove="Images\PhanCongbackground.png" />
     <None Remove="Images\PhatSinhBackground.jpg" />
+    <None Remove="Images\refresh.png" />
     <None Remove="Images\ThaoDo.png" />
     <None Remove="Images\ThemChiTietHoaDonBackground.jpg" />
     <None Remove="Images\ThemPhatSinhBackground.jpg" />
+    <None Remove="Images\thongtin.png" />
     <None Remove="Images\ThongTinBackground.jpg" />
     <None Remove="Images\ThongTinMauBackground.jpg" />
     <None Remove="Images\ThongTinNhanVienBackground.jpg" />
@@ -64,9 +70,11 @@
     <EmbeddedResource Include="Images\addmau.png" />
     <EmbeddedResource Include="Images\checked.png" />
     <EmbeddedResource Include="Images\ChinhSua.png" />
+    <EmbeddedResource Include="Images\ChiTiet.png" />
     <EmbeddedResource Include="Images\ChuaTrangTri.png" />
     <EmbeddedResource Include="Images\danhMucBackground.jpg" />
-    <EmbeddedResource Include="Images\DanhMucBackgroundTop.jpg" />
+    <EmbeddedResource Include="Images\DanhSachVatLieu.png" />
+    <EmbeddedResource Include="Images\DiemDanhNhanVien.jpg" />
     <EmbeddedResource Include="Images\DanhSachVatLieuBackground.jpg" />
     <EmbeddedResource Include="Images\DaThaoDo.png" />
     <EmbeddedResource Include="Images\DaTrangTri.png" />
@@ -82,6 +90,7 @@
     <EmbeddedResource Include="Images\loginBackground.jpg" />
     <EmbeddedResource Include="Images\logout.png" />
     <EmbeddedResource Include="Images\MasterBackground.jpg" />
+    <EmbeddedResource Include="Images\mau.png" />
     <EmbeddedResource Include="Images\modify.png" />
     <EmbeddedResource Include="Images\ModifyChiTietHoaDonBackground.jpg" />
     <EmbeddedResource Include="Images\ModifyPhatSinhBackground.jpg" />
@@ -89,11 +98,14 @@
     <EmbeddedResource Include="Images\nhanvien1.png" />
     <EmbeddedResource Include="Images\NhanVienBackground.jpg" />
     <EmbeddedResource Include="Images\noimage.png" />
+    <EmbeddedResource Include="Images\phancong.png" />
     <EmbeddedResource Include="Images\PhanCongbackground.png" />
     <EmbeddedResource Include="Images\PhatSinhBackground.jpg" />
+    <EmbeddedResource Include="Images\refresh.png" />
     <EmbeddedResource Include="Images\ThaoDo.png" />
     <EmbeddedResource Include="Images\ThemChiTietHoaDonBackground.jpg" />
     <EmbeddedResource Include="Images\ThemPhatSinhBackground.jpg" />
+    <EmbeddedResource Include="Images\thongtin.png" />
     <EmbeddedResource Include="Images\ThongTinBackground.jpg" />
     <EmbeddedResource Include="Images\ThongTinMauBackground.jpg" />
     <EmbeddedResource Include="Images\ThongTinNhanVienBackground.jpg" />
@@ -105,6 +117,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
     <PackageReference Include="Microsoft.AspNet.SignalR.Client" Version="2.4.1" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.1.5.188" />

@@ -20,20 +20,20 @@ namespace WeddingStoreMoblie.Views
             myVM = new ViewModels.ThongTinMauViewModel(maHD);
             BindingContext = myVM;
 
-            more.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = myVM.MenuCommand
-            });
+            //more.GestureRecognizers.Add(new TapGestureRecognizer
+            //{
+            //    Command = myVM.MenuCommand
+            //});
 
-            them.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = myVM.ThemChiTietCommand
-            });
+            //them.GestureRecognizers.Add(new TapGestureRecognizer
+            //{
+            //    Command = myVM.ThemChiTietCommand
+            //});
 
-            modify.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = myVM.ModifyCommand
-            });
+            //modify.GestureRecognizers.Add(new TapGestureRecognizer
+            //{
+            //    Command = myVM.ModifyCommand
+            //});
         }
 
         protected override async void OnAppearing()

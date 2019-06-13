@@ -43,6 +43,10 @@
       "frameworks": {
         "uap10.0.16299": {
           "dependencies": {
+            "CarouselView.FormsPlugin": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
             "Microsoft.NETCore.UniversalWindowsPlatform": {
               "target": "Package",
               "version": "[6.1.9, )"
@@ -126,6 +130,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "CarouselView.FormsPlugin": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
             "Microsoft.AspNet.SignalR.Client": {
               "target": "Package",
               "version": "[2.4.1, )"

@@ -42,6 +42,13 @@ namespace WeddingStoreMoblie.ViewModels
         #endregion
 
         #region Commands
+        public Command RefreshCommand
+        {
+            get => new Command(async () =>
+              {
+                  await GetDataAsync();
+              });
+        }
         #endregion
 
         #region Methods

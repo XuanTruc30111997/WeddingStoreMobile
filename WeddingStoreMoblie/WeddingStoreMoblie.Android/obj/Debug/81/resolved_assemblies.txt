@@ -1,4 +1,8 @@
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\WeddingStoreMoblie.Android.dll
+D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\CarouselView.FormsPlugin.Abstractions.dll
+D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\CarouselView.FormsPlugin.Android.dll
+D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\Com.Android.DeskClock.dll
+D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\Com.ViewPagerIndicator.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\FormsViewGroup.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\Java.Interop.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\Microsoft.AspNet.SignalR.Client.dll

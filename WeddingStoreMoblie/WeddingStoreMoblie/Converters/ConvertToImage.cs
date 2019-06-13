@@ -14,7 +14,8 @@ namespace WeddingStoreMoblie.Converters
         {
             if (value == null || value.ToString() == String.Empty)
             {
-                return ImageSource.FromResource("WeddingStoreMoblie.Images.noimage.png");
+                //return ImageSource.FromResource("WeddingStoreMoblie.Images.noimage.png");
+                return ImageSource.FromResource(Constant.ImagePatch + "noimage.png");
             }
             else
             {

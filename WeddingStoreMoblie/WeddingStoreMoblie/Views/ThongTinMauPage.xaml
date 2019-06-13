@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeddingStoreMoblie.Views.ThongTinMauPage"
              xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              xmlns:markEx="clr-namespace:WeddingStoreMoblie.MarkupExtensions">
 
     <AbsoluteLayout>
@@ -14,7 +15,184 @@
                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
                    AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
 
-        <Grid>
+        <carousel:CarouselViewControl ItemsSource="{Binding LstThongTinChiTietHoaDon}" BackgroundColor="Transparent"
+                                      AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+            <carousel:CarouselViewControl.ItemTemplate>
+                <DataTemplate>
+                    <Frame HasShadow="True" CornerRadius="35" Margin="5" BackgroundColor="Transparent">
+                        <Grid BackgroundColor="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="200"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Frame Grid.Row="0" BackgroundColor="Transparent" CornerRadius="20">
+                                <Image Source="{Binding Hinh, Converter={StaticResource myImage}}" Aspect="Fill"/>
+                            </Frame>
+                            <Grid Grid.Row="0" Grid.RowSpan="2" Margin="5,150,5,5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"/>
+                                    <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+                                <Frame Grid.Column="0" BackgroundColor="Gray" Opacity="0.8" CornerRadius="15">
+                                    <Label Text="{Binding TenSP}" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                </Frame>
+                                <Frame Grid.Column="1" BackgroundColor="Gray" Opacity="0.8" CornerRadius="15" Margin="0,0,5,0">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Text="{Binding SoLuong, StringFormat='Số lượng: {0:0}'}" TextColor="Black"/>
+                                        <Label Grid.Row="1" Text="{Binding ThanhTien,StringFormat='Thành tiền: {0:0,0.0} VNĐ'}" HorizontalTextAlignment="Center" TextColor="Black"/>
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                            <Frame Grid.Row="2" BackgroundColor="Coral" CornerRadius="15" HasShadow="True" Margin="5" Opacity="0.8">
+                                <ListView ItemsSource="{Binding myLstThongTinChiTietVL}" HasUnevenRows="True">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <Grid HeightRequest="80" Padding="5">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="70"/>
+                                                        <ColumnDefinition/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Image Grid.Column="0" Source="{Binding AnhMoTa,Converter={StaticResource myImage}}" Margin="5"/>
+                                                    <Grid Grid.Column="1" VerticalOptions="Center">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition/>
+                                                            <RowDefinition/>
+                                                        </Grid.RowDefinitions>
+                                                        <Label Text="{Binding TenVL}" Grid.Row="0"/>
+                                                        <Label Text="{Binding DonVi,StringFormat='Số Lượng: {0:N}'}" Grid.Row="1"/>
+                                                    </Grid>
+                                                </Grid>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </Frame>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </carousel:CarouselViewControl.ItemTemplate>
+        </carousel:CarouselViewControl>
+
+        <Grid HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" RowSpacing="0" ColumnSpacing="10" BackgroundColor="Transparent"
+              AbsoluteLayout.LayoutBounds="0,.8,1,1" AbsoluteLayout.LayoutFlags="YProportional,WidthProportional,HeightProportional">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <BoxView
+                IsVisible="{Binding ShowMenu}" Grid.ColumnSpan="3"
+                Color="Transparent"/>
+
+            <Image x:Name="more" WidthRequest="50" HeightRequest="50"
+                   Source="{markEx:EmbeddedImage list.png}"
+                   Grid.Column="3">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding MenuCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Image  WidthRequest="50" HeightRequest="50"
+                Source="{markEx:EmbeddedImage refresh.png}"
+                IsVisible="{Binding ShowMenu}"
+                Grid.Column="0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RefreshCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+            
+            <Image x:Name="them" WidthRequest="50" HeightRequest="50"
+                Source="{markEx:EmbeddedImage addmau.png}"
+                IsVisible="{Binding ShowMenu}"
+                Grid.Column="1">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ThemChiTietCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+            
+            <Image x:Name="modify" WidthRequest="50" HeightRequest="50"
+                Source="{markEx:EmbeddedImage modify.png}"
+                IsVisible="{Binding ShowMenu}"
+                Grid.Column="2">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ModifyCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+        
+        
+        
+        
+        <!--<Frame BackgroundColor="Red" HasShadow="True" CornerRadius="35" Margin="5"
+               AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+            <Grid BackgroundColor="Aqua">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="250"/>
+                    <RowDefinition Height="65"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0" BackgroundColor="Green" CornerRadius="20">
+                    <Image BackgroundColor="Bisque"/>
+                </Frame>
+                <Grid Grid.Row="0" Grid.RowSpan="2" Margin="5,200,5,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Frame Grid.Column="0" BackgroundColor="Blue">
+                        <Label Text="Khung hình chữ nhật đỏ hahihihihihihihi" FontSize="15" FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"/>
+                    </Frame>
+                    <Frame Grid.Column="1" BackgroundColor="Brown" Margin="0,0,5,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="Số lượng: 15"/>
+                            <Label Grid.Row="1" Text="Giá Tiền: 1.000.000.000 VNĐ" HorizontalTextAlignment="Center"/>
+                        </Grid>
+                    </Frame>
+                </Grid>
+                <Frame Grid.Row="2" BackgroundColor="Coral" CornerRadius="15" HasShadow="True" Margin="5">
+                    <ListView>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid HeightRequest="80">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="70"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" Source="{Binding AnhMoTa,Converter={StaticResource myImage}}" Margin="5"/>
+                                        <Grid Grid.Column="1" VerticalOptions="Center">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Label Text="{Binding TenVL}" Grid.Row="0"/>
+                                            <Label Text="{Binding DonVi,StringFormat='Số Lượng: {0:N}'}" Grid.Row="1"/>
+                                        </Grid>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
+            </Grid>
+        </Frame>-->
+
+        
+        
+        <!--<Grid>
             <Grid>
                 <ListView
                 ItemsSource="{Binding LstThongTinChiTietHoaDon}"
@@ -106,6 +284,9 @@
                 IsVisible="{Binding ShowMenu}"
                 Grid.Column="1"/>
             </Grid>
-        </Grid>
+        </Grid>-->
+        
+        
+        
     </AbsoluteLayout>
 </ContentPage>

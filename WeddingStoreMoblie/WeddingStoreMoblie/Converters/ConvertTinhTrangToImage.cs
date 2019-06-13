@@ -15,13 +15,16 @@ namespace WeddingStoreMoblie.Converters
             switch (tinhTrang)
             {
                 case 0:
-                    retSource= ImageSource.FromResource("WeddingStoreMoblie.Images.ChuaTrangTri.png");
+                    //retSource= ImageSource.FromResource("WeddingStoreMoblie.Images.ChuaTrangTri.png");
+                    retSource = ImageSource.FromResource(Constant.ImagePatch + "ChuaTrangTri.png");
                     break;
                 case 1:
-                    retSource = ImageSource.FromResource("WeddingStoreMoblie.Images.DaTrangTri.png");
+                    //retSource = ImageSource.FromResource("WeddingStoreMoblie.Images.DaTrangTri.png");
+                    retSource = ImageSource.FromResource(Constant.ImagePatch + "DaTrangTri.png");
                     break;
                 case 2:
-                    retSource = ImageSource.FromResource("WeddingStoreMoblie.Images.DaThaoDo.png");
+                    //retSource = ImageSource.FromResource("WeddingStoreMoblie.Images.DaThaoDo.png");
+                    retSource = ImageSource.FromResource(Constant.ImagePatch + "DaThaoDo.png");
                     break;
             }
             return retSource;

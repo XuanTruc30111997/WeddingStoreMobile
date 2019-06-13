@@ -12,10 +12,11 @@ namespace WeddingStoreMoblie.Converters
         {
             if (String.IsNullOrEmpty(value as String))
             {
-                return ImageSource.FromResource("WeddingStoreMoblie.Images.noimage.png");
+                //return ImageSource.FromResource("WeddingStoreMoblie.Images.noimage.png");
+                return ImageSource.FromResource(Constant.ImagePatch + "noimage.png");
             }
             else
-                return ImageSource.FromResource("WeddingStoreMoblie.Images." + value);
+                return ImageSource.FromResource(Constant.ImagePatch + "" + value);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

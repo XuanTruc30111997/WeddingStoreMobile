@@ -42,6 +42,7 @@ namespace WeddingStoreMoblie.ViewModels
                 GoToThongTinPage().GetAwaiter();
             }
         }
+        public bool IsNewNhanVien { get; set; }
         #endregion
 
         #region Services
@@ -50,6 +51,7 @@ namespace WeddingStoreMoblie.ViewModels
         #region Constructors
         public NhanVienViewModel()
         {
+            IsNewNhanVien = true;
             //GetData().GetAwaiter();
         }
         #endregion
@@ -62,17 +64,30 @@ namespace WeddingStoreMoblie.ViewModels
                 await GoToThongTinPage();
             });
         }
+        public Command RefreshCommand
+        {
+            get => new Command(async () => 
+            {
+                IsNewNhanVien = true;
+                await GetData();
+            });
+        }
         #endregion
 
         #region Methods
         public async Task GetData()
         {
-            Device.BeginInvokeOnMainThread(() => { isBusy = true; });
+            if (IsNewNhanVien)
+            {
+                Device.BeginInvokeOnMainThread(() => { isBusy = true; });
 
-            MockNhanVienRepository _nhanVien = new MockNhanVienRepository();
-            LstNhanVien = await _nhanVien.GetDataAsync();
+                MockNhanVienRepository _nhanVien = new MockNhanVienRepository();
+                LstNhanVien = await _nhanVien.GetDataAsync();
 
-            Device.BeginInvokeOnMainThread(() => { isBusy = false; });
+                IsNewNhanVien = false;
+
+                Device.BeginInvokeOnMainThread(() => { isBusy = false; });
+            }
         }
         private async Task GoToThongTinPage()
         {
