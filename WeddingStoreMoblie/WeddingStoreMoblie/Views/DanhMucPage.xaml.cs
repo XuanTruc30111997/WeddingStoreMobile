@@ -25,31 +25,31 @@ namespace WeddingStoreMoblie.Views
             base.OnAppearing();
             await vm.GetData();
 
-            await MyAnimation();
+            //await MyAnimation();
         }
 
-        async Task MyAnimation()
-        {
-            await imgTop.ScaleTo(5, 1000);
-            await imgTop.ScaleTo(0.1, 500, Easing.BounceIn);
-            await imgTop.ScaleTo(1, 1000, Easing.BounceOut);
+        //async Task MyAnimation()
+        //{
+        //    await imgTop.ScaleTo(5, 1000);
+        //    await imgTop.ScaleTo(0.1, 500, Easing.BounceIn);
+        //    await imgTop.ScaleTo(1, 1000, Easing.BounceOut);
 
-            //await lblTitle.TranslateTo(0, 0, 500, Easing.SinInOut);
-            await lblTitle.RotateTo(720, 1000, Easing.BounceOut);
+        //    //await lblTitle.TranslateTo(0, 0, 500, Easing.SinInOut);
+        //    await lblTitle.RotateTo(720, 1000, Easing.BounceOut);
 
-            await Task.WhenAll(
-                frameThongTin.FadeTo(1, 100),
-                frameThongTin.RotateXTo(720, 1000, Easing.SpringOut));
-            await Task.WhenAll(
-                frameNhanVien.FadeTo(1, 100),
-                frameNhanVien.RotateXTo(720, 1000, Easing.SpringOut));
-            await Task.WhenAll(
-                frameHoaDon.FadeTo(1, 100),
-                frameHoaDon.RotateXTo(720, 1000, Easing.SpringOut));
-            await Task.WhenAll(
-                frameVatLieu.FadeTo(1, 100),
-                frameVatLieu.RotateXTo(720, 1000, Easing.SpringOut));
-        }
+        //    await Task.WhenAll(
+        //        frameThongTin.FadeTo(1, 100),
+        //        frameThongTin.RotateXTo(720, 1000, Easing.SpringOut));
+        //    await Task.WhenAll(
+        //        frameNhanVien.FadeTo(1, 100),
+        //        frameNhanVien.RotateXTo(720, 1000, Easing.SpringOut));
+        //    await Task.WhenAll(
+        //        frameHoaDon.FadeTo(1, 100),
+        //        frameHoaDon.RotateXTo(720, 1000, Easing.SpringOut));
+        //    await Task.WhenAll(
+        //        frameVatLieu.FadeTo(1, 100),
+        //        frameVatLieu.RotateXTo(720, 1000, Easing.SpringOut));
+        //}
 
         private async void ThongTin_Tapped(object sender, EventArgs e)
         {

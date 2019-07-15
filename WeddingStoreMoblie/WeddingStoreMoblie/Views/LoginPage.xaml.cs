@@ -20,7 +20,7 @@ namespace WeddingStoreMoblie.Views
             BindingContext = vm;
         }
 
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
             ahihi.IsVisible = true;
@@ -40,20 +40,20 @@ namespace WeddingStoreMoblie.Views
             ahihi.IsVisible = false;
             myGrid.IsVisible = true;
 
-            await imgTop.ScaleTo(5, 1000);
-            await imgTop.ScaleTo(0.1, 500, Easing.BounceIn);
-            await imgTop.ScaleTo(1, 1000, Easing.BounceOut);
+            //await imgTop.ScaleTo(5, 1000);
+            //await imgTop.ScaleTo(0.1, 500, Easing.BounceIn);
+            //await imgTop.ScaleTo(1, 1000, Easing.BounceOut);
 
-            await lblLogin.TranslateTo(100, 0, 500, Easing.SpringOut);
-            await lblLogin.TranslateTo(-100, 0, 500, Easing.SpringOut);
-            await lblLogin.TranslateTo(0, 0);
+            //await lblLogin.TranslateTo(100, 0, 500, Easing.SpringOut);
+            //await lblLogin.TranslateTo(-100, 0, 500, Easing.SpringOut);
+            //await lblLogin.TranslateTo(0, 0);
 
-            await Task.WhenAll(
-                frameNhap.FadeTo(1, 100),
-                frameNhap.RotateXTo(720, 1000, Easing.SpringOut));
+            //await Task.WhenAll(
+            //    frameNhap.FadeTo(1, 100),
+            //    frameNhap.RotateXTo(720, 1000, Easing.SpringOut));
 
-            await btnLogin.ScaleTo(0);
-            await btnLogin.ScaleTo(1, 1000, Easing.BounceOut);
+            //await btnLogin.ScaleTo(0);
+            //await btnLogin.ScaleTo(1, 1000, Easing.BounceOut);
         }
 
         private void ahihiTap(object sender, EventArgs e)

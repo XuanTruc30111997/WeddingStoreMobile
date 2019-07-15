@@ -9,14 +9,14 @@ using Xamarin.Forms;
 
 namespace WeddingStoreMoblie.ViewModels
 {
-    public class ThongTinTaiKhoanViewModel:BaseViewModel
+    public class ThongTinTaiKhoanViewModel : BaseViewModel
     {
         #region Properties
         private string _maNV { get; set; }
         private NhanVienModel _MyNhanVien { get; set; }
         public NhanVienModel MyNhanVien
         {
-            get=>_MyNhanVien;
+            get => _MyNhanVien;
             set
             {
                 _MyNhanVien = value;
@@ -92,20 +92,40 @@ namespace WeddingStoreMoblie.ViewModels
                 bool result = await currentPage.DisplayAlert("Chỉnh sửa tài khoản?", "Bạn muốn thay đổi UserName và Password", "Yes", "No").ConfigureAwait(false);
                 if (result)
                 {
-                    bool response = await taiKhoanMock.SaveDataAsync(_MyTaiKhoan, "TaiKhoan", false);
-                    if(response)
+                    List<TaiKhoanModel> lstTK = await taiKhoanMock.GetDataAsync().ConfigureAwait(false);
+                    bool flag = false;
+                    foreach (var tk in lstTK)
                     {
-                        MyTaiKhoan = await taiKhoanMock.GetByIdNhanVien(_maNV);
+                        if (tk.MaNV != _MyTaiKhoan.MaNV && tk.UserName == _MyTaiKhoan.UserName)
+                        {
+                            flag = true;
+                            break;
+                        }
+                    }
+                    if (flag)
+                    {
                         Device.BeginInvokeOnMainThread(async () =>
                         {
-                            await currentPage.DisplayAlert("Thành công", "Thay đổi thông tin tài khoản thành công", "OK").ConfigureAwait(false);
+                            await currentPage.DisplayAlert("Thất bại!", "Thay đổi thông tin tài khoản thất bại. UserName đã được sử dụng", "OK").ConfigureAwait(false);
                         });
                     }
                     else
-                        Device.BeginInvokeOnMainThread(async () =>
+                    {
+                        bool response = await taiKhoanMock.SaveDataAsync(_MyTaiKhoan, "TaiKhoan", false);
+                        if (response)
                         {
-                            await currentPage.DisplayAlert("Thát bại!", "Thay đổi thông tin tài khoản thất bại", "OK").ConfigureAwait(false);
-                        });
+                            MyTaiKhoan = await taiKhoanMock.GetByIdNhanVien(_maNV);
+                            Device.BeginInvokeOnMainThread(async () =>
+                            {
+                                await currentPage.DisplayAlert("Thành công", "Thay đổi thông tin tài khoản thành công", "OK").ConfigureAwait(false);
+                            });
+                        }
+                        else
+                            Device.BeginInvokeOnMainThread(async () =>
+                            {
+                                await currentPage.DisplayAlert("Thất bại!", "Thay đổi thông tin tài khoản thất bại", "OK").ConfigureAwait(false);
+                            });
+                    }
                 }
             });
         }
@@ -121,7 +141,7 @@ namespace WeddingStoreMoblie.ViewModels
             Device.BeginInvokeOnMainThread(async () =>
             {
                 bool result = await currentPage.DisplayAlert("Đăng Xuất?", "Bạn muốn thoát tài khoản???", "Yes", "No").ConfigureAwait(false);
-                if(result)
+                if (result)
                 {
                     myNavigation.NavigateToMaster(null, 3, null);
                 }

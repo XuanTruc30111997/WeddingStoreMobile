@@ -29,15 +29,14 @@ namespace WeddingStoreMoblie.MockDatas.MockDataSystem
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    client.MaxResponseContentBufferSize = 256000;
                     string json = await client.GetStringAsync(Constant.RestApiWeddingStore + _name + _action);
                     var lstTaiKhoan = JsonConvert.DeserializeObject<List<TaiKhoanModel>>(json);
                     return lstTaiKhoan;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                Console.WriteLine("Error --> " + ex.Message);
             }
             return null;
         }

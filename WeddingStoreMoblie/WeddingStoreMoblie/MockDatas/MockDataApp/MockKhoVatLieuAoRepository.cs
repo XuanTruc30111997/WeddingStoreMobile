@@ -47,11 +47,19 @@ namespace WeddingStoreMoblie.MockDatas.MockDataApp
 
             foreach (var hd in lstHoaDon)
             {
-                if (hd.NgayTrangTri <= ntt && ntt <= hd.NgayThaoDo || hd.NgayTrangTri <= ntd && ntd <= hd.NgayThaoDo
-                           || ntt <= hd.NgayTrangTri && hd.NgayThaoDo <= ntd
-                           || hd.NgayTrangTri <= ntt && hd.NgayThaoDo >= ntd
-                           || (ntt >= hd.NgayThaoDo && ntt.Subtract(hd.NgayThaoDo).TotalDays <= 3)
-                           || (ntd <= hd.NgayTrangTri && hd.NgayTrangTri.Subtract(ntd).TotalDays <= 3))
+                bool flag = false;
+                if (hd.TinhTrang == 1 && hd.NgayThaoDo < ntt && ntt.Subtract(hd.NgayThaoDo).TotalDays > 3)
+                    flag = true;
+                else
+                {
+                    if (hd.TinhTrang == 0 && hd.NgayTrangTri <= ntt && ntt <= hd.NgayThaoDo || hd.NgayTrangTri <= ntd && ntd <= hd.NgayThaoDo
+                               || ntt <= hd.NgayTrangTri && hd.NgayThaoDo <= ntd
+                               || hd.NgayTrangTri <= ntt && hd.NgayThaoDo >= ntd
+                               || (ntt >= hd.NgayThaoDo && ntt.Subtract(hd.NgayThaoDo).TotalDays <= 3)
+                               || (ntd <= hd.NgayTrangTri && hd.NgayTrangTri.Subtract(ntd).TotalDays <= 3))
+                        flag = true;
+                }
+                if (flag)
                 {
                     List<ChiTietHoaDonModel> lstCTHD = await chiTietHDMock.GetByIdHD(hd.MaHD);
                     foreach (var cthd in lstCTHD)
@@ -60,7 +68,10 @@ namespace WeddingStoreMoblie.MockDatas.MockDataApp
                         foreach (var ctsp in lstCTSP)
                         {
                             VatLieuModel myVL = lstVatLieu.FirstOrDefault(vl => vl.MaVL == ctsp.MaVL);
-                            myVL.SoLuongTon -= (ctsp.SoLuong * cthd.SoLuong);
+                            if (hd.TinhTrang == 1)
+                                myVL.SoLuongTon += (ctsp.SoLuong * cthd.SoLuong);
+                            else
+                                myVL.SoLuongTon -= (ctsp.SoLuong * cthd.SoLuong);
                         }
                     }
 
@@ -68,7 +79,10 @@ namespace WeddingStoreMoblie.MockDatas.MockDataApp
                     foreach (var ps in lstPhatSinh)
                     {
                         VatLieuModel myVL = lstVatLieu.FirstOrDefault(vl => vl.MaVL == ps.MaVL);
-                        myVL.SoLuongTon -= ps.SoLuong;
+                        if (hd.TinhTrang == 1)
+                            myVL.SoLuongTon += ps.SoLuong;
+                        else
+                            myVL.SoLuongTon -= ps.SoLuong;
                     }
                 }
             }

@@ -36,7 +36,7 @@ namespace WeddingStoreMoblie.MockDatas.MockDataSystem
                 || (myHD.NgayTrangTri - hd.NgayThaoDo).TotalDays > 3).ToList();
             return myLst;
         }
-        public async Task<List<HoaDonModel>> GetLstHOaDonByThangNam(int thang,int nam,bool type)
+        public async Task<List<HoaDonModel>> GetLstHOaDonByThangNam(int thang, int nam, bool type)
         {
             List<HoaDonModel> lstHoaDon = await GetDataAsync();
             if (type) // trang trí
@@ -72,7 +72,8 @@ namespace WeddingStoreMoblie.MockDatas.MockDataSystem
         {
             List<HoaDonModel> lstHoaDon = await GetDataAsync();
             return lstHoaDon.Where(hd => (hd.TinhTrang == 0 && hd.MaHD != maHD)
-                                        || (hd.TinhTrang != 1 && hd.MaHD == maHD)).ToList();
+                                        || (hd.TinhTrang != 1 && hd.MaHD == maHD)
+                                        || (hd.TinhTrang == 1 && hd.MaHD != maHD)).ToList();
         }
     }
 }

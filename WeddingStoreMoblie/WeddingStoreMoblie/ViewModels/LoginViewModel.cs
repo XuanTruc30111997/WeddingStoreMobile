@@ -73,7 +73,7 @@ namespace WeddingStoreMoblie.ViewModels
                 isBusy = true;
             });
 
-            await GetData();
+            await GetData().ConfigureAwait(false);
 
             Device.BeginInvokeOnMainThread(() =>
             {

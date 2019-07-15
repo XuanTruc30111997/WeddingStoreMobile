@@ -33,7 +33,7 @@
                         <DataTemplate>
                             <!--<ImageCell ImageSource="{markEx:EmbeddedImage icon}" 
                                    Text="{Binding ChucNang}" TextColor="Black"/>-->
-                            
+
                             <ImageCell ImageSource="{Binding icon, Converter={StaticResource myImageApp}}" 
                                    Text="{Binding ChucNang}" TextColor="Black" />
                             
