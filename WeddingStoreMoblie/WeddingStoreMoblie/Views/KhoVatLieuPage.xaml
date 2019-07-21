@@ -6,39 +6,78 @@
              xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              xmlns:markEx="clr-namespace:WeddingStoreMoblie.MarkupExtensions"
              xmlns:converter="clr-namespace:WeddingStoreMoblie.Converters"
+             xmlns:sfListView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              BackgroundColor="#323d4f">
 
     <ContentPage.Resources>
         <converter:ConvertBoolToBrush x:Key="isNhap"/>
     </ContentPage.Resources>
-    
-    <AbsoluteLayout>
-        <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
+
+    <Frame>
+        <AbsoluteLayout>
+            <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
                            IsVisible="{Binding isBusy,Mode=TwoWay}"
                            IsRunning="{Binding isBusy,Mode=TwoWay}"
                            AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
-        <Image Source="{markEx:EmbeddedImage KhoVatLieuBackground.jpg}" 
+            <!--<Image Source="{markEx:EmbeddedImage KhoVatLieuBackground.jpg}" 
                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
-               AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
-        <Grid>
+               AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>-->
             <Grid>
-                <StackLayout Orientation="Vertical" BackgroundColor="Transparent">
-                    <StackLayout Orientation="Horizontal">
-                        <SearchBar Placeholder="Search Here!!" WidthRequest="250" FontSize="Medium" TextColor="White"
-                               SearchCommand="{Binding SearchCommand}" Text="{Binding keyWord}" PlaceholderColor="White"
+                <Grid>
+                    <StackLayout Orientation="Vertical" BackgroundColor="Transparent">
+                        <StackLayout Orientation="Horizontal">
+                            <SearchBar Placeholder="Search Here!!" WidthRequest="250" FontSize="Medium"
+                               SearchCommand="{Binding SearchCommand}" Text="{Binding keyWord}"
                                TextChanged="Handler_keyWordChanged" BackgroundColor="Transparent"/>
-                        <Picker Title="--Choose your option--" TextColor="White"
+                            <Picker Title="--Choose your option--"
                             ItemsSource="{Binding LstOption}" SelectedItem="{Binding selectedOption, Mode=TwoWay}"
                             WidthRequest="100" FontSize="Medium" BackgroundColor="Transparent"/>
-                    </StackLayout>
+                        </StackLayout>
 
-                    <ListView x:Name="listView" ItemsSource="{Binding LstVatLieu}"
+                        <!--<ListView x:Name="listView" ItemsSource="{Binding LstVatLieu}"
                               Margin="5" BackgroundColor="Transparent" HasUnevenRows="True"
                               RefreshCommand="{Binding RefreshCommand}" IsPullToRefreshEnabled="True" IsRefreshing="{Binding isBusy}">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <Grid HeightRequest="60" Padding="5">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid HeightRequest="60" Padding="5">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="70"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="5"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Source="{Binding AnhMoTa, Converter={StaticResource myImage}}" Grid.Column="0"/>
+                                            <Grid Grid.Column="1">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="4*"/>
+                                                    <ColumnDefinition Width="6*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Text="{Binding TenVL}" Style="{StaticResource lableBold}"
+                                                       Grid.Row="0" Grid.ColumnSpan="2"/>
+                                                <Label Text="{Binding SoLuongTon, StringFormat='Số lượng: {0:0}'}"
+                                                       HorizontalOptions="End" Grid.Row="1" Grid.Column="0"/>
+                                                <Label Text="{Binding GiaTien, StringFormat='Giá Tiền: {0:0,0} VNĐ'}"
+                                                       HorizontalTextAlignment="End" Grid.Row="1" Grid.Column="1"/>
+                                            </Grid>
+                                            <Frame Grid.Column="2" BackgroundColor="{Binding IsNhap, Converter={StaticResource isNhap}}"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>-->
+
+                        <sfListView:SfListView x:Name="listView" ItemsSource="{Binding LstVatLieu}"
+                                               Margin="5" BackgroundColor="Transparent" ItemSize="80" ItemSpacing="5"
+                                               LoadMoreCommand="{Binding LoadMoreDataCommand}"
+                                               LoadMoreCommandParameter="{Binding Source={x:Reference listView}}"
+                                               LoadMoreOption="AutoOnScroll">
+                            <sfListView:SfListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid HeightRequest="80">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="70"/>
                                             <ColumnDefinition Width="*"/>
@@ -54,27 +93,25 @@
                                                 <ColumnDefinition Width="4*"/>
                                                 <ColumnDefinition Width="6*"/>
                                             </Grid.ColumnDefinitions>
-                                            <Label Text="{Binding TenVL}" FontSize="Medium" FontAttributes="Bold"
-                                               Grid.Row="0" Grid.ColumnSpan="2" TextColor="White"/>
+                                            <Label Text="{Binding TenVL}" Style="{StaticResource lableBold}"
+                                                       Grid.Row="0" Grid.ColumnSpan="2"/>
                                             <Label Text="{Binding SoLuongTon, StringFormat='Số lượng: {0:0}'}"
-                                               HorizontalOptions="End" TextColor="White" FontAttributes="Italic"
-                                               Grid.Row="1" Grid.Column="0"/>
+                                                       HorizontalOptions="End" Grid.Row="1" Grid.Column="0"/>
                                             <Label Text="{Binding GiaTien, StringFormat='Giá Tiền: {0:0,0} VNĐ'}"
-                                               TextColor="White" HorizontalTextAlignment="End"
-                                               Grid.Row="1" Grid.Column="1"/>
+                                                       HorizontalTextAlignment="End" Grid.Row="1" Grid.Column="1"/>
                                         </Grid>
                                         <Frame Grid.Column="2" BackgroundColor="{Binding IsNhap, Converter={StaticResource isNhap}}"/>
                                     </Grid>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </StackLayout>
+                                </DataTemplate>
+                            </sfListView:SfListView.ItemTemplate>
+                        </sfListView:SfListView>
+                    </StackLayout>
+                </Grid>
+                <Grid HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="Transparent">
+                    <Image WidthRequest="64" HeightRequest="64" x:Name="them" Source="addlist.png"/>
+                </Grid>
             </Grid>
-            <Grid HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="Transparent">
-                <Image WidthRequest="64" HeightRequest="64" x:Name="them" Source="addlist.png"/>
-            </Grid>
-        </Grid>
 
-    </AbsoluteLayout>
+        </AbsoluteLayout>
+    </Frame>
 </ContentPage>

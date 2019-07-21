@@ -131,7 +131,6 @@ D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.And
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\linksrc\System.Reflection.Extensions.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\linksrc\System.Linq.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\linksrc\System.Resources.ResourceManager.dll
-D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\linksrc\System.Diagnostics.Tools.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\linksrc\System.Globalization.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\linksrc\System.ObjectModel.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\linksrc\System.Dynamic.Runtime.dll
@@ -204,7 +203,6 @@ D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.And
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Data.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Data.pdb
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Diagnostics.Debug.dll
-D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Diagnostics.Tools.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Dynamic.Runtime.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Globalization.dll
@@ -313,9 +311,6 @@ D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.And
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\mono\android\support\v7\app\ActionBar_OnMenuVisibilityListenerImplementor.java
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\mono\android\support\v7\app\ActionBar_OnNavigationListenerImplementor.java
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\mono\android\support\v7\app\ActionBar_TabListenerImplementor.java
-D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\md55dd9fc6ed71531afc8730347a2a7e0e2\AHorizontalScrollView.java
-D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\md55dd9fc6ed71531afc8730347a2a7e0e2\ScrollViewContainer.java
-D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\md55dd9fc6ed71531afc8730347a2a7e0e2\ScrollViewRenderer.java
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\md54c2b093f5c3df46aefa5ba5513ac1fa4\RgGestureDetectorListener.java
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\mono\android\support\v4\widget\DrawerLayout_DrawerListenerImplementor.java
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\mono\android\support\v4\widget\NestedScrollView_OnScrollChangeListenerImplementor.java
@@ -336,8 +331,6 @@ D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.And
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\mono\android\support\v4\view\ViewPropertyAnimatorUpdateListenerImplementor.java
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\md525515aaea8e1e7b653700744ebd40935\InputLayoutBorder.java
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\md525515aaea8e1e7b653700744ebd40935\InputLayoutBorderRenderer.java
-D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\md525515aaea8e1e7b653700744ebd40935\PasswordToggleViewRenderer.java
-D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\md525515aaea8e1e7b653700744ebd40935\PasswordToggleViewRenderer_OnClickListener.java
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\md525515aaea8e1e7b653700744ebd40935\SfTextInputLayoutRenderer.java
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\mono\android\support\v4\os\CancellationSignal_OnCancelListenerImplementor.java
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\mono\android\support\v4\media\session\MediaSessionCompat_OnActiveChangeListenerImplementor.java
@@ -590,3 +583,5 @@ D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.And
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\md51558244f76c53b6aeda52c8a337f2c37\EntryAccessibilityDelegate.java
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\md51558244f76c53b6aeda52c8a337f2c37\ListViewRenderer_SwipeRefreshLayoutWithFixedNestedScrolling.java
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\md51558244f76c53b6aeda52c8a337f2c37\SpacingItemDecoration.java
+D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\md525515aaea8e1e7b653700744ebd40935\InputLayoutToggleViewRenderer.java
+D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\src\md525515aaea8e1e7b653700744ebd40935\InputLayoutToggleViewRenderer_OnClickListener.java

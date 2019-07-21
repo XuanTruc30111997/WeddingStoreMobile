@@ -13,6 +13,7 @@ public class ListViewItemRenderer
 		__md_methods = 
 			"n_onLayout:(ZIIII)V:GetOnLayout_ZIIIIHandler\n" +
 			"n_onDraw:(Landroid/graphics/Canvas;)V:GetOnDraw_Landroid_graphics_Canvas_Handler\n" +
+			"n_onInterceptTouchEvent:(Landroid/view/MotionEvent;)Z:GetOnInterceptTouchEvent_Landroid_view_MotionEvent_Handler\n" +
 			"n_onTouchEvent:(Landroid/view/MotionEvent;)Z:GetOnTouchEvent_Landroid_view_MotionEvent_Handler\n" +
 			"n_onDown:(Landroid/view/MotionEvent;)Z:GetOnDown_Landroid_view_MotionEvent_Handler:Android.Views.GestureDetector/IOnGestureListenerInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null\n" +
 			"n_onFling:(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z:GetOnFling_Landroid_view_MotionEvent_Landroid_view_MotionEvent_FFHandler:Android.Views.GestureDetector/IOnGestureListenerInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null\n" +
@@ -63,6 +64,14 @@ public class ListViewItemRenderer
 	}
 
 	private native void n_onDraw (android.graphics.Canvas p0);
+
+
+	public boolean onInterceptTouchEvent (android.view.MotionEvent p0)
+	{
+		return n_onInterceptTouchEvent (p0);
+	}
+
+	private native boolean n_onInterceptTouchEvent (android.view.MotionEvent p0);
 
 
 	public boolean onTouchEvent (android.view.MotionEvent p0)

@@ -29,7 +29,7 @@
                             <ListView.GroupHeaderTemplate>
                                 <DataTemplate>
                                     <ViewCell>
-                                        <Label Text="{Binding Ngay}" TextColor="Salmon" FontSize="Large"/>
+                                        <Label Text="{Binding Ngay}" FontSize="18" FontAttributes="Bold"/>
                                     </ViewCell>
                                 </DataTemplate>
                             </ListView.GroupHeaderTemplate>
@@ -40,7 +40,7 @@
                                         <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="Fill">
                                             <Image HeightRequest="50" WidthRequest="50" Source="{Binding Avatar, Converter={StaticResource myImage}}"/>
                                             <StackLayout Orientation="Vertical">
-                                                <Label Text="{Binding TenNV}"/>
+                                                <Label Text="{Binding TenNV}" FontAttributes="Bold"/>
                                                 <Label Text="{Binding SoDT,StringFormat='SĐT: {0:N}'}"/>
                                                 <Grid>
                                                     <Grid.ColumnDefinitions>

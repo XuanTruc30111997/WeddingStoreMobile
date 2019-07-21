@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-06-19T03:29:00.511</Modified>
+      <Modified>2019-07-19T03:07:04.505</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.UWP\bin\x86\Debug\WeddingStoreMoblie.UWP.exe">
       <PackagePath>entrypoint\WeddingStoreMoblie.UWP.exe</PackagePath>
-      <Modified>2019-06-19T03:28:57.137</Modified>
+      <Modified>2019-07-19T03:07:01.800</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nguye\.nuget\packages\carouselview.formsplugin\5.2.0\lib\UAP10\CarouselView.FormsPlugin.Abstractions.dll">
       <PackagePath>CarouselView.FormsPlugin.Abstractions.dll</PackagePath>
@@ -124,7 +124,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie\bin\Debug\netstandard2.0\WeddingStoreMoblie.dll">
       <PackagePath>WeddingStoreMoblie.dll</PackagePath>
-      <Modified>2019-06-19T03:06:44.484</Modified>
+      <Modified>2019-07-19T00:39:58.607</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nguye\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -275,11 +275,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-06-19T03:28:56.540</Modified>
+      <Modified>2019-07-19T03:07:01.499</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-06-19T03:28:56.540</Modified>
+      <Modified>2019-07-19T03:07:01.500</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -299,11 +299,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-06-19T03:16:05.622</Modified>
+      <Modified>2019-07-19T03:07:03.047</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.UWP\bin\x86\Debug\Core\WeddingStoreMoblie.UWP.exe">
       <PackagePath>WeddingStoreMoblie.UWP.exe</PackagePath>
-      <Modified>2019-06-19T03:29:00.486</Modified>
+      <Modified>2019-07-19T03:07:04.473</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

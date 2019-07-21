@@ -689,7 +689,7 @@
           "Rg.Plugins.Popup": "1.1.5.188",
           "Syncfusion.Xamarin.SfListView": "17.1.0.50",
           "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "4.0.0.482894",
+          "Xamarin.Forms": "4.1.0.581479",
           "Xamarin.Forms.Behavior": "1.0.0"
         },
         "compile": {
@@ -1695,7 +1695,7 @@
           "Rg.Plugins.Popup": "1.1.5.188",
           "Syncfusion.Xamarin.SfListView": "17.1.0.50",
           "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "4.0.0.482894",
+          "Xamarin.Forms": "4.1.0.581479",
           "Xamarin.Forms.Behavior": "1.0.0"
         },
         "compile": {
@@ -2761,7 +2761,7 @@
           "Rg.Plugins.Popup": "1.1.5.188",
           "Syncfusion.Xamarin.SfListView": "17.1.0.50",
           "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "4.0.0.482894",
+          "Xamarin.Forms": "4.1.0.581479",
           "Xamarin.Forms.Behavior": "1.0.0"
         },
         "compile": {
@@ -3824,7 +3824,7 @@
           "Rg.Plugins.Popup": "1.1.5.188",
           "Syncfusion.Xamarin.SfListView": "17.1.0.50",
           "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "4.0.0.482894",
+          "Xamarin.Forms": "4.1.0.581479",
           "Xamarin.Forms.Behavior": "1.0.0"
         },
         "compile": {
@@ -4830,7 +4830,7 @@
           "Rg.Plugins.Popup": "1.1.5.188",
           "Syncfusion.Xamarin.SfListView": "17.1.0.50",
           "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "4.0.0.482894",
+          "Xamarin.Forms": "4.1.0.581479",
           "Xamarin.Forms.Behavior": "1.0.0"
         },
         "compile": {
@@ -5896,7 +5896,7 @@
           "Rg.Plugins.Popup": "1.1.5.188",
           "Syncfusion.Xamarin.SfListView": "17.1.0.50",
           "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "4.0.0.482894",
+          "Xamarin.Forms": "4.1.0.581479",
           "Xamarin.Forms.Behavior": "1.0.0"
         },
         "compile": {
@@ -6902,7 +6902,7 @@
           "Rg.Plugins.Popup": "1.1.5.188",
           "Syncfusion.Xamarin.SfListView": "17.1.0.50",
           "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "4.0.0.482894",
+          "Xamarin.Forms": "4.1.0.581479",
           "Xamarin.Forms.Behavior": "1.0.0"
         },
         "compile": {
@@ -7968,7 +7968,7 @@
           "Rg.Plugins.Popup": "1.1.5.188",
           "Syncfusion.Xamarin.SfListView": "17.1.0.50",
           "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "4.0.0.482894",
+          "Xamarin.Forms": "4.1.0.581479",
           "Xamarin.Forms.Behavior": "1.0.0"
         },
         "compile": {
@@ -14601,6 +14601,23 @@
       "warningLevel": 1,
       "message": "Detected package downgrade: Xamarin.Essentials from 1.1.0 to 1.0.1. Reference the package directly from the project to select a different version. \r\n WeddingStoreMoblie.UWP -> WeddingStoreMoblie -> Xamarin.Essentials (>= 1.1.0) \r\n WeddingStoreMoblie.UWP -> Xamarin.Essentials (>= 1.0.1)",
       "libraryId": "Xamarin.Essentials",
+      "targetGraphs": [
+        "UAP,Version=v10.0.16299",
+        "UAP,Version=v10.0.16299/win10-arm",
+        "UAP,Version=v10.0.16299/win10-arm-aot",
+        "UAP,Version=v10.0.16299/win10-arm64-aot",
+        "UAP,Version=v10.0.16299/win10-x64",
+        "UAP,Version=v10.0.16299/win10-x64-aot",
+        "UAP,Version=v10.0.16299/win10-x86",
+        "UAP,Version=v10.0.16299/win10-x86-aot"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 4.1.0.581479 to 4.0.0.482894. Reference the package directly from the project to select a different version. \r\n WeddingStoreMoblie.UWP -> WeddingStoreMoblie -> Xamarin.Forms (>= 4.1.0.581479) \r\n WeddingStoreMoblie.UWP -> Xamarin.Forms (>= 4.0.0.482894)",
+      "libraryId": "Xamarin.Forms",
       "targetGraphs": [
         "UAP,Version=v10.0.16299",
         "UAP,Version=v10.0.16299/win10-arm",

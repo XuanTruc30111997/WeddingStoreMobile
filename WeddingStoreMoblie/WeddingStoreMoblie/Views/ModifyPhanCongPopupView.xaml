@@ -40,16 +40,17 @@
 
     <pages:PopupPage.Content>
         <Frame BackgroundColor="Transparent" CornerRadius="45" Opacity="0.9" HasShadow="True"  Visual="Material"
-               HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="430" WidthRequest="295">
+               HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="480" WidthRequest="295">
             <AbsoluteLayout>
                 <Image Source="{markUp:EmbeddedImage DiemDanhNhanVien.jpg}" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
                 <Image Source="{Binding thongTinNhanVienPhanCong.Avatar, Converter={StaticResource myImage}}" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,150" AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional"/>
-                <Frame BackgroundColor="Gray" CornerRadius="15" Opacity="0.9"
+                <Frame CornerRadius="15" Opacity="0.9" Style="{StaticResource frameThongTin}"
                        AbsoluteLayout.LayoutBounds=".5,120,.8,75" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
-                    <Label Text="{Binding thongTinNhanVienPhanCong.TenNV}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                    <Label Text="{Binding thongTinNhanVienPhanCong.TenNV}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                           Style="{StaticResource lableBold}"/>
                 </Frame>
-                <Frame BackgroundColor="#CEF376" AbsoluteLayout.LayoutBounds=".5,210,.9,120" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
-                       CornerRadius="15" Opacity="0.7">
+                <Frame AbsoluteLayout.LayoutBounds=".5,210,.9,145" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                       CornerRadius="15" Opacity="0.7" Style="{StaticResource frameDanhSach}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -69,14 +70,15 @@
                     </Grid>
                 </Frame>
 
-                <StackLayout AbsoluteLayout.LayoutBounds=".5,340,260,35" AbsoluteLayout.LayoutFlags="XProportional" Orientation="Horizontal"
+                <StackLayout AbsoluteLayout.LayoutBounds=".5,360,260,50" AbsoluteLayout.LayoutFlags="XProportional" Orientation="Horizontal"
                              HorizontalOptions="Center">
-                    <Button Text="CheckIn" BackgroundColor="Blue" Command="{Binding CheckInCommand}" CornerRadius="15"/>
-                    <Button Text="CheckOut" BackgroundColor="Green" Command="{Binding CheckOutCommand}" CornerRadius="15" />
-                    <Button Text="Delete" BackgroundColor="Red" Command="{Binding DeleteCommand}" CornerRadius="15"/>
+                    <Button Text="CheckIn" Command="{Binding CheckInCommand}"/>
+                    <Button Text="CheckOut" Command="{Binding CheckOutCommand}"/>
+                    <Button Text="Delete" Command="{Binding DeleteCommand}" Style="{StaticResource buttonDelete}"/>
                 </StackLayout>
-                <Button Text="Done" BackgroundColor="#F36464" Command="{Binding DoneCommand}" CornerRadius="15"
-                        AbsoluteLayout.LayoutBounds=".5,385,.8,35" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
+                
+                <Button Text="Done" Command="{Binding DoneCommand}" Style="{StaticResource buttonDone}"
+                        AbsoluteLayout.LayoutBounds=".5,420,.8,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
             </AbsoluteLayout>
             <!--<Grid Padding="24" Margin="24"
               HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#E3B8B8">

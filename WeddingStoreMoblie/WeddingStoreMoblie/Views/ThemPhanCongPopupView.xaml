@@ -22,49 +22,48 @@
         <converter:ConvertDateTimeToStringV2 x:Key="myDateTime"/>
     </pages:PopupPage.Resources>
 
-    <StackLayout BackgroundColor="White"
-                 Padding="24"
-                 Margin="24"
-                 Orientation="Vertical">
-        <Label Text="-- Danh Sách Nhân Viên --"/>
-        <ListView ItemsSource="{Binding LstNhanVien}"
+    <Frame Padding="24" Margin="24" Style="{StaticResource frameBackground}">
+        <StackLayout Orientation="Vertical">
+            <Label Text="-- Danh Sách Nhân Viên --"/>
+            <ListView ItemsSource="{Binding LstNhanVien}"
                   SelectedItem="{Binding SelectedNV}"
                   HasUnevenRows="True"
                   Margin="5">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal" Padding="5">
-                            <Image Source="{Binding Avatar, Converter={StaticResource myImage}}" WidthRequest="50" HeightRequest="50"/>
-                            <StackLayout Orientation="Vertical">
-                                <Label Text="{Binding TenNV}"/>
-                                <Label Text="{Binding GioiTinh}"/>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="5">
+                                <Image Source="{Binding Avatar, Converter={StaticResource myImage}}" WidthRequest="50" HeightRequest="50"/>
+                                <StackLayout Orientation="Vertical" Margin="5,0">
+                                    <Label Text="{Binding TenNV}" Style="{StaticResource lableBold}"/>
+                                    <Label Text="{Binding GioiTinh}"/>
+                                </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Grid Padding="5">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="30"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="38"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid Padding="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="38"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-            <ctrls:MyCheckbox Grid.Row="0" Grid.Column="0" Checked="{Binding checkNTT}"/>
-            <Label Grid.Row="0" Grid.Column="1" Text="{Binding hoaDon.NgayTrangTri, StringFormat=' {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
+                <ctrls:MyCheckbox Grid.Row="0" Grid.Column="0" Checked="{Binding checkNTT}"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding hoaDon.NgayTrangTri, StringFormat=' {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
 
-            <ctrls:MyCheckbox Grid.Row="1" Grid.Column="0" Checked="{Binding checkNTD}"/>
-            <Label Grid.Row="1" Grid.Column="1" Text="{Binding hoaDon.NgayThaoDo, StringFormat=' {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
-        </Grid>
+                <ctrls:MyCheckbox Grid.Row="1" Grid.Column="0" Checked="{Binding checkNTD}"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding hoaDon.NgayThaoDo, StringFormat=' {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
+            </Grid>
 
-        <StackLayout Orientation="Horizontal" Padding="5" Margin="5">
-            <Button Text="Save" BackgroundColor="Blue" Command="{Binding SaveCommand}" CornerRadius="15"/>
-            <Button Text="Done" BackgroundColor="Red" Command="{Binding DoneCommand}" CornerRadius="15"/>
+            <StackLayout Orientation="Horizontal" Padding="5" Margin="5">
+                <Button Text="Save" Command="{Binding SaveCommand}" Style="{StaticResource buttonSave}"/>
+                <Button Text="Done" Command="{Binding DoneCommand}" Style="{StaticResource buttonDone}"/>
+            </StackLayout>
         </StackLayout>
-    </StackLayout>
+    </Frame>
 </pages:PopupPage>

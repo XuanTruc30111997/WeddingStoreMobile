@@ -70,12 +70,11 @@ D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.And
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Runtime.Extensions.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Reflection.Extensions.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Linq.dll
-D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Resources.ResourceManager.dll
-D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Diagnostics.Tools.dll
-D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Globalization.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.ObjectModel.dll
+D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Globalization.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Dynamic.Runtime.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Linq.Expressions.dll
+D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Resources.ResourceManager.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\Microsoft.CSharp.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Linq.Queryable.dll
 D:\KhoaLuan\Project\WeddingStoreMoblie\WeddingStoreMoblie\WeddingStoreMoblie.Android\obj\Debug\81\android\assets\System.Text.RegularExpressions.dll

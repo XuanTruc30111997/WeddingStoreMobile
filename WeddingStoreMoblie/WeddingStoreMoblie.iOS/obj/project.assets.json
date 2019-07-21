@@ -130,7 +130,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.0.0.482894": {
+      "Xamarin.Forms/4.1.0.581479": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -275,7 +275,7 @@
           "Rg.Plugins.Popup": "1.1.5.188",
           "Syncfusion.Xamarin.SfListView": "17.1.0.50",
           "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "4.0.0.482894",
+          "Xamarin.Forms": "4.1.0.581479",
           "Xamarin.Forms.Behavior": "1.0.0"
         },
         "compile": {
@@ -415,7 +415,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.0.0.482894": {
+      "Xamarin.Forms/4.1.0.581479": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -560,7 +560,7 @@
           "Rg.Plugins.Popup": "1.1.5.188",
           "Syncfusion.Xamarin.SfListView": "17.1.0.50",
           "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "4.0.0.482894",
+          "Xamarin.Forms": "4.1.0.581479",
           "Xamarin.Forms.Behavior": "1.0.0"
         },
         "compile": {
@@ -700,7 +700,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.0.0.482894": {
+      "Xamarin.Forms/4.1.0.581479": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -845,7 +845,7 @@
           "Rg.Plugins.Popup": "1.1.5.188",
           "Syncfusion.Xamarin.SfListView": "17.1.0.50",
           "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "4.0.0.482894",
+          "Xamarin.Forms": "4.1.0.581479",
           "Xamarin.Forms.Behavior": "1.0.0"
         },
         "compile": {
@@ -985,7 +985,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.0.0.482894": {
+      "Xamarin.Forms/4.1.0.581479": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -1130,7 +1130,7 @@
           "Rg.Plugins.Popup": "1.1.5.188",
           "Syncfusion.Xamarin.SfListView": "17.1.0.50",
           "Xamarin.Essentials": "1.1.0",
-          "Xamarin.Forms": "4.0.0.482894",
+          "Xamarin.Forms": "4.1.0.581479",
           "Xamarin.Forms.Behavior": "1.0.0"
         },
         "compile": {
@@ -1452,10 +1452,10 @@
         "xamarin.essentials.nuspec"
       ]
     },
-    "Xamarin.Forms/4.0.0.482894": {
-      "sha512": "2K1/jCyor3CYYxEBMDMrIUhTOD0sxiipdmJTbj9NYBnV3iJKblnBRWPoi06Is4cSoXC7G6sWSuF2b6cYxigEjg==",
+    "Xamarin.Forms/4.1.0.581479": {
+      "sha512": "wrO8AOW1xsFoGgT1SUvJ9OEeqAduJOm0xezZGNe0rCiAv2N9Qc/n5uywhlSia1s1k+Zy/hOrhZ4b7/EM6z9oog==",
       "type": "package",
-      "path": "xamarin.forms/4.0.0.482894",
+      "path": "xamarin.forms/4.1.0.581479",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1675,6 +1675,7 @@
         "lib/uap10.0/Xamarin.Forms.Platform.UAP.pdb",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP.pri",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/AutoSuggestStyle.xbf",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsCheckBoxStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsCommandBarStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsEmbeddedPageWrapper.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsFlyout.xbf",
@@ -1693,7 +1694,7 @@
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.0.0.482894.nupkg.sha512",
+        "xamarin.forms.4.1.0.581479.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -1720,7 +1721,7 @@
       "CarouselView.FormsPlugin >= 5.2.0",
       "WeddingStoreMoblie >= 1.0.0",
       "Xamarin.Essentials >= 1.0.1",
-      "Xamarin.Forms >= 4.0.0.482894"
+      "Xamarin.Forms >= 4.1.0.581479"
     ]
   },
   "packageFolders": {
@@ -1775,7 +1776,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.0.0.482894, )"
+            "version": "[4.1.0.581479, )"
           }
         }
       }

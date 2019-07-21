@@ -51,8 +51,8 @@
                 <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#5C89DC" Style="{StaticResource myFrame}" x:Name="frameThongTin"
                        CornerRadius="35" HasShadow="True">
                     <Frame.GestureRecognizers>
-                        <!--<TapGestureRecognizer Command="{Binding ThongTinCommand}"/>-->
-                        <TapGestureRecognizer Tapped="ThongTin_Tapped"/>
+                        <TapGestureRecognizer Command="{Binding ThongTinCommand}"/>
+                        <!--<TapGestureRecognizer Tapped="ThongTin_Tapped"/>-->
                     </Frame.GestureRecognizers>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -66,8 +66,8 @@
                 <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#5C89DC" Style="{StaticResource myFrame}" x:Name="frameNhanVien"
                        CornerRadius="35" HasShadow="True">
                     <Frame.GestureRecognizers>
-                        <!--<TapGestureRecognizer Command="{Binding NhanVienCommand}"/>-->
-                        <TapGestureRecognizer Tapped="NhanVien_Tapped"/>
+                        <TapGestureRecognizer Command="{Binding NhanVienCommand}"/>
+                        <!--<TapGestureRecognizer Tapped="NhanVien_Tapped"/>-->
                     </Frame.GestureRecognizers>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -81,8 +81,8 @@
                 <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="#5C89DC" Style="{StaticResource myFrame}" x:Name="frameHoaDon"
                        CornerRadius="35" HasShadow="True">
                     <Frame.GestureRecognizers>
-                        <!--<TapGestureRecognizer Command="{Binding HoaDonCommand}"/>-->
-                        <TapGestureRecognizer Tapped="HoaDon_Tapped"/>
+                        <TapGestureRecognizer Command="{Binding HoaDonCommand}"/>
+                        <!--<TapGestureRecognizer Tapped="HoaDon_Tapped"/>-->
                     </Frame.GestureRecognizers>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -96,8 +96,8 @@
                 <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#5C89DC" Style="{StaticResource myFrame}" x:Name="frameVatLieu"
                        CornerRadius="35" HasShadow="True">
                     <Frame.GestureRecognizers>
-                        <!--<TapGestureRecognizer Command="{Binding VatLieuCommand}"/>-->
-                        <TapGestureRecognizer Tapped="VatLieu_Tapped"/>
+                        <TapGestureRecognizer Command="{Binding VatLieuCommand}"/>
+                        <!--<TapGestureRecognizer Tapped="VatLieu_Tapped"/>-->
                     </Frame.GestureRecognizers>
                     <Grid>
                         <Grid.RowDefinitions>

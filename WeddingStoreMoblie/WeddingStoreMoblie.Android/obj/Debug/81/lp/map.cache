@@ -45,6 +45,5 @@ Xamarin.Forms.Xaml
 netstandard
 System.Reflection.Extensions
 System.Resources.ResourceManager
-System.Diagnostics.Tools
 System.Linq.Queryable
 System.ComponentModel

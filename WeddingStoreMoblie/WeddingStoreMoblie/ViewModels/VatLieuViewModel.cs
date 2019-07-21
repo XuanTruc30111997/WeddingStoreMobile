@@ -8,14 +8,15 @@ using WeddingStoreMoblie.Models.AppModels;
 using WeddingStoreMoblie.Models.SystemModels;
 using WeddingStoreMoblie.MockDatas.MockDataSystem;
 using Xamarin.Forms;
+using System.Collections.ObjectModel;
 
 namespace WeddingStoreMoblie.ViewModels
 {
     public class VatLieuViewModel : BaseViewModel
     {
         #region Properties
-        private List<VatLieuModel> _lstVatLieu { get; set; }
-        public List<VatLieuModel> LstVatLieu
+        private ObservableCollection<VatLieuModel> _lstVatLieu { get; set; }
+        public ObservableCollection<VatLieuModel> LstVatLieu
         {
             get => _lstVatLieu;
             set
@@ -38,6 +39,9 @@ namespace WeddingStoreMoblie.ViewModels
                 "$$->$"
             };
         }
+
+        private int _num = 0; // Số lượng items đã lấy
+        private bool _canLoadMore;
 
         private string _keyWord { get; set; }
         public string keyWord
@@ -71,13 +75,13 @@ namespace WeddingStoreMoblie.ViewModels
 
         private bool isSearching;
         // Danh sách lưu tất cả vật liệu không thay đổi
-        private List<VatLieuModel> _lstAllVatLieu = new List<VatLieuModel>();
+        private ObservableCollection<VatLieuModel> _lstAllVatLieu = new ObservableCollection<VatLieuModel>();
         // Danh sách lưu vật liệu sắp xếp theo Option
-        private List<VatLieuModel> _lstVatLieuOption = new List<VatLieuModel>();
+        private ObservableCollection<VatLieuModel> _lstVatLieuOption = new ObservableCollection<VatLieuModel>();
         #endregion
 
         #region Services
-        private MockVatLieuRepository _vatLieu;
+        private MockVatLieuRepository _vatLieu = new MockVatLieuRepository();
         #endregion
 
         #region Constructors
@@ -87,6 +91,9 @@ namespace WeddingStoreMoblie.ViewModels
             //selectedOption = "All";
 
             //OptionClick = new Command(ClickOnOption);
+            _canLoadMore = true;
+            LstVatLieu = new ObservableCollection<VatLieuModel>();
+            LoadMoreDataCommand = new Command<object>(LoadMore, CanLoadMore);
         }
         #endregion
 
@@ -105,26 +112,92 @@ namespace WeddingStoreMoblie.ViewModels
                  await GetData();
              });
         }
+
+        //public Command GetDataCommand
+        //{
+        //    get => new Command(async () =>
+        //      {
+        //          await GetData();
+        //      });
+        //}
+
+        public Command<object> LoadMoreDataCommand { get; set; }
         #endregion
 
         #region Methods
 
+        private bool CanLoadMore(object obj)
+        {
+            return _canLoadMore;
+        }
         public async Task GetData()
         {
             Device.BeginInvokeOnMainThread(() => { isBusy = true; });
-            _vatLieu = new MockVatLieuRepository();
-            //_lstVatLieu = await _vatLieu.GetVatLieu();
-            LstVatLieu = await _vatLieu.GetDataAsync();
+
+            //LstVatLieu = await _vatLieu.GetDataAsync();
+            //_lstAllVatLieu = _lstVatLieu;
+
+            //List<VatLieuModel> myLst = await _vatLieu.GetTenItems(_num);
+
+            //List<VatLieuModel> myLst = _lstAllVatLieu;
+            //myLst.AddRange(await _vatLieu.GetTenItems(_num));
+            //LstVatLieu = myLst;
+
+            //LstVatLieu.AddRange(await _vatLieu.GetTenItems(_num));
+            //OnPropertyChanged(nameof(LstVatLieu));
+
+            LstVatLieu = await _vatLieu.GetTenItems(_num);
+
             _lstAllVatLieu = _lstVatLieu;
+            _num += 10;
+
             selectedOption = "All";
             Device.BeginInvokeOnMainThread(() => { isBusy = false; });
         }
+
+        private async void LoadMore(object obj)
+        {
+            var listview = obj as Syncfusion.ListView.XForms.SfListView;
+            listview.IsBusy = true;
+
+            ObservableCollection<VatLieuModel> myLst = await _vatLieu.GetTenItems(_num);
+            if (myLst.Count > 0)
+            {
+                //LstVatLieu.AddRange(myLst);
+                //OnPropertyChanged(nameof(LstVatLieu));
+
+                foreach (var vatLieu in myLst)
+                {
+                    LstVatLieu.Add(vatLieu);
+                    //OnPropertyChanged(nameof(LstVatLieu));
+                }
+
+                _num += 10;
+            }
+            else
+                _canLoadMore = false;
+
+            listview.IsBusy = false;
+            //SearchByOption();
+        }
+
+        //private async Task LoadMore()
+        //{
+        //    List<VatLieuModel> myLst = await _vatLieu.GetTenItems(_num);
+        //    foreach(var vl in myLst)
+        //    {
+        //        LstVatLieu.Add(vl);
+        //        OnPropertyChanged(nameof(LstVatLieu));
+        //    }
+        //    _num += 10;
+        //}
 
         private void Search()
         {
             if (!String.IsNullOrEmpty(_keyWord)) //nhập tìm kiếm
             {
-                LstVatLieu = _lstVatLieuOption.Where(vl => vl.TenVL.ToLower().Contains(_keyWord.ToLower())).ToList();
+                LstVatLieu = new ObservableCollection<VatLieuModel>(_lstVatLieuOption.Where(vl => vl.TenVL.ToLower().Contains(_keyWord.ToLower())).ToList());
+                //LstVatLieu = _lstVatLieuOption.Where(vl => vl.TenVL.ToLower().Contains(_keyWord.ToLower())).ToList();
             }
             else
             {
@@ -140,13 +213,16 @@ namespace WeddingStoreMoblie.ViewModels
                     _lstVatLieuOption = _lstAllVatLieu;
                     break;
                 case "Còn Hàng":
-                    _lstVatLieuOption = _lstAllVatLieu.Where(vl => vl.SoLuongTon > 0).ToList();
+                    _lstVatLieuOption = new ObservableCollection<VatLieuModel>(_lstAllVatLieu.Where(vl => vl.SoLuongTon > 0).ToList());
+                    //_lstVatLieuOption = _lstAllVatLieu.Where(vl => vl.SoLuongTon > 0).ToList();
                     break;
                 case "$->$$":
-                    _lstVatLieuOption = _lstAllVatLieu.OrderBy(vl => vl.GiaTien).ToList();
+                    _lstVatLieuOption = new ObservableCollection<VatLieuModel>(_lstAllVatLieu.OrderBy(vl => vl.GiaTien).ToList());
+                    //_lstVatLieuOption = _lstAllVatLieu.OrderBy(vl => vl.GiaTien).ToList();
                     break;
                 case "$$->$":
-                    _lstVatLieuOption = _lstAllVatLieu.OrderByDescending(vl => vl.GiaTien).ToList();
+                    _lstVatLieuOption = new ObservableCollection<VatLieuModel>(_lstAllVatLieu.OrderByDescending(vl => vl.GiaTien).ToList());
+                    //_lstVatLieuOption = _lstAllVatLieu.OrderByDescending(vl => vl.GiaTien).ToList();
                     break;
             }
             LstVatLieu = _lstVatLieuOption;

@@ -12,14 +12,8 @@
             <Image Source="{markEx:EmbeddedImage loginBackground.jpg}" 
                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
                    AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
-            <Image AbsoluteLayout.LayoutBounds=".5,.5,200,200" AbsoluteLayout.LayoutFlags="XProportional,YProportional"
-                   x:Name="ahihi" Source="{markEx:EmbeddedImage Heart.png}">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="ahihiTap"/>
-                </Image.GestureRecognizers>
-            </Image>
             <Grid AbsoluteLayout.LayoutBounds="0.5,0.1,400,600" AbsoluteLayout.LayoutFlags="PositionProportional"
-                  BackgroundColor="Transparent" x:Name="myGrid" IsVisible="False">
+                  BackgroundColor="Transparent" x:Name="myGrid">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="6*"/>
                     <RowDefinition Height="3.5*"/>

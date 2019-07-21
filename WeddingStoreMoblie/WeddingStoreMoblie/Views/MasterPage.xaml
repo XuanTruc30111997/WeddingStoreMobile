@@ -13,7 +13,7 @@
                                IsRunning="{Binding isBusy,Mode=TwoWay}"
                                AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
             <Image Source="{markEx:EmbeddedImage MasterBackground.jpg}" 
-                   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
+                    Aspect="Fill" Opacity="0.7"
                    AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
             <Grid Padding="10" BackgroundColor="Transparent">
                 <Grid.RowDefinitions>

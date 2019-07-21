@@ -16,53 +16,56 @@
                                   ScaleIn="1.2"
                                   ScaleOut="0.8"/>
     </pages:PopupPage.Animation>
-    <AbsoluteLayout Padding="24" Margin="24">
-        <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
+    <Frame HorizontalOptions="Center" VerticalOptions="Center" Padding="24" Margin="24"
+           Style="{StaticResource frameBackground}">
+        <AbsoluteLayout>
+            <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
                                IsVisible="{Binding isBusy,Mode=TwoWay}"
                                IsRunning="{Binding isBusy,Mode=TwoWay}" Color="Black"
                                AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
-        <Image Source="{markEx:EmbeddedImage ModifyChiTietHoaDonBackground.jpg}" 
+            <!--<Image Source="{markEx:EmbeddedImage ModifyChiTietHoaDonBackground.jpg}" 
                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.8"
-                   AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
-        
-        <Grid HorizontalOptions="Center" VerticalOptions="Center" Padding="5">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-            </Grid.RowDefinitions>
-            <Label Grid.Row="0" Text="Danh sách mẫu trong hóa đơn" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>-->
 
-            <ListView Grid.Row="1" ItemsSource="{Binding LstThongTinMau}" HasUnevenRows="True"
+            <Grid HorizontalOptions="Center" VerticalOptions="Center" Padding="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Text="Danh sách mẫu trong hóa đơn" FontSize="Medium" FontAttributes="Bold" Margin="5"/>
+
+                <ListView Grid.Row="1" ItemsSource="{Binding LstThongTinMau}" HasUnevenRows="True"
                       SelectedItem="{Binding SelectedMau}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid HeightRequest="100" Padding="5">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="60"/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Image Grid.Column="0" HeightRequest="50" Source="{Binding Hinh, Converter={StaticResource myImage}}"/>
-                                <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="Center">
-                                    <Label Text="{Binding TenSP}" FontAttributes="Bold"/>
-                                    <Label Text="{Binding SoLuong, StringFormat='Số lượng: {0:0,0}'}"/>
-                                    <Label Text="{Binding ThanhTien, StringFormat=' {0:0,0} VNĐ'}" FontAttributes="Italic"/>
-                                </StackLayout>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid HeightRequest="100" Padding="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" HeightRequest="50" Source="{Binding Hinh, Converter={StaticResource myImage}}"/>
+                                    <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" Margin="5,0">
+                                        <Label Text="{Binding TenSP}" Style="{StaticResource lableBold}"/>
+                                        <Label Text="{Binding SoLuong, StringFormat='Số lượng: {0:0,0}'}"/>
+                                        <Label Text="{Binding ThanhTien, StringFormat=' {0:0,0} VNĐ'}"/>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
-            <Entry Grid.Row="2" Placeholder="Số lượng" Text="{Binding soLuong}" VerticalOptions="Center"/>
+                <Entry Grid.Row="2" Placeholder="Số lượng" Text="{Binding soLuong}" VerticalOptions="Center"/>
 
-            <StackLayout Orientation="Horizontal" Grid.Row="3" HorizontalOptions="Center">
-                <Button Text="Lưu" Command="{Binding SaveCommand}" BackgroundColor="DodgerBlue" CornerRadius="15"/>
-                <Button Text="Xóa" Command="{Binding DeleteCommand}" BackgroundColor="#DE171F" CornerRadius="15"/>
-                <Button Text="Done" Command="{Binding DoneCommand}" BackgroundColor="#fc0a36" CornerRadius="15"/>
-            </StackLayout>
-        </Grid>
-    </AbsoluteLayout>
+                <StackLayout Orientation="Horizontal" Grid.Row="3" HorizontalOptions="Center">
+                    <Button Text="Lưu" Command="{Binding SaveCommand}" Style="{StaticResource buttonSave}"/>
+                    <Button Text="Xóa" Command="{Binding DeleteCommand}" Style="{StaticResource buttonDelete}"/>
+                    <Button Text="Done" Command="{Binding DoneCommand}" Style="{StaticResource buttonDone}"/>
+                </StackLayout>
+            </Grid>
+        </AbsoluteLayout>
+    </Frame>
 </pages:PopupPage>

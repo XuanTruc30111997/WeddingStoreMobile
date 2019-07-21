@@ -9,6 +9,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using System.Linq;
 using WeddingStoreMoblie.MockDatas.MockDataSystem;
+using System.Collections.ObjectModel;
 
 namespace WeddingStoreMoblie.MockDatas.MockDataSystem
 {
@@ -51,6 +52,44 @@ namespace WeddingStoreMoblie.MockDatas.MockDataSystem
         public override async Task<bool> DeleteDataAsync(VatLieuModel obj, string name)
         {
             return await base.DeleteDataAsync(obj, name);
+        }
+
+        //public async Task<List<VatLieuModel>> GetTenItems(int num)
+        //{
+        //    _action = "/GetTenItems/"+num;
+        //    try
+        //    {
+        //        using (HttpClient client = new HttpClient())
+        //        {
+        //            string json = await client.GetStringAsync(Constant.RestApiWeddingStore + _name + _action);
+        //            var listAnswer = JsonConvert.DeserializeObject<List<VatLieuModel>>(json);
+        //            return listAnswer;
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //    }
+        //    return null;
+        //}
+
+        public async Task<ObservableCollection<VatLieuModel>> GetTenItems(int num)
+        {
+            _action = "/GetTenItems/" + num;
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    string json = await client.GetStringAsync(Constant.RestApiWeddingStore + _name + _action);
+                    var listAnswer = new ObservableCollection<VatLieuModel>(JsonConvert.DeserializeObject<List<VatLieuModel>>(json));
+                    return listAnswer;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            return null;
         }
     }
 }

@@ -9,57 +9,54 @@
         <converter:ConvertDateTimeToStringV2 x:Key="myDateTime"/>
         <converter:ConvertTinhTrangToImage x:Key="myTinhTrang"/>
     </ContentPage.Resources>
-    
+
     <ContentPage.Content>
         <AbsoluteLayout>
             <ActivityIndicator IsEnabled="{Binding isBusy,Mode=TwoWay}"
                                IsVisible="{Binding isBusy,Mode=TwoWay}"
                                IsRunning="{Binding isBusy,Mode=TwoWay}"
                                AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5, 0.5 ,50,50"/>
-            <Image Source="{markEx:EmbeddedImage ThongTinBackground.jpg}" 
+            <Image Source="{markEx:EmbeddedImage ThongTinMauBackground.jpg}" 
                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" Opacity="0.7"
                    AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
             <StackLayout Orientation="Vertical" BackgroundColor="Transparent">
                 <StackLayout Orientation="Vertical" BackgroundColor="Transparent">
-                    <Grid HeightRequest="50" BackgroundColor="Transparent">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="50"/>
-                        </Grid.ColumnDefinitions>
-                        <Label Text="Thông tin hóa đơn" FontAttributes="Bold" FontSize="Large" TextColor="Chocolate" VerticalOptions="Center"
-                               Margin="5" Grid.Column="0"/>
-                        <Image Aspect="Fill" Margin="7" Source="{Binding MyHD.TinhTrang, Converter={StaticResource myTinhTrang}}"
+                    <Frame Style="{StaticResource frameThongTin}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" BackgroundColor="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="50"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Thông tin hóa đơn" Margin="5" Grid.Column="0"
+                                       Style="{StaticResource lableHeading}"/>
+                                <Image Aspect="Fill" Margin="7" Source="{Binding MyHD.TinhTrang, Converter={StaticResource myTinhTrang}}"
                                Grid.Column="1"/>
-                    </Grid>
-                    <Grid Padding="10">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Label
-                            Grid.Row="0"
-                            Grid.ColumnSpan="2"
-                            Text="{Binding MyHD.MaHD,StringFormat='Mã hóa đơn: {0:N}'}"
-                            TextColor="Red" FontAttributes="Bold"/>
-                        <Label
-                            Grid.Row="1" Grid.ColumnSpan="2"
-                            TextColor="Black" FontAttributes="Bold"
-                            Text="{Binding MyHD.NgayLap,StringFormat='Ngày lập: {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
-                        <Label
-                            Grid.Row="2" Grid.Column="0"
-                            TextColor="Black" FontAttributes="Italic"
-                            Text="{Binding MyHD.NgayTrangTri,StringFormat='Ngày trang trí: {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
-                        <Label
-                            Grid.Row="2" Grid.Column="1"
-                            TextColor="Black" FontAttributes="Italic"
-                            Text="{Binding MyHD.NgayThaoDo,StringFormat='Ngày tháo dở: {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
-                        <!--<Label
+                            </Grid>
+                            <Grid Padding="10" Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding MyHD.MaHD,StringFormat='Mã hóa đơn: {0:N}'}"
+                                       Style="{StaticResource lableBold}"/>
+                                <Label Grid.Row="1" Grid.ColumnSpan="2"
+                                       Text="{Binding MyHD.NgayLap,StringFormat='Ngày lập: {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
+                                <Label Grid.Row="2" Grid.Column="0"
+                                       Text="{Binding MyHD.NgayTrangTri,StringFormat='Ngày trang trí: {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
+                                <Label Grid.Row="2" Grid.Column="1" TextColor="Black" FontAttributes="Italic"
+                                       Text="{Binding MyHD.NgayThaoDo,StringFormat='Ngày tháo dở: {0:dd/MM/yyyy}', Converter={StaticResource myDateTime}}"/>
+                                <!--<Label
                             Grid.Row="1" Grid.ColumnSpan="2"
                             TextColor="Black" FontAttributes="Bold"
                             Text="{Binding MyHD.NgayLap,StringFormat=' {0:yyyy/MM/dd}'}"/>
@@ -71,41 +68,46 @@
                             Grid.Row="2" Grid.Column="1"
                             TextColor="Black" FontAttributes="Italic"
                             Text="{Binding MyHD.NgayThaoDo,StringFormat=' {0:yyyy/MM/dd}'}"/>-->
-                        <Label
-                            Grid.Row="3" Grid.ColumnSpan="2"
-                            TextColor="Red" FontAttributes="Bold"
-                            Text="{Binding MyHD.TongTien,StringFormat='Tổng tiền: {0:0,0.0} VND'}"/>
-                    </Grid>
-                    <Label
-                        Text="Thông tin khách hàng"
-                        FontAttributes="Bold"
-                        FontSize="Large"
-                        TextColor="Chocolate"/>
-                    <StackLayout Orientation="Vertical" Padding="10">
-                        <Label TextColor="Black" FontAttributes="Bold" 
-                               Text="{Binding MyKH.MaKH,StringFormat='Mã khách hàng: {0:N}'}"/>
-                        <Label TextColor="Black" FontAttributes="Bold" 
-                               Text="{Binding MyKH.TenKH,StringFormat='Tên khách hàng: {0:N}'}"/>
-                        <Label TextColor="Black" FontAttributes="Bold" 
-                               Text="{Binding MyKH.DiaChi,StringFormat='Địa chỉ: {0:N}'}"/>
-                        <Label TextColor="Black" FontAttributes="Bold" 
-                               Text="{Binding MyKH.SoDT,StringFormat='Số điện thoại: {0:N}'}"/>
-                    </StackLayout>
+                                <Label Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource lableTien}"
+                                       Text="{Binding MyHD.TongTien,StringFormat='Tổng tiền: {0:0,0.0} VND'}"/>
+                            </Grid>
+                        </Grid>
+                    </Frame>
 
-                    <Grid Margin="5" BackgroundColor="Transparent" HeightRequest="50">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <ImageButton Grid.Column="0" BackgroundColor="Aqua" Source="{markEx:EmbeddedImage ChuaTrangTri.png}"
-                                     Command="{Binding ChangeTinhTrangTo1Command}" CornerRadius="15"/>
-                        <ImageButton Grid.Column="1" BackgroundColor="Green" Source="{markEx:EmbeddedImage DaTrangTri.png}"
-                                     Command="{Binding ChangeTinhTrangTo2Command}" CornerRadius="15"/>
-                        <ImageButton Grid.Column="2" BackgroundColor="Gray" Source="{markEx:EmbeddedImage DaThaoDo.png}"
-                                     Command="{Binding ChangeTinhTrangTo3Command}" CornerRadius="15"/>
-                    </Grid>
+                    <Frame Style="{StaticResource frameThongTin}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Text="Thông tin khách hàng" Grid.Row="0"
+                                   Style="{StaticResource lableHeading}"/>
+                            <StackLayout Orientation="Vertical" Padding="10" Grid.Row="1">
+                                <Label Text="{Binding MyKH.MaKH,StringFormat='Mã khách hàng: {0:N}'}"
+                                       Style="{StaticResource lableBold}"/>
+                                <Label Text="{Binding MyKH.TenKH,StringFormat='Tên khách hàng: {0:N}'}"
+                                       Style="{StaticResource lableBold}"/>
+                                <Label Text="{Binding MyKH.DiaChi,StringFormat='Địa chỉ: {0:N}'}"/>
+                                <Label Text="{Binding MyKH.SoDT,StringFormat='Số điện thoại: {0:N}'}"/>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
 
+                    <Frame Style="{StaticResource frameChucNang}">
+                        <Grid Margin="5" BackgroundColor="Transparent" HeightRequest="50">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <ImageButton Grid.Column="0" BackgroundColor="Transparent" Source="{markEx:EmbeddedImage ChuaTrangTri.png}"
+                                         Command="{Binding ChangeTinhTrangTo1Command}" CornerRadius="15"/>
+                            <ImageButton Grid.Column="1" BackgroundColor="Transparent" Source="{markEx:EmbeddedImage DaTrangTri.png}"
+                                         Command="{Binding ChangeTinhTrangTo2Command}" CornerRadius="15"/>
+                            <ImageButton Grid.Column="2" BackgroundColor="Transparent" Source="{markEx:EmbeddedImage DaThaoDo.png}"
+                                         Command="{Binding ChangeTinhTrangTo3Command}" CornerRadius="15"/>
+                        </Grid>
+                    </Frame>
                 </StackLayout>
             </StackLayout>
 

@@ -2,7 +2,7 @@ package md5048335796d6a848447231107a6de4b57;
 
 
 public class ExtendedScrollViewRenderer
-	extends md55dd9fc6ed71531afc8730347a2a7e0e2.ScrollViewRenderer
+	extends md51558244f76c53b6aeda52c8a337f2c37.ScrollViewRenderer
 	implements
 		mono.android.IGCUserPeer
 {
@@ -12,6 +12,7 @@ public class ExtendedScrollViewRenderer
 		__md_methods = 
 			"n_addView:(Landroid/view/View;)V:GetAddView_Landroid_view_View_Handler\n" +
 			"n_onMeasure:(II)V:GetOnMeasure_IIHandler\n" +
+			"n_onLayout:(ZIIII)V:GetOnLayout_ZIIIIHandler\n" +
 			"n_computeScroll:()V:GetComputeScrollHandler\n" +
 			"n_fling:(I)V:GetFling_IHandler\n" +
 			"n_onInterceptTouchEvent:(Landroid/view/MotionEvent;)Z:GetOnInterceptTouchEvent_Landroid_view_MotionEvent_Handler\n" +
@@ -46,14 +47,6 @@ public class ExtendedScrollViewRenderer
 	}
 
 
-	public ExtendedScrollViewRenderer (android.content.Context p0, android.util.AttributeSet p1, int p2, int p3)
-	{
-		super (p0, p1, p2, p3);
-		if (getClass () == ExtendedScrollViewRenderer.class)
-			mono.android.TypeManager.Activate ("Syncfusion.ListView.XForms.Android.ExtendedScrollViewRenderer, Syncfusion.SfListView.XForms.Android", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, mscorlib:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1, p2, p3 });
-	}
-
-
 	public void addView (android.view.View p0)
 	{
 		n_addView (p0);
@@ -68,6 +61,14 @@ public class ExtendedScrollViewRenderer
 	}
 
 	private native void n_onMeasure (int p0, int p1);
+
+
+	public void onLayout (boolean p0, int p1, int p2, int p3, int p4)
+	{
+		n_onLayout (p0, p1, p2, p3, p4);
+	}
+
+	private native void n_onLayout (boolean p0, int p1, int p2, int p3, int p4);
 
 
 	public void computeScroll ()

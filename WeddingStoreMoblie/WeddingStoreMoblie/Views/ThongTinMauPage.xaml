@@ -19,14 +19,14 @@
                                       AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
             <carousel:CarouselViewControl.ItemTemplate>
                 <DataTemplate>
-                    <Frame HasShadow="True" CornerRadius="35" Margin="5" BackgroundColor="Transparent">
+                    <Frame Margin="5" Style="{StaticResource frameNone}">
                         <Grid BackgroundColor="Transparent">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="200"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <Frame Grid.Row="0" BackgroundColor="Transparent" CornerRadius="20">
+                            <Frame Grid.Row="0" Style="{StaticResource frameNone}">
                                 <Image Source="{Binding Hinh, Converter={StaticResource myImage}}" Aspect="Fill"/>
                             </Frame>
                             <Grid Grid.Row="0" Grid.RowSpan="2" Margin="5,150,5,5">
@@ -34,21 +34,22 @@
                                     <ColumnDefinition Width="5*"/>
                                     <ColumnDefinition Width="5*"/>
                                 </Grid.ColumnDefinitions>
-                                <Frame Grid.Column="0" BackgroundColor="Gray" Opacity="0.8" CornerRadius="15">
-                                    <Label Text="{Binding TenSP}" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                <Frame Grid.Column="0" Style="{StaticResource frameThongTin}">
+                                    <Label Text="{Binding TenSP}" HorizontalTextAlignment="Center"
+                                           Style="{StaticResource lableBold}"/>
                                 </Frame>
-                                <Frame Grid.Column="1" BackgroundColor="Gray" Opacity="0.8" CornerRadius="15" Margin="0,0,5,0">
+                                <Frame Grid.Column="1" Margin="0,0,5,0" Style="{StaticResource frameThongTin}">
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
                                             <RowDefinition Height="Auto"/>
                                         </Grid.RowDefinitions>
-                                        <Label Grid.Row="0" Text="{Binding SoLuong, StringFormat='Số lượng: {0:0}'}" TextColor="Black"/>
-                                        <Label Grid.Row="1" Text="{Binding ThanhTien,StringFormat='Thành tiền: {0:0,0.0} VNĐ'}" HorizontalTextAlignment="Center" TextColor="Black"/>
+                                        <Label Grid.Row="0" Text="{Binding SoLuong, StringFormat='Số lượng: {0:0}'}" HorizontalOptions="Center"/>
+                                        <Label Grid.Row="1" Text="{Binding ThanhTien,StringFormat='Thành tiền: {0:0,0.0} VNĐ'}" HorizontalTextAlignment="Center"/>
                                     </Grid>
                                 </Frame>
                             </Grid>
-                            <Frame Grid.Row="2" BackgroundColor="Coral" CornerRadius="15" HasShadow="True" Margin="5" Opacity="0.8">
+                            <Frame Grid.Row="2" Style="{StaticResource frameDanhSach}">
                                 <ListView ItemsSource="{Binding myLstThongTinChiTietVL}" HasUnevenRows="True">
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
@@ -64,7 +65,7 @@
                                                             <RowDefinition/>
                                                             <RowDefinition/>
                                                         </Grid.RowDefinitions>
-                                                        <Label Text="{Binding TenVL}" Grid.Row="0"/>
+                                                        <Label Text="{Binding TenVL}" Grid.Row="0" Style="{StaticResource lableBold}"/>
                                                         <Label Text="{Binding DonVi,StringFormat='Số Lượng: {0:N}'}" Grid.Row="1"/>
                                                     </Grid>
                                                 </Grid>
@@ -80,7 +81,7 @@
         </carousel:CarouselViewControl>
 
         <Grid HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" RowSpacing="0" ColumnSpacing="10" BackgroundColor="Transparent"
-              AbsoluteLayout.LayoutBounds="0,.8,1,1" AbsoluteLayout.LayoutFlags="YProportional,WidthProportional,HeightProportional">
+              AbsoluteLayout.LayoutBounds="0,.7,1,1" AbsoluteLayout.LayoutFlags="YProportional,WidthProportional,HeightProportional">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto" />

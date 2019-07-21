@@ -2184,6 +2184,7 @@ namespace WeddingStoreMoblie.Droid
 			global::Com.ViewPagerIndicator.Resource.Styleable.CirclePageIndicator_vpiStrokeWidth = global::WeddingStoreMoblie.Droid.Resource.Styleable.CirclePageIndicator_vpiStrokeWidth;
 			global::Com.ViewPagerIndicator.Resource.Styleable.ViewPagerIndicator = global::WeddingStoreMoblie.Droid.Resource.Styleable.ViewPagerIndicator;
 			global::Com.ViewPagerIndicator.Resource.Styleable.ViewPagerIndicator_vpiCirclePageIndicatorStyle = global::WeddingStoreMoblie.Droid.Resource.Styleable.ViewPagerIndicator_vpiCirclePageIndicatorStyle;
+			global::Syncfusion.XForms.Android.Core.Resource.Drawable.input_layout_drop_down_icon = global::WeddingStoreMoblie.Droid.Resource.Drawable.input_layout_drop_down_icon;
 			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglecollapseicon = global::WeddingStoreMoblie.Droid.Resource.Drawable.inputlayout_togglecollapseicon;
 			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglevisibleicon = global::WeddingStoreMoblie.Droid.Resource.Drawable.inputlayout_togglevisibleicon;
 			global::Syncfusion.ListView.XForms.Android.Resource.Attribute.layoutManager = global::WeddingStoreMoblie.Droid.Resource.Attribute.layoutManager;
@@ -2193,6 +2194,7 @@ namespace WeddingStoreMoblie.Droid
 			global::Syncfusion.ListView.XForms.Android.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::WeddingStoreMoblie.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
 			global::Syncfusion.ListView.XForms.Android.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::WeddingStoreMoblie.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
 			global::Syncfusion.ListView.XForms.Android.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::WeddingStoreMoblie.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::Syncfusion.ListView.XForms.Android.Resource.Drawable.input_layout_drop_down_icon = global::WeddingStoreMoblie.Droid.Resource.Drawable.input_layout_drop_down_icon;
 			global::Syncfusion.ListView.XForms.Android.Resource.Drawable.inputlayout_togglecollapseicon = global::WeddingStoreMoblie.Droid.Resource.Drawable.inputlayout_togglecollapseicon;
 			global::Syncfusion.ListView.XForms.Android.Resource.Drawable.inputlayout_togglevisibleicon = global::WeddingStoreMoblie.Droid.Resource.Drawable.inputlayout_togglevisibleicon;
 			global::Syncfusion.ListView.XForms.Android.Resource.Id.item_touch_helper_previous_elevation = global::WeddingStoreMoblie.Droid.Resource.Id.item_touch_helper_previous_elevation;
@@ -7110,6 +7112,9 @@ namespace WeddingStoreMoblie.Droid
 			
 			// aapt resource value: 0x7F060007
 			public const int inputlayout_togglevisibleicon = 2131099655;
+			
+			// aapt resource value: 0x7F060008
+			public const int input_layout_drop_down_icon = 2131099656;
 			
 			// aapt resource value: 0x7F090105
 			public const int mr_button_connected_dark = 2131296517;

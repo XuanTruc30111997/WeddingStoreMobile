@@ -20,7 +20,7 @@ namespace WeddingStoreMoblie.MockDatas.MockDataApp
         }
         public async Task<List<ThongTinChiTietHoaDon>> GetThongTinChiTietHoaDon(string maHD)
         {
-            await GetThongTin(maHD);
+            await GetThongTin(maHD).ConfigureAwait(false);
             return _lstThongTinChiTietHD;
         }
 
@@ -56,6 +56,29 @@ namespace WeddingStoreMoblie.MockDatas.MockDataApp
                             (myMauTrangTri.HinhMoTa, cthd.MaSP, myMauTrangTri.TenSP, cthd.SoLuong, myMauTrangTri.GiaTien * cthd.SoLuong, _lstThongTinChiTietVL);
                 _lstThongTinChiTietHD.Add(thongTinChiTietHD);
             }
+            //await Task.Run(() =>
+            //{
+            //    Parallel.ForEach(_lstChiTietHD, async (cthd) =>
+            //    {
+            //        lstChiTietMau = await _chiTietMau.GetByIdSP(cthd.MaSP);
+            //        _lstThongTinChiTietVL = new List<ThongTinChiTietVatLieu>();
+            //        _vatLieu = new MockVatLieuRepository();
+            //        VatLieuModel myVL = new VatLieuModel();
+            //        foreach (var ctm in lstChiTietMau)
+            //        {
+            //            myVL = await _vatLieu.GetById(ctm.MaVL);
+            //            ThongTinChiTietVatLieu thongTinVatLieu = new ThongTinChiTietVatLieu
+            //                                    (myVL.AnhMoTa, myVL.TenVL, ctm.SoLuong * cthd.SoLuong, myVL.DonVi, myVL.GiaTien * ctm.SoLuong * cthd.SoLuong);
+            //            _lstThongTinChiTietVL.Add(thongTinVatLieu);
+            //        }
+            //        _mauTrangTri = new MockSanPhamRepository();
+            //        SanPhamModel myMauTrangTri = await _mauTrangTri.GetById(cthd.MaSP);
+            //        ThongTinChiTietHoaDon thongTinChiTietHD = new ThongTinChiTietHoaDon
+            //                    (myMauTrangTri.HinhMoTa, cthd.MaSP, myMauTrangTri.TenSP, cthd.SoLuong, myMauTrangTri.GiaTien * cthd.SoLuong, _lstThongTinChiTietVL);
+            //        _lstThongTinChiTietHD.Add(thongTinChiTietHD);
+            //        Console.WriteLine("Done: " + cthd.MaSP);
+            //    });
+            //});
         }
 
         public async Task<List<ThongTinPhatSinh>> GetThongTinPhatSinhByIdHD(string maHD)
