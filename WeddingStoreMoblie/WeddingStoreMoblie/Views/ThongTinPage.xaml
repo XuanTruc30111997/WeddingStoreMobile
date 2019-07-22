@@ -43,6 +43,7 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -70,6 +71,8 @@
                             Text="{Binding MyHD.NgayThaoDo,StringFormat=' {0:yyyy/MM/dd}'}"/>-->
                                 <Label Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource lableTien}"
                                        Text="{Binding MyHD.TongTien,StringFormat='Tổng tiền: {0:0,0.0} VND'}"/>
+                                <Label Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource lableTien}"
+                                       Text="{Binding MyHD.TienCoc,StringFormat='Tiền Cọc: {0:0,0.0} VND'}"/>
                             </Grid>
                         </Grid>
                     </Frame>

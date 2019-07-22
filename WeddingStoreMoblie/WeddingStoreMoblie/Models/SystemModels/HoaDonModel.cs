@@ -24,5 +24,7 @@ namespace WeddingStoreMoblie.Models.SystemModels
         //public int TinhTrang { get; set; }
         private int _TinhTrang { get; set; }
         public int TinhTrang { get => _TinhTrang; set { _TinhTrang = value; OnPropertyChanged(); } }
+        public float TienCoc { get; set; }
+        public bool IsThanhToan { get; set; }
     }
 }

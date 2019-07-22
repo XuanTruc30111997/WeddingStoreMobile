@@ -4,7 +4,7 @@
              x:Class="WeddingStoreMoblie.Views.ThongTinNhanVienPage"
              xmlns:converter="clr-namespace:WeddingStoreMoblie.Converters" 
              xmlns:markEx="clr-namespace:WeddingStoreMoblie.MarkupExtensions"
-             BackgroundColor="#F5D790">
+             BackgroundColor="Transparent">
 
     <ContentPage.Resources>
         <converter:ConvertTimeSpanToString x:Key="myTime"/>
